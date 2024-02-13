@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjectFinalLp2.Data;
+namespace ProjectFinalLp2.Models;
 
 public partial class Client
 {
