@@ -22,7 +22,7 @@
     <Folder Include="Formularios\Client\" />
     <Folder Include="Formularios\SuperAdmin\" />
     <Folder Include="Formularios\Trabajador\" />
-    <Folder Include="Model\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
