@@ -27,7 +27,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			{
 				timerAnimation.Enabled = false;
 				this.Hide();
-				// llamar al loading
+				new frmlogin().Show();
 			}
 		}
 	}

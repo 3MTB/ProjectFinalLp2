@@ -1,5 +1,4 @@
 using ProjectFinalLp2.Models;
-using ProjectFinalLp2.Models.dataLocal;
 
 namespace ProjectFinalLp2
 {
