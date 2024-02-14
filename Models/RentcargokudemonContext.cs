@@ -21,6 +21,8 @@ public partial class RentcargokudemonContext : DbContext
 
     public virtual DbSet<Contacto> Contactos { get; set; }
 
+    public virtual DbSet<Licencium> Licencia { get; set; }
+
     public virtual DbSet<Rentado> Rentados { get; set; }
 
     public virtual DbSet<Trabajador> Trabajadors { get; set; }
@@ -63,6 +65,7 @@ public partial class RentcargokudemonContext : DbContext
                 .HasColumnName("apellido");
             entity.Property(e => e.Edad).HasColumnName("edad");
             entity.Property(e => e.IdContacto).HasColumnName("idContacto");
+            entity.Property(e => e.IdLicencia).HasColumnName("idLicencia");
             entity.Property(e => e.Imagen)
                 .HasColumnType("image")
                 .HasColumnName("imagen");
@@ -78,6 +81,11 @@ public partial class RentcargokudemonContext : DbContext
             entity.HasOne(d => d.IdContactoNavigation).WithMany(p => p.Clients)
                 .HasForeignKey(d => d.IdContacto)
                 .HasConstraintName("FK_client_contacto1");
+
+            entity.HasOne(d => d.IdLicenciaNavigation).WithMany(p => p.Clients)
+                .HasForeignKey(d => d.IdLicencia)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_client_Licencia");
         });
 
         modelBuilder.Entity<Contacto>(entity =>
@@ -105,6 +113,17 @@ public partial class RentcargokudemonContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("telefono");
+        });
+
+        modelBuilder.Entity<Licencium>(entity =>
+        {
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Categoria)
+                .HasMaxLength(5)
+                .IsUnicode(false)
+                .HasColumnName("categoria");
+            entity.Property(e => e.Emision).HasColumnName("emision");
+            entity.Property(e => e.FechaVencimiento).HasColumnName("fechaVencimiento");
         });
 
         modelBuilder.Entity<Rentado>(entity =>
@@ -186,11 +205,4 @@ public partial class RentcargokudemonContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
-	public override int SaveChanges()
-	{
-
-		return base.SaveChanges();
-	}
-
 }

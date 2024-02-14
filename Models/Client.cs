@@ -19,7 +19,11 @@ public partial class Client
 
     public int IdContacto { get; set; }
 
+    public int IdLicencia { get; set; }
+
     public virtual Contacto IdContactoNavigation { get; set; } = null!;
+
+    public virtual Licencium IdLicenciaNavigation { get; set; } = null!;
 
     public virtual ICollection<Rentado> Rentados { get; set; } = new List<Rentado>();
 }
