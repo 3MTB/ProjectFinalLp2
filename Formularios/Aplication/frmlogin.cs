@@ -87,14 +87,11 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			{
 				cbUser.DataSource = dbContext.Trabajadors.ToList();
 				cbUser.DisplayMember = "Nombre";
-
 			}
 			else if (cbRoll.Text == Roll.Cliente)
 			{
 				cbUser.DataSource = dbContext.Clients.ToList();
 				cbUser.DisplayMember = "Nombre";
-
-
 			}
 			else if (cbRoll.Text == Roll.Boos)
 			{

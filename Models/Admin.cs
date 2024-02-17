@@ -5,9 +5,18 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Admin
 {
-    public int Id { get; set; }
+	public Admin(string nombre, string password)
+	{
+		Nombre = nombre.ToUpper();
+		Password = password;
+	}
+	public Admin()
+	{
 
-    public string Nombre { get; set; } = null!;
+	}
+	public int Id { get; set; }
 
-    public string Password { get; set; } = null!;
+	public string Nombre { get; set; } = null!;
+
+	public string Password { get; set; } = null!;
 }
