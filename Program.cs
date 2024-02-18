@@ -22,8 +22,8 @@ namespace ProjectFinalLp2
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
+			// Programa inicial
 			Application.Run(new frmPrueba());
-			
 		}
 	}
 }
