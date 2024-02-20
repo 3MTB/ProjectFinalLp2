@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectFinalLp2.Models;
 
@@ -11,9 +12,11 @@ using ProjectFinalLp2.Models;
 namespace ProjectFinalLp2.Migrations
 {
     [DbContext(typeof(RentcargokudemonContext))]
-    partial class RentcargokudemonContextModelSnapshot : ModelSnapshot
+    [Migration("20240218130409_SupportToEncryptation")]
+    partial class SupportToEncryptation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

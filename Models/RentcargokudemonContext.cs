@@ -47,7 +47,7 @@ public partial class RentcargokudemonContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
             entity.Property(e => e.Password)
-                .HasMaxLength(15)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("password");
         });
@@ -74,7 +74,7 @@ public partial class RentcargokudemonContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
             entity.Property(e => e.Password)
-                .HasMaxLength(15)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("password");
 
@@ -94,23 +94,23 @@ public partial class RentcargokudemonContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Ciudad)
-                .HasMaxLength(50)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("ciudad");
             entity.Property(e => e.Direccion)
-                .HasMaxLength(80)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("direccion");
             entity.Property(e => e.Email)
-                .HasMaxLength(50)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("email");
             entity.Property(e => e.Pais)
-                .HasMaxLength(50)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("pais");
             entity.Property(e => e.Telefono)
-                .HasMaxLength(50)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("telefono");
         });
@@ -167,7 +167,7 @@ public partial class RentcargokudemonContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("name");
             entity.Property(e => e.Password)
-                .HasMaxLength(15)
+                .HasMaxLength(300)
                 .IsUnicode(false)
                 .HasColumnName("password");
         });

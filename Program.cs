@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // Add for me
 using ProjectFinalLp2.Formularios.Aplication;
-
+using ProjectFinalLp2.Formularios.Boss;
+using ProjectFinalLp2.Models;
 
 namespace ProjectFinalLp2
 {
@@ -22,8 +23,15 @@ namespace ProjectFinalLp2
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
+			// Clear that
+			Admin adminDefault = new RentcargokudemonContext().Admins.First();
+			// Clear that
+
+			
+
+
 			// Programa inicial
-			Application.Run(new frmPrueba());
+			Application.Run(new frmMainAdministrador(adminDefault));
 		}
 	}
 }

@@ -157,7 +157,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 						if (boss.Password == tbPassword.Text)
 						{
 							this.Hide();
-							new frmMainBoss().Show();
+							new frmMainAdministrador(boss).Show();
 						}
 						else
 						{

@@ -30,14 +30,20 @@ namespace ProjectFinalLp2
 		//TODO:  Try SUCESS
 		private void btnEnviar_Click(object sender, EventArgs e)
 		{
-			if (gestorAdministrador.InsertaAdmin(new Models.Admin(tbName.Text, tbPassword.Text)))
+			if (VerificaString(tbName.Text) && VerificaString(tbPassword.Text))
 			{
-				tbName.Text = string.Empty;
-				tbPassword.Text = string.Empty;
-				ActualizaValores();
+				if (gestorAdministrador.InsertaAdmin(new Models.Admin(tbName.Text, tbPassword.Text)))
+				{
+					tbName.Text = string.Empty;
+					tbPassword.Text = string.Empty;
+					ActualizaValores();
 
+				}
 			}
-
+			else
+			{
+				MessageBox.Show("Campo vacio");
+			}
 		}
 
 

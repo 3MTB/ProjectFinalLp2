@@ -13,9 +13,9 @@ public partial class Contacto
 
     public string Direccion { get; set; } = null!;
 
-    public string? Email { get; set; }
+    public string Email { get; set; } = null!;
 
-    public string? Telefono { get; set; }
+    public string Telefono { get; set; } = null!;
 
     public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 }

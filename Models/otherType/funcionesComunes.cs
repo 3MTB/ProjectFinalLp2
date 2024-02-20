@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,13 +23,25 @@ namespace ProjectFinalLp2.Models.otherType
 			return Passowrd.Any(x => Char.IsDigit(x)) && Passowrd.Length >= 4 && Passowrd.Length <= 15;
 		}
 		// review that
-		private static string Encriptar(string str)
+		public static string Encriptar(string str)
 		{
 			return protector.Protect(str);
 		}
-		private static string Desencriptar(string str)
+		
+		public static string Desencriptar(string str)
 		{
-			return protector.Unprotect(str);
+			try
+			{
+				/// Problem here
+				var des = protector.Unprotect(str);
+				Console.WriteLine($"dEncriptando: {str} ::: {des}");
+				return des;
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show(e.ToString());
+			}
+			return ":";
 		}
 		// review that
 
@@ -39,8 +52,6 @@ namespace ProjectFinalLp2.Models.otherType
 		public static bool MakeMessage(string description, string Title, MessageBoxIcon tipo, DialogResult correctAnswer)
 		{
 			return MessageBox.Show(description, Title, MessageBoxButtons.YesNo, tipo) == correctAnswer;
-
-			//MessageBox.Show(description, Title, MessageBoxButtons.OK, tipo, buttons);
 		}
 	}
 	struct TipoAviso
