@@ -109,10 +109,28 @@ namespace ProjectFinalLp2.Formularios.Boss
 
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("¿Seguro que quieres salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+			if (MessageBox.Show("¿Seguro que quieres salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 			{
 				Application.Exit();
 			}
 		}
+
+		private void btnEliminarPerfil_Click(object sender, EventArgs e)
+		{
+			string MessageEliminacion = $"{adminCurrent.Nombre}, ¿Estas seguro que deseas eliminar tu perfil?\n Esto implica que perderás tu acceso al programa.";
+			if (MessageBox.Show(MessageEliminacion, "Eliminación de Perfil", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+			{
+
+				var context = new RentcargokudemonContext();
+				context.Admins.Remove(adminCurrent);
+				context.SaveChanges();
+				this.Hide();
+
+				var open = new frmLoading();
+				open.Show();
+
+			}
+		}
+
 	}
 }
