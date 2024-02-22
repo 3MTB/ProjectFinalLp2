@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,6 @@ namespace ProjectFinalLp2
 					tbName.Text = string.Empty;
 					tbPassword.Text = string.Empty;
 					ActualizaValores();
-
 				}
 			}
 			else
@@ -113,5 +113,58 @@ namespace ProjectFinalLp2
 			cbRegistroName.DisplayMember = "Nombre";
 		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog openFile = new OpenFileDialog();
+			openFile.Filter = "Foto Perfil|*.jpg;*.png;";
+			openFile.Title = "Seleccionar Foto Perfil |.jpg .png";
+			DialogResult dr = openFile.ShowDialog();
+			if (dr == DialogResult.OK)
+			{
+				pictureClient.Image = Image.FromFile(openFile.FileName);
+			}
+			else
+			{
+				MessageBox.Show("Error al cargar la imagen");
+			}
+		}
+
+		private byte[] ImageToString()
+		{
+			MemoryStream ms = new MemoryStream();
+			pictureClient.Image.Save(ms, ImageFormat.Jpeg);
+			var obt = ms.GetBuffer();
+			/*MessageBox.Show("Before");
+			for (int i = 0; i < 5; i++)
+			{
+                MessageBox.Show(obt[i].ToString());
+            }
+			MessageBox.Show("After");*/
+
+			return obt;
+		}
+
+		private void btnImageToString_Click(object sender, EventArgs e)
+		{
+			var context = new RentcargokudemonContext();
+			var img = ImageToString();
+			var cto = context.Contactos.First();
+			var lic = context.Licencia.First();
+
+
+			Client cl = new Client("First Test", "First Test", 89, "1236", img, cto.Id, lic.Id, cto, lic);
+			context.Clients.Add(cl);
+			context.SaveChanges();
+
+		}
+
+		private void btnObtenerImageDb_Click(object sender, EventArgs e)
+		{
+			var context = new RentcargokudemonContext();
+			var client = context.Clients.OrderByDescending(x=>x.Id).First();
+			MemoryStream ms = new MemoryStream(client.Imagen);
+			Bitmap bm = new Bitmap(ms);
+			picDb.Image = bm;
+		}
 	}
 }

@@ -27,7 +27,7 @@ namespace ProjectFinalLp2.Models.otherType
 		{
 			return protector.Protect(str);
 		}
-		
+
 		public static string Desencriptar(string str)
 		{
 			try
@@ -53,6 +53,29 @@ namespace ProjectFinalLp2.Models.otherType
 		{
 			return MessageBox.Show(description, Title, MessageBoxButtons.YesNo, tipo) == correctAnswer;
 		}
+
+		public static Bitmap stringToImage(byte[] image)
+		{
+			Bitmap devolver = new Bitmap("");
+			try
+			{
+				MemoryStream ms = new MemoryStream(image);
+				devolver = new Bitmap(ms);
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Error al momento de cargar la Imagen.\n\nError: {e.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			MessageBox.Show($"BITMAP DEVUELTO: {devolver}");
+			return devolver;
+		}
+		//TODO:												 configurar esto
+		public static void ImageToString()
+		{
+			MemoryStream ms = new MemoryStream();
+		}
+		//TODO:											:  configurar esto
+
 	}
 	struct TipoAviso
 	{

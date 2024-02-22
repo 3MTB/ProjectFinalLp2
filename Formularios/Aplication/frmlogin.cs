@@ -136,7 +136,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 						if (client.Password == tbPassword.Text)
 						{
 							this.Hide();
-							new frmMainClient().Show();
+							new frmMainClient(client).Show();
 						}
 						else
 						{

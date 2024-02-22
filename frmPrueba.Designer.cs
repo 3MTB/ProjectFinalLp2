@@ -36,12 +36,19 @@
 			dgData = new DataGridView();
 			btnDelete = new Button();
 			btnUpdate = new Button();
+			pictureClient = new PictureBox();
+			btnIngresarImagen = new Button();
+			btnImageToString = new Button();
+			picDb = new PictureBox();
+			btnObtenerImageDb = new Button();
 			((System.ComponentModel.ISupportInitialize)dgData).BeginInit();
+			((System.ComponentModel.ISupportInitialize)pictureClient).BeginInit();
+			((System.ComponentModel.ISupportInitialize)picDb).BeginInit();
 			SuspendLayout();
 			// 
 			// tbName
 			// 
-			tbName.Location = new Point(273, 135);
+			tbName.Location = new Point(491, 175);
 			tbName.Name = "tbName";
 			tbName.Size = new Size(125, 27);
 			tbName.TabIndex = 0;
@@ -51,7 +58,7 @@
 			cbRegistroName.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbRegistroName.FlatStyle = FlatStyle.Popup;
 			cbRegistroName.FormattingEnabled = true;
-			cbRegistroName.Location = new Point(591, 75);
+			cbRegistroName.Location = new Point(809, 115);
 			cbRegistroName.Name = "cbRegistroName";
 			cbRegistroName.Size = new Size(151, 28);
 			cbRegistroName.TabIndex = 1;
@@ -60,7 +67,7 @@
 			// 
 			btnEnviar.FlatStyle = FlatStyle.Flat;
 			btnEnviar.Font = new Font("Segoe UI", 14F);
-			btnEnviar.Location = new Point(420, 224);
+			btnEnviar.Location = new Point(638, 264);
 			btnEnviar.Name = "btnEnviar";
 			btnEnviar.Size = new Size(106, 65);
 			btnEnviar.TabIndex = 2;
@@ -70,7 +77,7 @@
 			// 
 			// tbPassword
 			// 
-			tbPassword.Location = new Point(273, 194);
+			tbPassword.Location = new Point(491, 234);
 			tbPassword.Name = "tbPassword";
 			tbPassword.Size = new Size(125, 27);
 			tbPassword.TabIndex = 3;
@@ -78,7 +85,7 @@
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(176, 201);
+			label1.Location = new Point(394, 241);
 			label1.Name = "label1";
 			label1.Size = new Size(70, 20);
 			label1.TabIndex = 4;
@@ -88,10 +95,10 @@
 			// 
 			dgData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgData.Dock = DockStyle.Bottom;
-			dgData.Location = new Point(0, 295);
+			dgData.Location = new Point(0, 561);
 			dgData.Name = "dgData";
 			dgData.RowHeadersWidth = 51;
-			dgData.Size = new Size(800, 155);
+			dgData.Size = new Size(1009, 155);
 			dgData.TabIndex = 5;
 			// 
 			// btnDelete
@@ -99,7 +106,7 @@
 			btnDelete.FlatStyle = FlatStyle.Flat;
 			btnDelete.Font = new Font("Segoe UI Black", 14F);
 			btnDelete.ForeColor = Color.OrangeRed;
-			btnDelete.Location = new Point(650, 201);
+			btnDelete.Location = new Point(868, 241);
 			btnDelete.Name = "btnDelete";
 			btnDelete.Size = new Size(108, 40);
 			btnDelete.TabIndex = 6;
@@ -112,7 +119,7 @@
 			btnUpdate.FlatStyle = FlatStyle.Flat;
 			btnUpdate.Font = new Font("Segoe UI", 12F);
 			btnUpdate.ForeColor = Color.SteelBlue;
-			btnUpdate.Location = new Point(650, 142);
+			btnUpdate.Location = new Point(868, 182);
 			btnUpdate.Name = "btnUpdate";
 			btnUpdate.Size = new Size(113, 53);
 			btnUpdate.TabIndex = 7;
@@ -120,12 +127,77 @@
 			btnUpdate.UseVisualStyleBackColor = true;
 			btnUpdate.Click += btnUpdate_Click;
 			// 
+			// pictureClient
+			// 
+			pictureClient.Location = new Point(67, 49);
+			pictureClient.Margin = new Padding(0);
+			pictureClient.Name = "pictureClient";
+			pictureClient.Size = new Size(150, 153);
+			pictureClient.SizeMode = PictureBoxSizeMode.StretchImage;
+			pictureClient.TabIndex = 8;
+			pictureClient.TabStop = false;
+			// 
+			// btnIngresarImagen
+			// 
+			btnIngresarImagen.FlatStyle = FlatStyle.Flat;
+			btnIngresarImagen.ForeColor = Color.CadetBlue;
+			btnIngresarImagen.Location = new Point(40, 264);
+			btnIngresarImagen.Name = "btnIngresarImagen";
+			btnIngresarImagen.Size = new Size(203, 88);
+			btnIngresarImagen.TabIndex = 9;
+			btnIngresarImagen.Text = "Ingresar";
+			btnIngresarImagen.UseVisualStyleBackColor = true;
+			btnIngresarImagen.Click += button1_Click;
+			// 
+			// btnImageToString
+			// 
+			btnImageToString.FlatStyle = FlatStyle.Flat;
+			btnImageToString.Font = new Font("Segoe UI", 12F);
+			btnImageToString.ForeColor = Color.DarkViolet;
+			btnImageToString.Location = new Point(40, 358);
+			btnImageToString.Margin = new Padding(0);
+			btnImageToString.Name = "btnImageToString";
+			btnImageToString.Size = new Size(203, 88);
+			btnImageToString.TabIndex = 10;
+			btnImageToString.Text = "Convert To String";
+			btnImageToString.UseVisualStyleBackColor = true;
+			btnImageToString.Click += btnImageToString_Click;
+			// 
+			// picDb
+			// 
+			picDb.Location = new Point(429, 282);
+			picDb.Margin = new Padding(0);
+			picDb.Name = "picDb";
+			picDb.Size = new Size(150, 153);
+			picDb.SizeMode = PictureBoxSizeMode.StretchImage;
+			picDb.TabIndex = 11;
+			picDb.TabStop = false;
+			// 
+			// btnObtenerImageDb
+			// 
+			btnObtenerImageDb.FlatStyle = FlatStyle.Flat;
+			btnObtenerImageDb.Font = new Font("Segoe UI", 12F);
+			btnObtenerImageDb.ForeColor = Color.Crimson;
+			btnObtenerImageDb.Location = new Point(394, 454);
+			btnObtenerImageDb.Margin = new Padding(0);
+			btnObtenerImageDb.Name = "btnObtenerImageDb";
+			btnObtenerImageDb.Size = new Size(203, 88);
+			btnObtenerImageDb.TabIndex = 12;
+			btnObtenerImageDb.Text = "Obtener Image DB";
+			btnObtenerImageDb.UseVisualStyleBackColor = true;
+			btnObtenerImageDb.Click += btnObtenerImageDb_Click;
+			// 
 			// frmPrueba
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.Black;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(1009, 716);
+			Controls.Add(btnObtenerImageDb);
+			Controls.Add(picDb);
+			Controls.Add(btnImageToString);
+			Controls.Add(btnIngresarImagen);
+			Controls.Add(pictureClient);
 			Controls.Add(btnUpdate);
 			Controls.Add(btnDelete);
 			Controls.Add(dgData);
@@ -138,6 +210,8 @@
 			Name = "frmPrueba";
 			Text = "frmPrueba";
 			((System.ComponentModel.ISupportInitialize)dgData).EndInit();
+			((System.ComponentModel.ISupportInitialize)pictureClient).EndInit();
+			((System.ComponentModel.ISupportInitialize)picDb).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -152,5 +226,10 @@
 		private DataGridView dgData;
 		private Button btnDelete;
 		private Button btnUpdate;
+		private PictureBox pictureClient;
+		private Button btnIngresarImagen;
+		private Button btnImageToString;
+		private PictureBox picDb;
+		private Button btnObtenerImageDb;
 	}
 }
