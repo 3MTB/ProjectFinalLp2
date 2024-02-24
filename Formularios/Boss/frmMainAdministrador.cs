@@ -121,6 +121,8 @@ namespace ProjectFinalLp2.Formularios.Boss
 			if (MessageBox.Show(MessageEliminacion, "Eliminación de Perfil", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 			{
 
+
+
 				var context = new RentcargokudemonContext();
 				context.Admins.Remove(adminCurrent);
 				context.SaveChanges();
@@ -130,6 +132,8 @@ namespace ProjectFinalLp2.Formularios.Boss
 				open.Show();
 
 			}
+
+
 		}
 
 	}

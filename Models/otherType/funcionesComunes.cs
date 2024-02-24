@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace ProjectFinalLp2.Models.otherType
 {
-	public class funcionesComunes
+	// funciones comundes - verifica String / password
+	public partial class funcionesComunes
 	{
 		// protector para la encritptacion y desencriptacion de la informacion.
 		private static IDataProtector protector => new EphemeralDataProtectionProvider().CreateProtector("rentCarGokuDemon");
@@ -54,29 +56,46 @@ namespace ProjectFinalLp2.Models.otherType
 			return MessageBox.Show(description, Title, MessageBoxButtons.YesNo, tipo) == correctAnswer;
 		}
 
-		public static Bitmap stringToImage(byte[] image)
+	}
+
+	// Images -- TODO: Try it
+	public partial class funcionesComunes
+	{
+		private responseConversionImage ImageToByte(PictureBox pict)
 		{
-			Bitmap devolver = new Bitmap("");
+			if (pict.Image == null)
+			{
+				MessageBox.Show("Sin imagen cargada", "Error");
+				return new responseConversionImage(false, null);
+			}
 			try
 			{
-				MemoryStream ms = new MemoryStream(image);
-				devolver = new Bitmap(ms);
+				MemoryStream ms = new MemoryStream();
+				pict.Image.Save(ms, ImageFormat.Png);
+				return new responseConversionImage(true, ms.GetBuffer());
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show($"Error al momento de cargar la Imagen.\n\nError: {e.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Error Al Convertir la imagen a guardar", "Error GUARDAR Imagen");
+				return new responseConversionImage(false, null);
 			}
-			MessageBox.Show($"BITMAP DEVUELTO: {devolver}");
-			return devolver;
 		}
-		//TODO:												 configurar esto
-		public static void ImageToString()
+		private responseGetImage ByteToImage(byte[] imagenInput)
 		{
-			MemoryStream ms = new MemoryStream();
+			try
+			{
+				MemoryStream ms = new MemoryStream(imagenInput);
+				Bitmap bm = new Bitmap(ms);
+				return new responseGetImage(true, bm);
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show("Error al CARGAR la IMAGEN GUARDAD", "Error Cargar Imagen");
+				return new responseGetImage(false, null);
+			}
 		}
-		//TODO:											:  configurar esto
-
 	}
+
 	struct TipoAviso
 	{
 		public const MessageBoxIcon error = MessageBoxIcon.Error;

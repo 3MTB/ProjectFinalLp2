@@ -16,4 +16,6 @@ namespace ProjectFinalLp2.Models.otherType
 		public const string Trabajador = "Trabajador";
 		public const string Boos = "Jefe";
 	}
+	public record responseConversionImage(bool Success, byte[]? Message);
+	public record responseGetImage(bool Success, Bitmap? Message);
 }

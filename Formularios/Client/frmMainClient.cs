@@ -29,7 +29,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			try
 			{
 				lblNameClient.Text = $"{clientCurrent.Nombre} {clientCurrent.Apellido}";
-				pictureClient.Image = stringToImage(clientCurrent.Imagen);
+				//pictureClient.Image = stringToImage(clientCurrent.Imagen);
 				//						Review that
 			}
 			catch (Exception ex)

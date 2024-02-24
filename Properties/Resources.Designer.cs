@@ -73,6 +73,16 @@ namespace ProjectFinalLp2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clientDefaultWhite {
+            get {
+                object obj = ResourceManager.GetObject("clientDefaultWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frost {
             get {
                 object obj = ResourceManager.GetObject("Frost", resourceCulture);
@@ -86,6 +96,16 @@ namespace ProjectFinalLp2.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userDefault {
+            get {
+                object obj = ResourceManager.GetObject("userDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

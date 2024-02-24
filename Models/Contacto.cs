@@ -5,6 +5,19 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Contacto
 {
+	public Contacto(string pais, string ciudad, string direccion, string email, string telefono)
+	{
+		Pais = pais;
+		Ciudad = ciudad;
+		Direccion = direccion;
+		Email = email;
+		Telefono = telefono;
+	}
+    public Contacto()
+    {
+        
+    }
+
     public int Id { get; set; }
 
     public string Pais { get; set; } = null!;

@@ -126,7 +126,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 113</value>
+    <value>173, 48</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tbName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -149,10 +149,13 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbName.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbPersonalInfo</value>
   </data>
   <data name="&gt;&gt;tbName.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>2</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -161,7 +164,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 113</value>
+    <value>81, 48</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -182,10 +185,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbPersonalInfo</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>1</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -197,7 +203,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 180</value>
+    <value>81, 115</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -218,43 +224,46 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbPersonalInfo</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>4</value>
   </data>
-  <data name="textBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="tbApellido.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="textBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="tbApellido.Font" type="System.Drawing.Font, System.Drawing">
     <value>Agency FB, 14pt</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 180</value>
+  <data name="tbApellido.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 115</value>
   </data>
-  <data name="textBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tbApellido.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="textBox1.MaxLength" type="System.Int32, mscorlib">
+  <data name="tbApellido.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tbApellido.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 35</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="tbApellido.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="&gt;&gt;tbApellido.Name" xml:space="preserve">
+    <value>tbApellido</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbApellido.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;tbApellido.Parent" xml:space="preserve">
+    <value>gbPersonalInfo</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>20</value>
+  <data name="&gt;&gt;tbApellido.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -266,7 +275,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 232</value>
+    <value>81, 179</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -287,19 +296,22 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbPersonalInfo</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>5</value>
+  </data>
+  <data name="numEdad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="numEdad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 232</value>
+    <value>173, 171</value>
   </data>
   <data name="numEdad.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="numEdad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 31</value>
+    <value>125, 27</value>
   </data>
   <data name="numEdad.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -311,10 +323,10 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numEdad.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbPersonalInfo</value>
   </data>
   <data name="&gt;&gt;numEdad.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>6</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -326,7 +338,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 366</value>
+    <value>96, 109</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -347,10 +359,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>4</value>
   </data>
   <data name="tbCiudad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -359,7 +371,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbCiudad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 366</value>
+    <value>177, 109</value>
   </data>
   <data name="tbCiudad.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -380,10 +392,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbCiudad.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;tbCiudad.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>3</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -395,7 +407,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 299</value>
+    <value>96, 42</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -416,10 +428,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>1</value>
   </data>
   <data name="tbPais.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -428,7 +440,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbPais.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 299</value>
+    <value>177, 42</value>
   </data>
   <data name="tbPais.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -449,10 +461,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbPais.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;tbPais.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>2</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -464,7 +476,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 496</value>
+    <value>96, 239</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -485,10 +497,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="tbEmail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -497,7 +509,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 496</value>
+    <value>177, 239</value>
   </data>
   <data name="tbEmail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -518,10 +530,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbEmail.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;tbEmail.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -533,7 +545,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 429</value>
+    <value>96, 172</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -554,10 +566,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>6</value>
   </data>
   <data name="tbDireccion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -566,7 +578,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbDireccion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 429</value>
+    <value>177, 172</value>
   </data>
   <data name="tbDireccion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -587,10 +599,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbDireccion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;tbDireccion.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>5</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -602,7 +614,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 555</value>
+    <value>96, 298</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -623,7 +635,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -635,7 +647,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbTelefono.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 555</value>
+    <value>177, 298</value>
   </data>
   <data name="tbTelefono.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -656,10 +668,13 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbTelefono.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbContacto</value>
   </data>
   <data name="&gt;&gt;tbTelefono.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -671,7 +686,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>547, 72</value>
+    <value>98, 14</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -692,10 +707,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="tbCategoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -704,7 +719,7 @@
     <value>Agency FB, 14pt</value>
   </data>
   <data name="tbCategoria.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 100</value>
+    <value>122, 42</value>
   </data>
   <data name="tbCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -725,10 +740,13 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbCategoria.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;tbCategoria.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
+  </data>
+  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -740,7 +758,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>547, 167</value>
+    <value>98, 109</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -761,16 +779,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="getEmisionLicencia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="getEmisionLicencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Agency FB, 10pt</value>
+  </data>
   <data name="getEmisionLicencia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 214</value>
+    <value>24, 156</value>
+  </data>
+  <data name="getEmisionLicencia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="getEmisionLicencia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 31</value>
+    <value>339, 27</value>
   </data>
   <data name="getEmisionLicencia.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -782,16 +809,25 @@
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;getEmisionLicencia.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;getEmisionLicencia.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="getVencimientoLicencia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="getVencimientoLicencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Agency FB, 10pt</value>
   </data>
   <data name="getVencimientoLicencia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 334</value>
+    <value>24, 276</value>
+  </data>
+  <data name="getVencimientoLicencia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="getVencimientoLicencia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 31</value>
+    <value>339, 27</value>
   </data>
   <data name="getVencimientoLicencia.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -803,10 +839,13 @@
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;getVencimientoLicencia.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;getVencimientoLicencia.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
+  </data>
+  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -818,7 +857,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 287</value>
+    <value>51, 229</value>
   </data>
   <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -839,10 +878,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="btnRegistrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -851,13 +890,13 @@
     <value>Agency FB, 19.2pt, style=Bold</value>
   </data>
   <data name="btnRegistrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 419</value>
+    <value>250, 203</value>
   </data>
   <data name="btnRegistrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnRegistrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 92</value>
+    <value>169, 76</value>
   </data>
   <data name="btnRegistrar.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -872,9 +911,321 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnRegistrar.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbFinish</value>
   </data>
   <data name="&gt;&gt;btnRegistrar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pictImagePerfil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 34</value>
+  </data>
+  <data name="pictImagePerfil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pictImagePerfil.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 100</value>
+  </data>
+  <data name="pictImagePerfil.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictImagePerfil.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;pictImagePerfil.Name" xml:space="preserve">
+    <value>pictImagePerfil</value>
+  </data>
+  <data name="&gt;&gt;pictImagePerfil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictImagePerfil.Parent" xml:space="preserve">
+    <value>gbFinish</value>
+  </data>
+  <data name="&gt;&gt;pictImagePerfil.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCargaImagen.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCargaImagen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Agency FB, 15pt</value>
+  </data>
+  <data name="btnCargaImagen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 134</value>
+  </data>
+  <data name="btnCargaImagen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnCargaImagen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 38</value>
+  </data>
+  <data name="btnCargaImagen.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="btnCargaImagen.Text" xml:space="preserve">
+    <value>Cargar Imagen</value>
+  </data>
+  <data name="&gt;&gt;btnCargaImagen.Name" xml:space="preserve">
+    <value>btnCargaImagen</value>
+  </data>
+  <data name="&gt;&gt;btnCargaImagen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCargaImagen.Parent" xml:space="preserve">
+    <value>gbFinish</value>
+  </data>
+  <data name="&gt;&gt;btnCargaImagen.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbPersonalInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnPersonalInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnPersonalInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnPersonalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 249</value>
+  </data>
+  <data name="btnPersonalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 29</value>
+  </data>
+  <data name="btnPersonalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnPersonalInfo.Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="&gt;&gt;btnPersonalInfo.Name" xml:space="preserve">
+    <value>btnPersonalInfo</value>
+  </data>
+  <data name="&gt;&gt;btnPersonalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPersonalInfo.Parent" xml:space="preserve">
+    <value>gbPersonalInfo</value>
+  </data>
+  <data name="&gt;&gt;btnPersonalInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbPersonalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="gbPersonalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 9</value>
+  </data>
+  <data name="gbPersonalInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="gbPersonalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>442, 307</value>
+  </data>
+  <data name="gbPersonalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;gbPersonalInfo.Name" xml:space="preserve">
+    <value>gbPersonalInfo</value>
+  </data>
+  <data name="&gt;&gt;gbPersonalInfo.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;gbPersonalInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbPersonalInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbLicencia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnGuardarLicencia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnGuardarLicencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 13pt</value>
+  </data>
+  <data name="btnGuardarLicencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGuardarLicencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 234</value>
+  </data>
+  <data name="btnGuardarLicencia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnGuardarLicencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 44</value>
+  </data>
+  <data name="btnGuardarLicencia.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btnGuardarLicencia.Text" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="&gt;&gt;btnGuardarLicencia.Name" xml:space="preserve">
+    <value>btnGuardarLicencia</value>
+  </data>
+  <data name="&gt;&gt;btnGuardarLicencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGuardarLicencia.Parent" xml:space="preserve">
+    <value>gbLicencia</value>
+  </data>
+  <data name="&gt;&gt;btnGuardarLicencia.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSinLicencia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnSinLicencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 13pt</value>
+  </data>
+  <data name="btnSinLicencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 64</value>
+  </data>
+  <data name="btnSinLicencia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnSinLicencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 44</value>
+  </data>
+  <data name="btnSinLicencia.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnSinLicencia.Text" xml:space="preserve">
+    <value>No tengo Licencia</value>
+  </data>
+  <data name="&gt;&gt;btnSinLicencia.Name" xml:space="preserve">
+    <value>btnSinLicencia</value>
+  </data>
+  <data name="&gt;&gt;btnSinLicencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSinLicencia.Parent" xml:space="preserve">
+    <value>gbLicencia</value>
+  </data>
+  <data name="&gt;&gt;btnSinLicencia.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbLicencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="gbLicencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>532, 9</value>
+  </data>
+  <data name="gbLicencia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="gbLicencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 307</value>
+  </data>
+  <data name="gbLicencia.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;gbLicencia.Name" xml:space="preserve">
+    <value>gbLicencia</value>
+  </data>
+  <data name="&gt;&gt;gbLicencia.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;gbLicencia.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbLicencia.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbContacto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnEnviarContacto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnEnviarContacto.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnEnviarContacto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnEnviarContacto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 203</value>
+  </data>
+  <data name="btnEnviarContacto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 29</value>
+  </data>
+  <data name="btnEnviarContacto.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnEnviarContacto.Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="&gt;&gt;btnEnviarContacto.Name" xml:space="preserve">
+    <value>btnEnviarContacto</value>
+  </data>
+  <data name="&gt;&gt;btnEnviarContacto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEnviarContacto.Parent" xml:space="preserve">
+    <value>gbContacto</value>
+  </data>
+  <data name="&gt;&gt;btnEnviarContacto.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbContacto.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="gbContacto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 331</value>
+  </data>
+  <data name="gbContacto.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="gbContacto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 362</value>
+  </data>
+  <data name="gbContacto.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;gbContacto.Name" xml:space="preserve">
+    <value>gbContacto</value>
+  </data>
+  <data name="&gt;&gt;gbContacto.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;gbContacto.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbContacto.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbFinish.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="gbFinish.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="gbFinish.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 341</value>
+  </data>
+  <data name="gbFinish.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="gbFinish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>613, 339</value>
+  </data>
+  <data name="gbFinish.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;gbFinish.Name" xml:space="preserve">
+    <value>gbFinish</value>
+  </data>
+  <data name="&gt;&gt;gbFinish.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;gbFinish.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbFinish.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -891,9 +1242,6 @@
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>SS</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmRegisterClient</value>

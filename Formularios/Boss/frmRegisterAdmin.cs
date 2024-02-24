@@ -58,7 +58,8 @@ namespace ProjectFinalLp2.Formularios.Boss
 					return;
 				}
 			}
-		}
+		
+			}
 
 		private void tbPassword_TextChanged(object sender, EventArgs e)
 		{
