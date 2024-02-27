@@ -9,7 +9,7 @@ public partial class Client
 	{
 
 	}
-	public Client(string nombre, string apellido, int edad, string password, byte[] imagen, int idContacto, int idLicencia, Contacto idContactoNavigation, Licencium idLicenciaNavigation)
+	public Client(string nombre, string apellido, int edad, string password, byte[] imagen, int idContacto, int idLicencia, Contacto contacto, Licencium licencia)
 	{
 		Nombre = nombre;
 		Apellido = apellido;
@@ -18,8 +18,8 @@ public partial class Client
 		Imagen = imagen;
 		IdContacto = idContacto;
 		IdLicencia = idLicencia;
-		IdContactoNavigation = idContactoNavigation;
-		IdLicenciaNavigation = idLicenciaNavigation;
+		IdContactoNavigation = contacto;
+		IdLicenciaNavigation = licencia;
 	}
 
 	public int Id { get; set; }

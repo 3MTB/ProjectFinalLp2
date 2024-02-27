@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 			panelLateral = new Panel();
 			btnPerfil = new Button();
 			BtnHome = new Button();
@@ -119,6 +119,7 @@
 			btnMyVehicule.Tag = " ";
 			btnMyVehicule.Text = "Mis Vehiculos";
 			btnMyVehicule.UseVisualStyleBackColor = true;
+			btnMyVehicule.Click += btnMyVehicule_Click;
 			// 
 			// lblNameClient
 			// 
@@ -141,7 +142,7 @@
 			pictureClient.Location = new Point(67, 31);
 			pictureClient.Margin = new Padding(0);
 			pictureClient.Name = "pictureClient";
-			pictureClient.ShadowDecoration.CustomizableEdges = customizableEdges2;
+			pictureClient.ShadowDecoration.CustomizableEdges = customizableEdges1;
 			pictureClient.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
 			pictureClient.Size = new Size(80, 80);
 			pictureClient.SizeMode = PictureBoxSizeMode.Zoom;
@@ -194,6 +195,7 @@
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "frmMainClient";
 			Text = "Main Client";
+			Load += frmMainClient_Load;
 			panelLateral.ResumeLayout(false);
 			panelLateral.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)pictureClient).EndInit();

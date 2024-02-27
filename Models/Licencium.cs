@@ -7,15 +7,14 @@ public partial class Licencium
 {
 	public Licencium()
 	{
-	}
 
+	}
 	public Licencium(DateOnly emision, string categoria, DateOnly fechaVencimiento)
 	{
 		Emision = emision;
 		Categoria = categoria;
 		FechaVencimiento = fechaVencimiento;
 	}
-
 
 	public int Id { get; set; }
 

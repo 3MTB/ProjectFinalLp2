@@ -87,16 +87,22 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			{
 				cbUser.DataSource = dbContext.Trabajadors.ToList();
 				cbUser.DisplayMember = "Nombre";
+				btnRegistrar.Text = Roll.Trabajador;
+
 			}
 			else if (cbRoll.Text == Roll.Cliente)
 			{
 				cbUser.DataSource = dbContext.Clients.ToList();
 				cbUser.DisplayMember = "Nombre";
+				btnRegistrar.Text = Roll.Cliente;
+
 			}
 			else if (cbRoll.Text == Roll.Boos)
 			{
 				cbUser.DataSource = dbContext.Admins.ToList();
 				cbUser.DisplayMember = "Nombre";
+				btnRegistrar.Text = Roll.Boos;
+
 			}
 		}
 
@@ -178,5 +184,28 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			}
 		}
 
+
+		private void GoToRegistrar()
+		{
+			if (cbRoll.Text == Roll.Trabajador)
+			{
+				MessageBox.Show("FUNCION EN CONSCTRUCCION :: Registrar Trabajador");
+			}
+			else if (cbRoll.Text == Roll.Cliente)
+			{
+				this.Hide();
+				new frmRegisterClient().Show();
+			}
+			else if (cbRoll.Text == Roll.Boos)
+			{
+				this.Hide();
+				new frmRegisterAdmin().Show();
+			}
+		}
+
+		private void btnRegistrar_Click(object sender, EventArgs e)
+		{
+			GoToRegistrar();
+		}
 	}
 }

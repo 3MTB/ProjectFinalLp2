@@ -710,39 +710,6 @@
     <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tbCategoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="tbCategoria.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Agency FB, 14pt</value>
-  </data>
-  <data name="tbCategoria.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 42</value>
-  </data>
-  <data name="tbCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tbCategoria.MaxLength" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="tbCategoria.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 35</value>
-  </data>
-  <data name="tbCategoria.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;tbCategoria.Name" xml:space="preserve">
-    <value>tbCategoria</value>
-  </data>
-  <data name="&gt;&gt;tbCategoria.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbCategoria.Parent" xml:space="preserve">
-    <value>gbLicencia</value>
-  </data>
-  <data name="&gt;&gt;tbCategoria.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -890,7 +857,7 @@
     <value>Agency FB, 19.2pt, style=Bold</value>
   </data>
   <data name="btnRegistrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 203</value>
+    <value>211, 229</value>
   </data>
   <data name="btnRegistrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -914,7 +881,7 @@
     <value>gbFinish</value>
   </data>
   <data name="&gt;&gt;btnRegistrar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="pictImagePerfil.Location" type="System.Drawing.Point, System.Drawing">
     <value>77, 34</value>
@@ -941,7 +908,10 @@
     <value>gbFinish</value>
   </data>
   <data name="&gt;&gt;pictImagePerfil.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
+  </data>
+  <data name="btnCargaImagen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="btnCargaImagen.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -950,7 +920,7 @@
     <value>Agency FB, 15pt</value>
   </data>
   <data name="btnCargaImagen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 134</value>
+    <value>77, 152</value>
   </data>
   <data name="btnCargaImagen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -974,7 +944,7 @@
     <value>gbFinish</value>
   </data>
   <data name="&gt;&gt;btnCargaImagen.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="gbPersonalInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -985,11 +955,17 @@
   <data name="btnPersonalInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="btnPersonalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 13.8pt, style=Bold, Italic</value>
+  </data>
   <data name="btnPersonalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 249</value>
+    <value>153, 229</value>
+  </data>
+  <data name="btnPersonalInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnPersonalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 29</value>
+    <value>122, 49</value>
   </data>
   <data name="btnPersonalInfo.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1039,6 +1015,36 @@
   <data name="gbLicencia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="cbCategoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbCategoria.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 16</value>
+  </data>
+  <data name="cbCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="cbCategoria.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 28</value>
+  </data>
+  <data name="cbCategoria.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;cbCategoria.Name" xml:space="preserve">
+    <value>cbCategoria</value>
+  </data>
+  <data name="&gt;&gt;cbCategoria.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCategoria.Parent" xml:space="preserve">
+    <value>gbLicencia</value>
+  </data>
+  <data name="&gt;&gt;cbCategoria.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnGuardarLicencia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="btnGuardarLicencia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1049,7 +1055,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGuardarLicencia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 234</value>
+    <value>264, 213</value>
   </data>
   <data name="btnGuardarLicencia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1073,7 +1079,7 @@
     <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;btnGuardarLicencia.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnSinLicencia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1106,7 +1112,7 @@
     <value>gbLicencia</value>
   </data>
   <data name="&gt;&gt;btnSinLicencia.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="gbLicencia.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -1148,7 +1154,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnEnviarContacto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 203</value>
+    <value>2, 239</value>
+  </data>
+  <data name="btnEnviarContacto.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnEnviarContacto.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 29</value>
@@ -1201,6 +1210,102 @@
   <data name="gbFinish.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="lblAvisoPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAvisoPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>324, 163</value>
+  </data>
+  <data name="lblAvisoPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="lblAvisoPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;lblAvisoPassword.Name" xml:space="preserve">
+    <value>lblAvisoPassword</value>
+  </data>
+  <data name="&gt;&gt;lblAvisoPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAvisoPassword.Parent" xml:space="preserve">
+    <value>gbFinish</value>
+  </data>
+  <data name="&gt;&gt;lblAvisoPassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Agency FB, 14pt</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 84</value>
+  </data>
+  <data name="label15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 28</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>gbFinish</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbPassword.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tbPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 112</value>
+  </data>
+  <data name="tbPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tbPassword.MaxLength" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="tbPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="tbPassword.PlaceholderText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="tbPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 27</value>
+  </data>
+  <data name="tbPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;tbPassword.Name" xml:space="preserve">
+    <value>tbPassword</value>
+  </data>
+  <data name="&gt;&gt;tbPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbPassword.Parent" xml:space="preserve">
+    <value>gbFinish</value>
+  </data>
+  <data name="&gt;&gt;tbPassword.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="gbFinish.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
@@ -1211,7 +1316,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="gbFinish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 339</value>
+    <value>517, 339</value>
   </data>
   <data name="gbFinish.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>

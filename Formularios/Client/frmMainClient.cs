@@ -29,8 +29,17 @@ namespace ProjectFinalLp2.Formularios.Client
 			try
 			{
 				lblNameClient.Text = $"{clientCurrent.Nombre} {clientCurrent.Apellido}";
-				//pictureClient.Image = stringToImage(clientCurrent.Imagen);
-				//						Review that
+				var img = ByteToImage(clientCurrent.Imagen);
+				if (img.Success && img.Message != null)
+				{
+					pictureClient.Image = img.Message;
+				}
+				else
+				{
+					MessageBox.Show($"Error al momento de cargar la foto del usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					pictureClient.Image = Properties.Resources.userDefault;
+				}
+
 			}
 			catch (Exception ex)
 			{
@@ -43,6 +52,14 @@ namespace ProjectFinalLp2.Formularios.Client
 			Application.Exit();
 		}
 
+		private void btnMyVehicule_Click(object sender, EventArgs e)
+		{
 
+		}
+
+		private void frmMainClient_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

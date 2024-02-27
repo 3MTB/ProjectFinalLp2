@@ -5,21 +5,37 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Rentado
 {
-    public int Id { get; set; }
+	public Rentado()
+	{
 
-    public int IdCliente { get; set; }
+	}
+	public Rentado(int idCliente, int idVehiculo, DateTime fechaInicio, DateTime fechaFinal, int idTrabajador, Client idClienteNavigation, Trabajador employee, Vehiculo vehicule)
+	{
+		IdCliente = idCliente;
+		IdVehiculo = idVehiculo;
+		FechaInicio = fechaInicio;
+		FechaFinal = fechaFinal;
+		IdTrabajador = idTrabajador;
+		IdClienteNavigation = idClienteNavigation;
+		IdTrabajadorNavigation = employee;
+		IdVehiculoNavigation = vehicule;
+	}
 
-    public int IdVehiculo { get; set; }
+	public int Id { get; set; }
 
-    public DateTime FechaInicio { get; set; }
+	public int IdCliente { get; set; }
 
-    public DateTime FechaFinal { get; set; }
+	public int IdVehiculo { get; set; }
 
-    public int IdTrabajador { get; set; }
+	public DateTime FechaInicio { get; set; }
 
-    public virtual Client IdClienteNavigation { get; set; } = null!;
+	public DateTime FechaFinal { get; set; }
 
-    public virtual Trabajador IdTrabajadorNavigation { get; set; } = null!;
+	public int IdTrabajador { get; set; }
 
-    public virtual Vehiculo IdVehiculoNavigation { get; set; } = null!;
+	public virtual Client IdClienteNavigation { get; set; } = null!;
+
+	public virtual Trabajador IdTrabajadorNavigation { get; set; } = null!;
+
+	public virtual Vehiculo IdVehiculoNavigation { get; set; } = null!;
 }

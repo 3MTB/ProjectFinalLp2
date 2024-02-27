@@ -161,7 +161,7 @@ namespace ProjectFinalLp2
 		private void btnObtenerImageDb_Click(object sender, EventArgs e)
 		{
 			var context = new RentcargokudemonContext();
-			var client = context.Clients.OrderByDescending(x=>x.Id).First();
+			var client = context.Clients.OrderByDescending(x => x.Id).First();
 			MemoryStream ms = new MemoryStream(client.Imagen);
 			Bitmap bm = new Bitmap(ms);
 			picDb.Image = bm;

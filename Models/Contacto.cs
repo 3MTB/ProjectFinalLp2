@@ -5,6 +5,10 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Contacto
 {
+	public Contacto()
+	{
+
+	}
 	public Contacto(string pais, string ciudad, string direccion, string email, string telefono)
 	{
 		Pais = pais;
@@ -13,22 +17,19 @@ public partial class Contacto
 		Email = email;
 		Telefono = telefono;
 	}
-    public Contacto()
-    {
-        
-    }
 
-    public int Id { get; set; }
 
-    public string Pais { get; set; } = null!;
+	public int Id { get; set; }
 
-    public string Ciudad { get; set; } = null!;
+	public string Pais { get; set; } = null!;
 
-    public string Direccion { get; set; } = null!;
+	public string Ciudad { get; set; } = null!;
 
-    public string Email { get; set; } = null!;
+	public string Direccion { get; set; } = null!;
 
-    public string Telefono { get; set; } = null!;
+	public string Email { get; set; } = null!;
 
-    public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
+	public string Telefono { get; set; } = null!;
+
+	public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 }

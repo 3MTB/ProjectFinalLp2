@@ -61,7 +61,7 @@ namespace ProjectFinalLp2.Models.otherType
 	// Images -- TODO: Try it
 	public partial class funcionesComunes
 	{
-		private responseConversionImage ImageToByte(PictureBox pict)
+		public static responseConversionImage ImageToByte(PictureBox pict)
 		{
 			if (pict.Image == null)
 			{
@@ -80,7 +80,7 @@ namespace ProjectFinalLp2.Models.otherType
 				return new responseConversionImage(false, null);
 			}
 		}
-		private responseGetImage ByteToImage(byte[] imagenInput)
+		public static responseGetImage ByteToImage(byte[] imagenInput)
 		{
 			try
 			{
@@ -92,6 +92,24 @@ namespace ProjectFinalLp2.Models.otherType
 			{
 				MessageBox.Show("Error al CARGAR la IMAGEN GUARDAD", "Error Cargar Imagen");
 				return new responseGetImage(false, null);
+			}
+		}
+		public static void CargaImageFromLocal(PictureBox pictContenedor)
+		{
+			try
+			{
+				OpenFileDialog openFile = new OpenFileDialog();
+				openFile.Title = "Selecciona la imagen [ jpg . png ]";
+				openFile.Filter = "Cargar Imagen|*.jpg;*.png; *.Jpeg";
+				if (openFile.ShowDialog() == DialogResult.OK)
+				{
+					pictContenedor.Image = Image.FromFile(openFile.FileName);
+				}
+			}
+			catch (Exception e)
+			{
+				pictContenedor.Image = Properties.Resources.userDefault;
+				MessageBox.Show("Error al cargar la imagen", "Error");
 			}
 		}
 	}

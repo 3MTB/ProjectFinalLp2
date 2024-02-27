@@ -190,6 +190,10 @@ public partial class RentcargokudemonContext : DbContext
                 .HasMaxLength(12)
                 .IsUnicode(false)
                 .HasColumnName("estado");
+            entity.Property(e => e.LicenciaRequerida)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("licenciaRequerida");
             entity.Property(e => e.Marca)
                 .HasMaxLength(25)
                 .IsUnicode(false);

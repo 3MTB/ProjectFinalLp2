@@ -48,6 +48,7 @@
 			timerAnimation = new System.Windows.Forms.Timer(components);
 			tbPassword = new TextBox();
 			label2 = new Label();
+			btnRegistrar = new Button();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
@@ -252,12 +253,29 @@
 			label2.TabIndex = 8;
 			label2.Text = "Password";
 			// 
+			// btnRegistrar
+			// 
+			btnRegistrar.Anchor = AnchorStyles.None;
+			btnRegistrar.BackColor = Color.Transparent;
+			btnRegistrar.FlatStyle = FlatStyle.Flat;
+			btnRegistrar.Font = new Font("Agency FB", 12F);
+			btnRegistrar.ForeColor = Color.White;
+			btnRegistrar.Location = new Point(645, 682);
+			btnRegistrar.Margin = new Padding(0);
+			btnRegistrar.Name = "btnRegistrar";
+			btnRegistrar.Size = new Size(85, 44);
+			btnRegistrar.TabIndex = 9;
+			btnRegistrar.Text = "Registrar";
+			btnRegistrar.UseVisualStyleBackColor = false;
+			btnRegistrar.Click += btnRegistrar_Click;
+			// 
 			// frmlogin
 			// 
 			AutoScaleDimensions = new SizeF(7F, 24F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackgroundImage = Properties.Resources.Frost;
 			ClientSize = new Size(782, 753);
+			Controls.Add(btnRegistrar);
 			Controls.Add(label2);
 			Controls.Add(tbPassword);
 			Controls.Add(pgbVertical);
@@ -267,11 +285,11 @@
 			Controls.Add(label1);
 			Controls.Add(panel1);
 			Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			FormBorderStyle = FormBorderStyle.None;
+			HelpButton = true;
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "frmlogin";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "Logg In";
+			Text = "Log In";
 			TopMost = true;
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();
@@ -297,5 +315,6 @@
 		private Button btnOut;
 		private TextBox tbPassword;
 		private Label label2;
+		private Button btnRegistrar;
 	}
 }

@@ -5,6 +5,22 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Vehiculo
 {
+	public Vehiculo()
+	{
+
+	}
+	public Vehiculo(string marca, string modelo, int anio, string color, string estado, decimal precioRenta, string desription, string licenciaRequerida)
+	{
+		Marca = marca;
+		Modelo = modelo;
+		Anio = anio;
+		Color = color;
+		Estado = estado;
+		PrecioRenta = precioRenta;
+		Desription = desription;
+		LicenciaRequerida = licenciaRequerida;
+	}
+
 	public int Id { get; set; }
 
 	public string Marca { get; set; } = null!;
@@ -20,6 +36,8 @@ public partial class Vehiculo
 	public decimal PrecioRenta { get; set; }
 
 	public string Desription { get; set; } = null!;
+
+	public string LicenciaRequerida { get; set; } = null!;
 
 	public virtual ICollection<Rentado> Rentados { get; set; } = new List<Rentado>();
 }

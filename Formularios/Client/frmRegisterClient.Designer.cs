@@ -54,7 +54,6 @@
 			label8 = new Label();
 			tbTelefono = new TextBox();
 			label9 = new Label();
-			tbCategoria = new TextBox();
 			label10 = new Label();
 			getEmisionLicencia = new DateTimePicker();
 			getVencimientoLicencia = new DateTimePicker();
@@ -65,11 +64,15 @@
 			gbPersonalInfo = new Guna.UI2.WinForms.Guna2GroupBox();
 			btnPersonalInfo = new Button();
 			gbLicencia = new Guna.UI2.WinForms.Guna2GroupBox();
+			cbCategoria = new ComboBox();
 			btnGuardarLicencia = new Button();
 			btnSinLicencia = new Button();
 			gbContacto = new Guna.UI2.WinForms.Guna2GroupBox();
 			btnEnviarContacto = new Button();
 			gbFinish = new Guna.UI2.WinForms.Guna2GroupBox();
+			lblAvisoPassword = new Label();
+			label15 = new Label();
+			tbPassword = new TextBox();
 			((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictImagePerfil).BeginInit();
 			gbPersonalInfo.SuspendLayout();
@@ -83,6 +86,7 @@
 			resources.ApplyResources(tbName, "tbName");
 			tbName.BorderStyle = BorderStyle.FixedSingle;
 			tbName.Name = "tbName";
+			tbName.TextChanged += CambiaPersonalInfoAfter;
 			// 
 			// label1
 			// 
@@ -99,6 +103,7 @@
 			resources.ApplyResources(tbApellido, "tbApellido");
 			tbApellido.BorderStyle = BorderStyle.FixedSingle;
 			tbApellido.Name = "tbApellido";
+			tbApellido.TextChanged += CambiaPersonalInfoAfter;
 			// 
 			// label3
 			// 
@@ -110,6 +115,8 @@
 			resources.ApplyResources(numEdad, "numEdad");
 			numEdad.Maximum = new decimal(new int[] { 160, 0, 0, 0 });
 			numEdad.Name = "numEdad";
+			numEdad.Value = new decimal(new int[] { 20, 0, 0, 0 });
+			numEdad.ValueChanged += CambiaPersonalInfoAfter;
 			// 
 			// label4
 			// 
@@ -121,6 +128,7 @@
 			resources.ApplyResources(tbCiudad, "tbCiudad");
 			tbCiudad.BorderStyle = BorderStyle.FixedSingle;
 			tbCiudad.Name = "tbCiudad";
+			tbCiudad.TextChanged += ChangeContactInfo;
 			// 
 			// label5
 			// 
@@ -132,6 +140,7 @@
 			resources.ApplyResources(tbPais, "tbPais");
 			tbPais.BorderStyle = BorderStyle.FixedSingle;
 			tbPais.Name = "tbPais";
+			tbPais.TextChanged += ChangeContactInfo;
 			// 
 			// label6
 			// 
@@ -143,6 +152,7 @@
 			resources.ApplyResources(tbEmail, "tbEmail");
 			tbEmail.BorderStyle = BorderStyle.FixedSingle;
 			tbEmail.Name = "tbEmail";
+			tbEmail.TextChanged += ChangeContactInfo;
 			// 
 			// label7
 			// 
@@ -154,6 +164,7 @@
 			resources.ApplyResources(tbDireccion, "tbDireccion");
 			tbDireccion.BorderStyle = BorderStyle.FixedSingle;
 			tbDireccion.Name = "tbDireccion";
+			tbDireccion.TextChanged += ChangeContactInfo;
 			// 
 			// label8
 			// 
@@ -165,17 +176,12 @@
 			resources.ApplyResources(tbTelefono, "tbTelefono");
 			tbTelefono.BorderStyle = BorderStyle.FixedSingle;
 			tbTelefono.Name = "tbTelefono";
+			tbTelefono.TextChanged += ChangeContactInfo;
 			// 
 			// label9
 			// 
 			resources.ApplyResources(label9, "label9");
 			label9.Name = "label9";
-			// 
-			// tbCategoria
-			// 
-			resources.ApplyResources(tbCategoria, "tbCategoria");
-			tbCategoria.BorderStyle = BorderStyle.FixedSingle;
-			tbCategoria.Name = "tbCategoria";
 			// 
 			// label10
 			// 
@@ -188,6 +194,7 @@
 			getEmisionLicencia.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
 			getEmisionLicencia.Name = "getEmisionLicencia";
 			getEmisionLicencia.Value = new DateTime(2024, 2, 8, 0, 0, 0, 0);
+			getEmisionLicencia.ValueChanged += CambiaLicenciaInfo;
 			// 
 			// getVencimientoLicencia
 			// 
@@ -195,7 +202,7 @@
 			getVencimientoLicencia.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
 			getVencimientoLicencia.Name = "getVencimientoLicencia";
 			getVencimientoLicencia.Value = new DateTime(2024, 2, 7, 0, 0, 0, 0);
-			getVencimientoLicencia.ValueChanged += dateTimePicker1_ValueChanged;
+			getVencimientoLicencia.ValueChanged += CambiaLicenciaInfo;
 			// 
 			// label11
 			// 
@@ -225,6 +232,7 @@
 			btnCargaImagen.ForeColor = Color.White;
 			btnCargaImagen.Name = "btnCargaImagen";
 			btnCargaImagen.UseVisualStyleBackColor = true;
+			btnCargaImagen.Click += btnCargaImagen_Click;
 			// 
 			// gbPersonalInfo
 			// 
@@ -252,6 +260,7 @@
 			// btnPersonalInfo
 			// 
 			resources.ApplyResources(btnPersonalInfo, "btnPersonalInfo");
+			btnPersonalInfo.ForeColor = Color.White;
 			btnPersonalInfo.Name = "btnPersonalInfo";
 			btnPersonalInfo.UseVisualStyleBackColor = true;
 			btnPersonalInfo.Click += btnPersonalInfo_Click;
@@ -260,10 +269,10 @@
 			// 
 			resources.ApplyResources(gbLicencia, "gbLicencia");
 			gbLicencia.BackColor = Color.FromArgb(10, 25, 24);
+			gbLicencia.Controls.Add(cbCategoria);
 			gbLicencia.Controls.Add(btnGuardarLicencia);
 			gbLicencia.Controls.Add(btnSinLicencia);
 			gbLicencia.Controls.Add(label9);
-			gbLicencia.Controls.Add(tbCategoria);
 			gbLicencia.Controls.Add(label10);
 			gbLicencia.Controls.Add(getEmisionLicencia);
 			gbLicencia.Controls.Add(label11);
@@ -280,12 +289,21 @@
 			gbLicencia.ShadowDecoration.CustomizableEdges = customizableEdges4;
 			gbLicencia.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 			// 
+			// cbCategoria
+			// 
+			resources.ApplyResources(cbCategoria, "cbCategoria");
+			cbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+			cbCategoria.FormattingEnabled = true;
+			cbCategoria.Name = "cbCategoria";
+			cbCategoria.SelectedIndexChanged += CambiaLicenciaInfo;
+			// 
 			// btnGuardarLicencia
 			// 
 			resources.ApplyResources(btnGuardarLicencia, "btnGuardarLicencia");
 			btnGuardarLicencia.ForeColor = Color.Green;
 			btnGuardarLicencia.Name = "btnGuardarLicencia";
 			btnGuardarLicencia.UseVisualStyleBackColor = true;
+			btnGuardarLicencia.Click += btnGuardarLicencia_Click;
 			// 
 			// btnSinLicencia
 			// 
@@ -328,11 +346,15 @@
 			btnEnviarContacto.ForeColor = Color.Red;
 			btnEnviarContacto.Name = "btnEnviarContacto";
 			btnEnviarContacto.UseVisualStyleBackColor = true;
+			btnEnviarContacto.Click += btnEnviarContacto_Click;
 			// 
 			// gbFinish
 			// 
 			resources.ApplyResources(gbFinish, "gbFinish");
 			gbFinish.BackColor = Color.FromArgb(10, 25, 24);
+			gbFinish.Controls.Add(lblAvisoPassword);
+			gbFinish.Controls.Add(label15);
+			gbFinish.Controls.Add(tbPassword);
 			gbFinish.Controls.Add(pictImagePerfil);
 			gbFinish.Controls.Add(btnRegistrar);
 			gbFinish.Controls.Add(btnCargaImagen);
@@ -347,6 +369,22 @@
 			gbFinish.Name = "gbFinish";
 			gbFinish.ShadowDecoration.CustomizableEdges = customizableEdges8;
 			gbFinish.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+			// 
+			// lblAvisoPassword
+			// 
+			resources.ApplyResources(lblAvisoPassword, "lblAvisoPassword");
+			lblAvisoPassword.Name = "lblAvisoPassword";
+			// 
+			// label15
+			// 
+			resources.ApplyResources(label15, "label15");
+			label15.Name = "label15";
+			// 
+			// tbPassword
+			// 
+			resources.ApplyResources(tbPassword, "tbPassword");
+			tbPassword.Name = "tbPassword";
+			tbPassword.TextChanged += tbPassword_TextChanged;
 			// 
 			// frmRegisterClient
 			// 
@@ -369,6 +407,7 @@
 			gbContacto.ResumeLayout(false);
 			gbContacto.PerformLayout();
 			gbFinish.ResumeLayout(false);
+			gbFinish.PerformLayout();
 			ResumeLayout(false);
 		}
 
@@ -391,13 +430,11 @@
 		private Label label8;
 		private TextBox tbTelefono;
 		private Label label9;
-		private TextBox tbCategoria;
 		private Label label10;
 		private DateTimePicker getEmisionLicencia;
 		private DateTimePicker getVencimientoLicencia;
 		private Label label11;
 		private Button btnRegistrar;
-		private PictureBox pictImagePerfil;
 		private Button btnCargaImagen;
 		private Guna.UI2.WinForms.Guna2GroupBox gbPersonalInfo;
 		private Button btnPersonalInfo;
@@ -415,5 +452,10 @@
 		private Label label13;
 		private Label label14;
 		private NumericUpDown numericUpDown1;
+		private ComboBox cbCategoria;
+		private Label label15;
+		private TextBox tbPassword;
+		private Label lblAvisoPassword;
+		public PictureBox pictImagePerfil;
 	}
 }

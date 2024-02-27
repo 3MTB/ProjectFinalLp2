@@ -26,7 +26,7 @@ namespace ProjectFinalLp2
 
 			// Clear that
 			Admin adminDefault = new RentcargokudemonContext().Admins.First();
-			Client clientDefault = new RentcargokudemonContext().Clients.First();
+			//Client clientDefault = new RentcargokudemonContext().Clients.First();
 			// Clear that
 
 
@@ -35,7 +35,7 @@ namespace ProjectFinalLp2
 			// Programa inicial
 			//Application.Run(new frmMainAdministrador(adminDefault));
 			//Application.Run(new frmMainClient(clientDefault));
-			Application.Run(new frmRegisterClient());
+			Application.Run(new frmLoading());
 		}
 	}
 }
