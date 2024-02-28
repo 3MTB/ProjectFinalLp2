@@ -12,6 +12,9 @@ using System.Windows.Forms;
 //My NameSpace
 using ProjectFinalLp2.Formularios.Aplication;
 using ProjectFinalLp2.Models;
+using ProjectFinalLp2.Models.otherType;
+using static ProjectFinalLp2.Models.otherType.ColorDefaults;
+//My NameSpace
 
 namespace ProjectFinalLp2.Formularios.Boss
 {
@@ -20,10 +23,10 @@ namespace ProjectFinalLp2.Formularios.Boss
 		public Admin adminCurrent { get; set; }
 		public Button currentButon { get; set; }
 		public Form currentForm { get; set; }
-		public Color cForegroundActive = Color.FromArgb(255, 255, 255);
-		public Color cForegroundDisable = Color.FromArgb(0, 0, 0);
-		public Color cBackgroundDisable = Color.FromArgb(255, 255, 255);
-		public Color cBackgroundActive = Color.FromArgb(0, 0, 0);
+		//public Color cForegroundActive = Color.FromArgb(255, 255, 255);
+		//public Color cForegroundDisable = Color.FromArgb(0, 0, 0);
+		//public Color cBackgroundDisable = Color.FromArgb(255, 255, 255);
+		//public Color cBackgroundActive = Color.FromArgb(0, 0, 0);
 
 
 		public frmMainAdministrador(Admin admin)
@@ -102,8 +105,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 			currentForm.BringToFront();
 			panelMain.Controls.Add(currentForm);
 			currentForm.Show();
-
-
 		}
 
 
@@ -120,8 +121,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 			string MessageEliminacion = $"{adminCurrent.Nombre}, ¿Estas seguro que deseas eliminar tu perfil?\n Esto implica que perderás tu acceso al programa.";
 			if (MessageBox.Show(MessageEliminacion, "Eliminación de Perfil", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 			{
-
-
 
 				var context = new RentcargokudemonContext();
 				context.Admins.Remove(adminCurrent);

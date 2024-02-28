@@ -31,8 +31,8 @@
 			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 			panelLateral = new Panel();
 			btnPerfil = new Button();
-			BtnHome = new Button();
 			btnSalir = new Button();
+			btnHome = new Button();
 			btnRentar = new Button();
 			btnMyVehicule = new Button();
 			lblNameClient = new Label();
@@ -49,8 +49,8 @@
 			// 
 			panelLateral.BackColor = Color.FromArgb(10, 45, 90);
 			panelLateral.Controls.Add(btnPerfil);
-			panelLateral.Controls.Add(BtnHome);
 			panelLateral.Controls.Add(btnSalir);
+			panelLateral.Controls.Add(btnHome);
 			panelLateral.Controls.Add(btnRentar);
 			panelLateral.Controls.Add(btnMyVehicule);
 			panelLateral.Controls.Add(lblNameClient);
@@ -63,6 +63,7 @@
 			// 
 			// btnPerfil
 			// 
+			btnPerfil.Anchor = AnchorStyles.None;
 			btnPerfil.Location = new Point(46, 200);
 			btnPerfil.Margin = new Padding(0);
 			btnPerfil.Name = "btnPerfil";
@@ -72,22 +73,9 @@
 			btnPerfil.Text = "Perfil";
 			btnPerfil.UseVisualStyleBackColor = true;
 			// 
-			// BtnHome
-			// 
-			BtnHome.FlatStyle = FlatStyle.Popup;
-			BtnHome.ForeColor = Color.White;
-			BtnHome.Location = new Point(46, 449);
-			BtnHome.Margin = new Padding(0);
-			BtnHome.Name = "BtnHome";
-			BtnHome.Size = new Size(127, 43);
-			BtnHome.TabIndex = 3;
-			BtnHome.Tag = " ";
-			BtnHome.Text = "Home";
-			BtnHome.UseVisualStyleBackColor = true;
-			BtnHome.Click += btnSalir_Click;
-			// 
 			// btnSalir
 			// 
+			btnSalir.Anchor = AnchorStyles.None;
 			btnSalir.Location = new Point(46, 669);
 			btnSalir.Margin = new Padding(0);
 			btnSalir.Name = "btnSalir";
@@ -98,9 +86,25 @@
 			btnSalir.UseVisualStyleBackColor = true;
 			btnSalir.Click += btnSalir_Click;
 			// 
+			// btnHome
+			// 
+			btnHome.Anchor = AnchorStyles.None;
+			btnHome.FlatStyle = FlatStyle.Flat;
+			btnHome.ForeColor = Color.White;
+			btnHome.Location = new Point(46, 444);
+			btnHome.Margin = new Padding(0);
+			btnHome.Name = "btnHome";
+			btnHome.Size = new Size(127, 43);
+			btnHome.TabIndex = 3;
+			btnHome.Tag = " ";
+			btnHome.Text = "Home";
+			btnHome.UseVisualStyleBackColor = true;
+			btnHome.Click += btnHome_Click;
+			// 
 			// btnRentar
 			// 
-			btnRentar.Location = new Point(46, 354);
+			btnRentar.Anchor = AnchorStyles.None;
+			btnRentar.Location = new Point(46, 375);
 			btnRentar.Margin = new Padding(0);
 			btnRentar.Name = "btnRentar";
 			btnRentar.Size = new Size(127, 43);
@@ -108,9 +112,11 @@
 			btnRentar.Tag = " ";
 			btnRentar.Text = "Rentar";
 			btnRentar.UseVisualStyleBackColor = true;
+			btnRentar.Click += btnRentar_Click;
 			// 
 			// btnMyVehicule
 			// 
+			btnMyVehicule.Anchor = AnchorStyles.None;
 			btnMyVehicule.Location = new Point(46, 275);
 			btnMyVehicule.Margin = new Padding(0);
 			btnMyVehicule.Name = "btnMyVehicule";
@@ -123,6 +129,7 @@
 			// 
 			// lblNameClient
 			// 
+			lblNameClient.Anchor = AnchorStyles.None;
 			lblNameClient.AutoSize = true;
 			lblNameClient.Font = new Font("Agency FB", 14F);
 			lblNameClient.ForeColor = Color.White;
@@ -135,9 +142,10 @@
 			// 
 			// pictureClient
 			// 
+			pictureClient.Anchor = AnchorStyles.None;
 			pictureClient.ErrorImage = Properties.Resources.admin;
 			pictureClient.FillColor = Color.Transparent;
-			pictureClient.Image = Properties.Resources.Frost;
+			pictureClient.Image = Properties.Resources.clientDefaultWhite;
 			pictureClient.ImageRotate = 0F;
 			pictureClient.Location = new Point(67, 31);
 			pictureClient.Margin = new Padding(0);
@@ -215,7 +223,7 @@
 		private Button btnSalir;
 		private Panel panel1;
 		private Label label1;
-		private Button BtnHome;
 		private Panel panelMain;
+		private Button btnHome;
 	}
 }

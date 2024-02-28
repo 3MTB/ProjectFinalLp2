@@ -14,6 +14,17 @@ namespace ProjectFinalLp2.Models.otherType
 		public static string[] categoriaLicencias = new string[] { catLicencia.c1, catLicencia.c2, catLicencia.c3, catLicencia.c4, catLicencia.c5 };
 
 	}
+	/*public Color cForegroundActive = Color.FromArgb(255, 255, 255);
+		public Color cForegroundDisable = Color.FromArgb(0, 0, 0);
+		public Color cBackgroundDisable = Color.FromArgb(255, 255, 255);
+		public Color cBackgroundActive = Color.FromArgb(0, 0, 0);*/
+	public record ColorDefaults
+	{
+		public static Color cForegroundActive = Color.FromArgb(255, 255, 255);
+		public static Color cForegroundDisable = Color.FromArgb(0, 0, 0);
+		public static Color cBackgroundDisable = Color.FromArgb(255, 255, 255);
+		public static Color cBackgroundActive = Color.FromArgb(0, 0, 0);
+	}
 	struct catLicencia
 	{
 		public const string c1 = "01";

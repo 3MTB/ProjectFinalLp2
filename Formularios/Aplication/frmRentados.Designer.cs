@@ -124,7 +124,7 @@
 			FormBorderStyle = FormBorderStyle.None;
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "frmRentados";
-			Text = "frmRentados";
+			Text = "13";
 			Load += frmRentados_Load;
 			((System.ComponentModel.ISupportInitialize)dgRentados).EndInit();
 			ResumeLayout(false);
