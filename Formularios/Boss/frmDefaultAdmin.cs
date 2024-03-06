@@ -12,16 +12,21 @@ namespace ProjectFinalLp2.Formularios.Boss
 {
 	public partial class frmDefaultAdmin : Form
 	{
+		#region					Constructor
 		public frmDefaultAdmin()
 		{
 			InitializeComponent();
 		}
+		#endregion
 
+		#region					METODOS
 		private void timerDateTime_Tick(object sender, EventArgs e)
 		{
 			var date = DateTime.Now;
 			lblDateMain.Text = date.GetDateTimeFormats()[1];
 			lblTimeMain.Text = $"{date.Hour}:{date.Minute}:{date.Second}";
 		}
+
+		#endregion
 	}
 }

@@ -5,16 +5,15 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Admin
 {
-	public Admin()
-	{
-
-	}
 	public Admin(string nombre, string password)
 	{
 		Nombre = nombre;
 		Password = password;
 	}
+	public Admin()
+	{
 
+	}
 
 	public int Id { get; set; }
 

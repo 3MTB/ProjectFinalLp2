@@ -25,13 +25,12 @@ namespace ProjectFinalLp2
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			// Clear that
-			Admin adminDefault = new RentcargokudemonContext().Admins.First();
+			//Admin adminDefault = new RentcargokudemonContext().Admins.First();
 			//Client clientDefault = new RentcargokudemonContext().Clients.First();
 			// Clear that
 
 
-
-
+			
 			// Programa inicial
 			//Application.Run(new frmMainAdministrador(adminDefault));
 			//Application.Run(new frmMainClient(clientDefault));

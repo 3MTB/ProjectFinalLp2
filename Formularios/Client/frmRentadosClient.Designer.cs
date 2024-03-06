@@ -32,6 +32,7 @@
 			label1 = new Label();
 			tbCantidad = new TextBox();
 			lblAlert = new Label();
+			btnRentar = new Button();
 			((System.ComponentModel.ISupportInitialize)dgRentados).BeginInit();
 			SuspendLayout();
 			// 
@@ -82,12 +83,26 @@
 			lblAlert.UseMnemonic = false;
 			lblAlert.Visible = false;
 			// 
+			// btnRentar
+			// 
+			btnRentar.BackColor = Color.Transparent;
+			btnRentar.FlatStyle = FlatStyle.Flat;
+			btnRentar.ForeColor = Color.White;
+			btnRentar.Location = new Point(26, 46);
+			btnRentar.Name = "btnRentar";
+			btnRentar.Size = new Size(94, 51);
+			btnRentar.TabIndex = 4;
+			btnRentar.Text = "Rentar";
+			btnRentar.UseVisualStyleBackColor = false;
+			btnRentar.Click += btnRentar_Click;
+			// 
 			// frmRentadosClient
 			// 
 			AutoScaleDimensions = new SizeF(8F, 28F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ActiveCaptionText;
 			ClientSize = new Size(800, 630);
+			Controls.Add(btnRentar);
 			Controls.Add(lblAlert);
 			Controls.Add(tbCantidad);
 			Controls.Add(label1);
@@ -108,5 +123,6 @@
 		private Label label1;
 		private TextBox tbCantidad;
 		private Label lblAlert;
+		private Button btnRentar;
 	}
 }

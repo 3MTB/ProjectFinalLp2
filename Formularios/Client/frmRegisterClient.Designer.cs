@@ -73,6 +73,7 @@
 			lblAvisoPassword = new Label();
 			label15 = new Label();
 			tbPassword = new TextBox();
+			btnToLogin = new Button();
 			((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictImagePerfil).BeginInit();
 			gbPersonalInfo.SuspendLayout();
@@ -386,12 +387,22 @@
 			tbPassword.Name = "tbPassword";
 			tbPassword.TextChanged += tbPassword_TextChanged;
 			// 
+			// btnToLogin
+			// 
+			resources.ApplyResources(btnToLogin, "btnToLogin");
+			btnToLogin.FlatAppearance.BorderColor = Color.Red;
+			btnToLogin.ForeColor = Color.White;
+			btnToLogin.Name = "btnToLogin";
+			btnToLogin.UseVisualStyleBackColor = true;
+			btnToLogin.Click += btnToLogin_Click;
+			// 
 			// frmRegisterClient
 			// 
 			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(10, 25, 94);
 			BackgroundImage = Properties.Resources.Frost;
+			Controls.Add(btnToLogin);
 			Controls.Add(gbFinish);
 			Controls.Add(gbContacto);
 			Controls.Add(gbLicencia);
@@ -457,5 +468,6 @@
 		private TextBox tbPassword;
 		private Label lblAvisoPassword;
 		public PictureBox pictImagePerfil;
+		private Button btnToLogin;
 	}
 }

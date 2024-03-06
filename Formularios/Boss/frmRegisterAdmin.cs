@@ -1,4 +1,5 @@
 ﻿using ProjectFinalLp2.Formularios.Aplication;
+using ProjectFinalLp2.Models;
 using ProjectFinalLp2.Models.GestorData;
 using ProjectFinalLp2.Models.otherType;
 using System;
@@ -20,11 +21,15 @@ namespace ProjectFinalLp2.Formularios.Boss
 {
 	public partial class frmRegisterAdmin : Form
 	{
+		#region					CONSTRUCTOR
 		public frmRegisterAdmin()
 		{
 			InitializeComponent();
+			tbName.Text = Environment.UserName;
 		}
+		#endregion
 
+		#region						EVENTOS
 		private void btnRegistrar_Click(object sender, EventArgs e)
 		{
 			if (VerificaString(tbName.Text) && VerificaString(tbPassword.Text))
@@ -58,8 +63,8 @@ namespace ProjectFinalLp2.Formularios.Boss
 					return;
 				}
 			}
-		
-			}
+
+		}
 
 		private void tbPassword_TextChanged(object sender, EventArgs e)
 		{
@@ -88,6 +93,30 @@ namespace ProjectFinalLp2.Formularios.Boss
 				lblAvisoPassword.Text = string.Empty;
 			}
 		}
+
+		private void tbName_TextChanged(object sender, EventArgs e)
+		{
+			RentcargokudemonContext context = new RentcargokudemonContext();
+			if (context.Admins.Any(x => x.Nombre == tbName.Text.ToString()))
+			{
+				lblExistencia.Visible = true;
+				btnRegistrar.Enabled = false;
+			}
+			else
+			{
+				lblExistencia.Visible = false;
+				btnRegistrar.Enabled = true;
+
+			}
+		}
+		private void btnToLogin_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			new frmlogin().Show();
+		}
+		#endregion
+
+
 	}
 }
 

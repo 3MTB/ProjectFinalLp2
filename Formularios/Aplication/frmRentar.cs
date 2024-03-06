@@ -12,9 +12,12 @@ namespace ProjectFinalLp2.Formularios.Aplication
 {
 	public partial class frmRentar : Form
 	{
+		#region							CONSTRUCTOR
 		public frmRentar()
 		{
 			InitializeComponent();
 		}
+
+		#endregion
 	}
 }

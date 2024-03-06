@@ -850,6 +850,9 @@
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnRegistrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="btnRegistrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -920,7 +923,7 @@
     <value>Agency FB, 15pt</value>
   </data>
   <data name="btnCargaImagen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 152</value>
+    <value>43, 152</value>
   </data>
   <data name="btnCargaImagen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1010,7 +1013,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbPersonalInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="gbLicencia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -1139,7 +1142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbLicencia.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="gbContacto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -1205,9 +1208,12 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbContacto.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="gbFinish.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblAvisoPassword.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="lblAvisoPassword.AutoSize" type="System.Boolean, mscorlib">
@@ -1233,6 +1239,9 @@
   </data>
   <data name="&gt;&gt;lblAvisoPassword.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label15.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1274,7 +1283,7 @@
     <value>None</value>
   </data>
   <data name="tbPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 112</value>
+    <value>310, 112</value>
   </data>
   <data name="tbPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1310,13 +1319,13 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="gbFinish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 341</value>
+    <value>556, 341</value>
   </data>
   <data name="gbFinish.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="gbFinish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>517, 339</value>
+    <value>448, 339</value>
   </data>
   <data name="gbFinish.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1331,6 +1340,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbFinish.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnToLogin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnToLogin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnToLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>459, 650</value>
+  </data>
+  <data name="btnToLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 40</value>
+  </data>
+  <data name="btnToLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="btnToLogin.Text" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="&gt;&gt;btnToLogin.Name" xml:space="preserve">
+    <value>btnToLogin</value>
+  </data>
+  <data name="&gt;&gt;btnToLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnToLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnToLogin.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

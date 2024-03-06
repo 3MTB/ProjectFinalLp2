@@ -108,9 +108,10 @@
 			progressBar.ShowText = true;
 			progressBar.Size = new Size(600, 38);
 			progressBar.TabIndex = 18;
-			progressBar.TextAlign = HorizontalAlignment.Left;
+			progressBar.TextAlign = HorizontalAlignment.Right;
 			progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
 			progressBar.UseTransparentBackground = true;
+			progressBar.Value = 60;
 			// 
 			// timerAnimation
 			// 

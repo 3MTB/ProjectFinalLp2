@@ -23,118 +23,22 @@ namespace ProjectFinalLp2.Formularios.Client
 {
 	public partial class frmRegisterClient : Form
 	{
-
+		#region						Objetos Reutilizables
 		public int FaseCurrent = 1;
 		Guna2GroupBox[] gbDisponibles = new Guna2GroupBox[4];
 		RentcargokudemonContext context = new RentcargokudemonContext();
-
+		#endregion
 
 		//! TODO: ADD API FOR COUNTRY AND CITIES -- https://restcountries.com/
+		#region Constructor
 		public frmRegisterClient()
 		{
 			InitializeComponent();
 
 		}
+		#endregion
 
-
-		private void btnRegistrar_Click(object sender, EventArgs e)
-		{
-			// verificar todos los campos
-			// crear todos los objetos necesarios y hacer la insercion
-			/*public Client(string nombre, string apellido, int edad, string password, byte[] imagen, int idContacto, int idLicencia, Contacto contacto, Licencium licencia)
-				 */
-			try
-			{
-				if (!VerificaString(tbPassword.Text) || tbPassword.Text.Length <4 )
-				{
-					MessageBox.Show("Debes introducir una contraseña valida [ Mínimo 4 Dígitos ]");
-					tbPassword.Focus();
-					return;
-
-				}
-				string nombre = tbName.Text;
-				string apellido = tbApellido.Text;
-				int edad = (int)numEdad.Value;
-
-				string password = tbPassword.Text;
-				/// obtener image - Contacto  & Licencia
-				var imageResponse = ImageToByte(pictImagePerfil);
-				var contacto = MakeContacto();
-				var licencia = MakeLicencia();
-
-				if (imageResponse.Success && imageResponse.Message != null && contacto != null && licencia != null)
-				{
-					Models.Client client = new Models.Client(nombre, apellido, edad, password, imageResponse.Message, contacto.Id, licencia.Id, contacto, licencia);
-
-					context.Contactos.Add(contacto);
-					context.Licencia.Add(licencia);
-					context.SaveChanges();
-					context.Clients.Add(client);
-					context.SaveChanges();
-					this.Hide();
-					// Enviar al login
-					new frmlogin().Show();
-				}
-				else
-				{
-					if (!imageResponse.Success)
-					{
-						pictImagePerfil.Focus();
-					}
-					if (contacto == null)
-					{
-						tbPais.Focus();
-					}
-					if (licencia == null)
-					{
-						cbCategoria.Focus();
-					}
-					return;
-				}
-
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{e.ToString()}");
-			}
-		}
-		private Contacto? MakeContacto()
-		{
-			try
-			{
-				/*public Contacto(string pais, string ciudad, string direccion, string email, string telefono)
-*/
-				string pais = tbPais.Text;
-				string ciudad = tbCiudad.Text;
-				string direccion = tbDireccion.Text;
-				string email = tbEmail.Text;
-				string telefono = tbTelefono.Text;
-				Contacto contacto = new Contacto(pais, ciudad, direccion, email, telefono);
-				return contacto;
-			}
-			catch (Exception e)
-			{
-				MessageBox.Show($"Algo  fallo al momento de registrar tus datos de contacto :( \n\n{e.ToString()}");
-				return null;
-			}
-		}
-		private Licencium? MakeLicencia()
-		{
-			try
-			{
-				DateOnly emision = DateOnly.FromDateTime(getEmisionLicencia.Value);
-				var categoria = cbCategoria.Text;
-				DateOnly vencimiento = DateOnly.FromDateTime(getVencimientoLicencia.Value);
-				Licencium add = new Licencium(emision, categoria, vencimiento);
-				return add;
-			}
-			catch (Exception e)
-			{
-				MessageBox.Show($"Algo  fallo al momento de registrar tu licencia :( \n\n{e.ToString()}");
-				return null;
-			}
-		}
-
+		#region								Eventos
 		private void frmRegisterClient_Load(object sender, EventArgs e)
 		{
 			// CARGA Group Box Existentes al ARRAY
@@ -145,37 +49,6 @@ namespace ProjectFinalLp2.Formularios.Client
 			// CARGA Group Box Existentes al ARRAY
 			GestorVisibilidadFase();
 		}
-
-		private void GestorVisibilidadFase()
-		{
-			if (FaseCurrent > gbDisponibles.Length)
-			{
-				MessageBox.Show("Error Fase no encontrada");
-				return;
-			}
-			// botones que se deben ocultar
-			btnPersonalInfo.Visible = FaseCurrent == 1;
-			btnGuardarLicencia.Visible = FaseCurrent == 2;
-			btnEnviarContacto.Visible = FaseCurrent == 3;
-
-
-			if (FaseCurrent == 2)
-			{
-				cbCategoria.DataSource = otherTypeUses.categoriaLicencias;
-			}
-			if (FaseCurrent == 3)
-			{
-				// Volver a cargar los datos obtenidos del api de paises o en su defecto los default
-			}
-			// botones que se deben ocultar
-
-			for (int i = 0; i < gbDisponibles.Length; i++)
-			{
-				gbDisponibles[i].Visible = i < FaseCurrent;
-			}
-
-		}
-
 		private void btnPersonalInfo_Click(object sender, EventArgs e)
 		{
 			if (VerificaString(tbName.Text) && VerificaString(tbApellido.Text))
@@ -226,6 +99,8 @@ namespace ProjectFinalLp2.Formularios.Client
 				Application.Exit();
 			}
 		}
+
+
 		private void CambiaPersonalInfoAfter(object sender, EventArgs e)
 		{
 			if (!VerificaString(tbName.Text) || !VerificaString(tbApellido.Text) || numEdad.Value < 18)
@@ -234,6 +109,7 @@ namespace ProjectFinalLp2.Formularios.Client
 				GestorVisibilidadFase();
 			}
 		}
+
 		private void CambiaLicenciaInfo(object sender, EventArgs e)
 		{
 			if (getEmisionLicencia.Value > DateTime.Now || getEmisionLicencia.Value >= getVencimientoLicencia.Value || getVencimientoLicencia.Value >= getEmisionLicencia.Value || !VerificaString(cbCategoria.Text))
@@ -242,6 +118,7 @@ namespace ProjectFinalLp2.Formularios.Client
 				GestorVisibilidadFase();
 			}
 		}
+
 		private void btnGuardarLicencia_Click(object sender, EventArgs e)
 		{
 			if (getEmisionLicencia.Value <= DateTime.Now &&
@@ -301,6 +178,7 @@ namespace ProjectFinalLp2.Formularios.Client
 
 		}
 
+
 		private void btnEnviarContacto_Click(object sender, EventArgs e)
 		{
 			if (VerificaString(tbPais.Text) && VerificaString(tbCiudad.Text) && VerificaString(tbDireccion.Text) && VerificaString(tbEmail.Text) && VerificaString(tbTelefono.Text))
@@ -350,6 +228,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			GestorVisibilidadFase();
 		}
 
+
 		private void btnCargaImagen_Click(object sender, EventArgs e)
 		{
 			CargaImageFromLocal(pictImagePerfil);
@@ -389,15 +268,144 @@ namespace ProjectFinalLp2.Formularios.Client
 					lblAvisoPassword.Text = string.Empty;
 				}
 				tbPassword.Focus();
-
 			}
 		}
+
+		private void btnToLogin_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			new frmlogin().Show();
+		}
+
+		private void btnRegistrar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!VerificaString(tbPassword.Text) || tbPassword.Text.Length < 4)
+				{
+					MessageBox.Show("Debes introducir una contraseña valida [ Mínimo 4 Dígitos ]");
+					tbPassword.Focus();
+					return;
+
+				}
+				string nombre = tbName.Text;
+				string apellido = tbApellido.Text;
+				int edad = (int)numEdad.Value;
+
+				string password = tbPassword.Text;
+				/// obtener image - Contacto  & Licencia
+				var imageResponse = ImageToByte(pictImagePerfil);
+				var contacto = MakeContacto();
+				var licencia = MakeLicencia();
+
+				if (imageResponse.Success && imageResponse.Message != null && contacto != null && licencia != null)
+				{
+					Models.Client client = new Models.Client(nombre, apellido, edad, password, imageResponse.Message, contacto.Id, licencia.Id, contacto, licencia);
+
+					context.Contactos.Add(contacto);
+					context.Licencia.Add(licencia);
+					context.SaveChanges();
+					context.Clients.Add(client);
+					context.SaveChanges();
+
+				}
+				else
+				{
+					if (!imageResponse.Success)
+					{
+						pictImagePerfil.Focus();
+					}
+					if (contacto == null)
+					{
+						tbPais.Focus();
+					}
+					if (licencia == null)
+					{
+						cbCategoria.Focus();
+					}
+					return;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{e.ToString()}");
+			}
+		}
+
+		#endregion
+
+		#region						Metodos Auxiliares
+		// Gestor para el ocultamiento de los input cuando su valor cambie
+		private void GestorVisibilidadFase()
+		{
+			if (FaseCurrent > gbDisponibles.Length)
+			{
+				MessageBox.Show("Error Fase no encontrada");
+				return;
+			}
+			// botones que se deben ocultar
+			btnPersonalInfo.Visible = FaseCurrent == 1;
+			btnGuardarLicencia.Visible = FaseCurrent == 2;
+			btnEnviarContacto.Visible = FaseCurrent == 3;
+
+
+			if (FaseCurrent == 2)
+			{
+				cbCategoria.DataSource = otherTypeUses.categoriaLicencias;
+			}
+			if (FaseCurrent == 3)
+			{
+				// Volver a cargar los datos obtenidos del api de paises o en su defecto los default
+			}
+			// botones que se deben ocultar
+
+			for (int i = 0; i < gbDisponibles.Length; i++)
+			{
+				gbDisponibles[i].Visible = i < FaseCurrent;
+			}
+
+		}
+		private Contacto? MakeContacto()
+		{
+			try
+			{
+				string pais = tbPais.Text;
+				string ciudad = tbCiudad.Text;
+				string direccion = tbDireccion.Text;
+				string email = tbEmail.Text;
+				string telefono = tbTelefono.Text;
+				Contacto contacto = new Contacto(pais, ciudad, direccion, email, telefono);
+				return contacto;
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Algo  fallo al momento de registrar tus datos de contacto :( \n\n{e.ToString()}");
+				return null;
+			}
+		}
+		private Licencium? MakeLicencia()
+		{
+			try
+			{
+				DateOnly emision = DateOnly.FromDateTime(getEmisionLicencia.Value);
+				var categoria = cbCategoria.Text;
+				DateOnly vencimiento = DateOnly.FromDateTime(getVencimientoLicencia.Value);
+				// cambiar esto
+				TipoLicencium tpl = new TipoLicencium("01", "Motores");
+				Licencium add = new Licencium(emision, tpl.IdLicencia, vencimiento, tpl);
+				return add;
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Algo  fallo al momento de registrar tu licencia :( \n\n{e.ToString()}");
+				return null;
+			}
+		}
+
+
+		#endregion
+
 	}
-
-
-
-
-
-
 }
 

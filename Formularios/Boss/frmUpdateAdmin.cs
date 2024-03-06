@@ -14,7 +14,11 @@ namespace ProjectFinalLp2.Formularios.Boss
 {
 	public partial class frmUpdateAdmin : Form
 	{
+		#region					Objetos Generales
 		public Admin admin { get; set; }
+		#endregion
+
+		#region						CONSTRUCTOR
 		public frmUpdateAdmin(Admin admin)
 		{
 			InitializeComponent();
@@ -25,7 +29,9 @@ namespace ProjectFinalLp2.Formularios.Boss
 		{
 			ActualizaValores();
 		}
+		#endregion
 
+		#region						EVENTOS
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			focusTo focus = gestorAdministrador.UpdateAdmin(admin.Id, new Admin(tbName.Text, tbPassword.Text));
@@ -45,26 +51,23 @@ namespace ProjectFinalLp2.Formularios.Boss
 			}
 			else if (!focus.Password)
 			{
-				lblPassword.Text = lblPassword.Text;
+				//lblPassword.Text = lblPassword.Text;
 				lblPassword.ForeColor = Color.Green;
 				tbPassword.Text = string.Empty;
 			}
 			else
 			{
 				ActualizaValores();
-				// inseccion correcta
-				MessageBox.Show("Correct");
+				MessageBox.Show("CAMBIOS CORRECTOS", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 		private void ActualizaValores()
 		{
 			lblName.Text = admin.Nombre;
-			lblPassword.Text = admin.Password;
-		}
-
-		private void label5_Click(object sender, EventArgs e)
-		{
+			lblPassword.Text = new String('*', admin.Password.Length);
 
 		}
+		#endregion
+
 	}
 }

@@ -11,7 +11,6 @@ using System.Windows.Forms;
 // My NameSpace
 using static ProjectFinalLp2.Models.otherType.funcionesComunes;
 using static ProjectFinalLp2.Models.otherType.ColorDefaults;
-using ProjectFinalLp2.Formularios;
 using ProjectFinalLp2.Formularios.Aplication;
 using ProjectFinalLp2.Formularios.Boss;
 
@@ -19,8 +18,12 @@ namespace ProjectFinalLp2.Formularios.Client
 {
 	public partial class frmMainClient : Form
 	{
-		public ProjectFinalLp2.Models.Client clientCurrent { get; set; }
-		public frmMainClient(ProjectFinalLp2.Models.Client clientCurrent)
+		#region					OBJETOS GENERALES
+		public Models.Client clientCurrent { get; set; }
+		#endregion
+
+		#region Constructor
+		public frmMainClient(Models.Client clientCurrent)
 		{
 			InitializeComponent();
 			this.clientCurrent = clientCurrent;
@@ -28,8 +31,6 @@ namespace ProjectFinalLp2.Formularios.Client
 		}
 		private void MyInitializer()
 		{
-			// Pasar de byte[] a image
-			//pictureClient.Image =
 			try
 			{
 				lblNameClient.Text = $"{clientCurrent.Nombre} {clientCurrent.Apellido}";
@@ -49,9 +50,10 @@ namespace ProjectFinalLp2.Formularios.Client
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"Error al momento de cargar los datos del usuarios.\n\nError: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"Error al momento de cargar los datos del usuarios.\n\nError: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+		#endregion
 
 		#region Menu dinámico
 		public Button currentButon { get; set; }
@@ -97,6 +99,8 @@ namespace ProjectFinalLp2.Formularios.Client
 			currentForm.Show();
 		}
 		#endregion
+
+		#region							Eventos
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("¿Seguro que quieres salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -109,13 +113,10 @@ namespace ProjectFinalLp2.Formularios.Client
 		{
 			if (sender.GetType() == btnMyVehicule.GetType())
 			{
+				lblPlace.Text = "Mis Rentados";
 				OpenChildFrom(new frmRentadosClient(clientCurrent), btnMyVehicule);
 			}
 
-		}
-
-		private void frmMainClient_Load(object sender, EventArgs e)
-		{
 		}
 
 		private void btnHome_Click(object sender, EventArgs e)
@@ -123,6 +124,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			// cambiat por home
 			if (sender.GetType() == btnHome.GetType())
 			{
+				lblPlace.Text = "HOME";
 				OpenChildFrom(new frmDefaultAdmin(), btnMyVehicule);
 			}
 			// cargar vehivulos para rentat
@@ -132,9 +134,24 @@ namespace ProjectFinalLp2.Formularios.Client
 		{
 			if (sender.GetType() == btnRentar.GetType())
 			{
-				MessageBox.Show("Funcion no desarrollada 0- Rentar");
+				lblPlace.Text = "Rentar";
+
+				MessageBox.Show("Función no desarrollada 0- Rentar");
 				//OpenChildFrom(new frmRentados(), btnMyVehicule);
 			}
 		}
+
+		private void btnPerfil_Click(object sender, EventArgs e)
+		{
+			if (sender.GetType() == btnPerfil.GetType())
+			{
+				lblPlace.Text = "Perfil";
+
+				MessageBox.Show("Función no desarrollada 0- Rentar");
+				//OpenChildFrom(new frmRentados(), btnMyVehicule);
+			}
+		}
+		#endregion
+
 	}
 }

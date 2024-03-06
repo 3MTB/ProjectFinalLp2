@@ -12,16 +12,18 @@ namespace ProjectFinalLp2.Formularios.Aplication
 {
 	public partial class frmLoading : Form
 	{
+		#region								Constructor
 		public frmLoading()
 		{
 			InitializeComponent();
 		}
-
+		#endregion
+		#region						Eventos --- Gestor Animacion
 		private void timerAnimation_Tick(object sender, EventArgs e)
 		{
 			if (progressBar.Value < progressBar.Maximum)
 			{
-				progressBar.Value += 1;
+				progressBar.Value += 2;
 			}
 			else
 			{
@@ -30,5 +32,6 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				new frmlogin().Show();
 			}
 		}
+		#endregion
 	}
 }

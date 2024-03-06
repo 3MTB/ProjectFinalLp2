@@ -5,10 +5,6 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Client
 {
-	public Client()
-	{
-
-	}
 	public Client(string nombre, string apellido, int edad, string password, byte[] imagen, int idContacto, int idLicencia, Contacto contacto, Licencium licencia)
 	{
 		Nombre = nombre;
@@ -21,7 +17,10 @@ public partial class Client
 		IdContactoNavigation = contacto;
 		IdLicenciaNavigation = licencia;
 	}
+	public Client()
+	{
 
+	}
 	public int Id { get; set; }
 
 	public string Nombre { get; set; } = null!;

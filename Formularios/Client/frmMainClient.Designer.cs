@@ -38,7 +38,7 @@
 			lblNameClient = new Label();
 			pictureClient = new Guna.UI2.WinForms.Guna2CirclePictureBox();
 			panel1 = new Panel();
-			label1 = new Label();
+			lblPlace = new Label();
 			panelMain = new Panel();
 			panelLateral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureClient).BeginInit();
@@ -58,13 +58,13 @@
 			panelLateral.Dock = DockStyle.Left;
 			panelLateral.Location = new Point(0, 0);
 			panelLateral.Name = "panelLateral";
-			panelLateral.Size = new Size(221, 774);
+			panelLateral.Size = new Size(221, 769);
 			panelLateral.TabIndex = 0;
 			// 
 			// btnPerfil
 			// 
 			btnPerfil.Anchor = AnchorStyles.None;
-			btnPerfil.Location = new Point(46, 200);
+			btnPerfil.Location = new Point(47, 197);
 			btnPerfil.Margin = new Padding(0);
 			btnPerfil.Name = "btnPerfil";
 			btnPerfil.Size = new Size(127, 43);
@@ -72,11 +72,12 @@
 			btnPerfil.Tag = " ";
 			btnPerfil.Text = "Perfil";
 			btnPerfil.UseVisualStyleBackColor = true;
+			btnPerfil.Click += btnPerfil_Click;
 			// 
 			// btnSalir
 			// 
 			btnSalir.Anchor = AnchorStyles.None;
-			btnSalir.Location = new Point(46, 669);
+			btnSalir.Location = new Point(43, 590);
 			btnSalir.Margin = new Padding(0);
 			btnSalir.Name = "btnSalir";
 			btnSalir.Size = new Size(127, 43);
@@ -91,7 +92,7 @@
 			btnHome.Anchor = AnchorStyles.None;
 			btnHome.FlatStyle = FlatStyle.Flat;
 			btnHome.ForeColor = Color.White;
-			btnHome.Location = new Point(46, 444);
+			btnHome.Location = new Point(47, 441);
 			btnHome.Margin = new Padding(0);
 			btnHome.Name = "btnHome";
 			btnHome.Size = new Size(127, 43);
@@ -104,7 +105,7 @@
 			// btnRentar
 			// 
 			btnRentar.Anchor = AnchorStyles.None;
-			btnRentar.Location = new Point(46, 375);
+			btnRentar.Location = new Point(47, 372);
 			btnRentar.Margin = new Padding(0);
 			btnRentar.Name = "btnRentar";
 			btnRentar.Size = new Size(127, 43);
@@ -117,7 +118,7 @@
 			// btnMyVehicule
 			// 
 			btnMyVehicule.Anchor = AnchorStyles.None;
-			btnMyVehicule.Location = new Point(46, 275);
+			btnMyVehicule.Location = new Point(47, 272);
 			btnMyVehicule.Margin = new Padding(0);
 			btnMyVehicule.Name = "btnMyVehicule";
 			btnMyVehicule.Size = new Size(127, 43);
@@ -133,7 +134,7 @@
 			lblNameClient.AutoSize = true;
 			lblNameClient.Font = new Font("Agency FB", 14F);
 			lblNameClient.ForeColor = Color.White;
-			lblNameClient.Location = new Point(46, 121);
+			lblNameClient.Location = new Point(51, 118);
 			lblNameClient.Margin = new Padding(0);
 			lblNameClient.Name = "lblNameClient";
 			lblNameClient.Size = new Size(119, 28);
@@ -147,7 +148,7 @@
 			pictureClient.FillColor = Color.Transparent;
 			pictureClient.Image = Properties.Resources.clientDefaultWhite;
 			pictureClient.ImageRotate = 0F;
-			pictureClient.Location = new Point(67, 31);
+			pictureClient.Location = new Point(70, 28);
 			pictureClient.Margin = new Padding(0);
 			pictureClient.Name = "pictureClient";
 			pictureClient.ShadowDecoration.CustomizableEdges = customizableEdges1;
@@ -160,25 +161,26 @@
 			// panel1
 			// 
 			panel1.BackColor = Color.FromArgb(10, 45, 190);
-			panel1.Controls.Add(label1);
+			panel1.Controls.Add(lblPlace);
 			panel1.Dock = DockStyle.Top;
 			panel1.Location = new Point(221, 0);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(980, 79);
+			panel1.Size = new Size(699, 79);
 			panel1.TabIndex = 1;
 			// 
-			// label1
+			// lblPlace
 			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Agency FB", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.ForeColor = Color.White;
-			label1.Location = new Point(313, 21);
-			label1.Margin = new Padding(0);
-			label1.Name = "label1";
-			label1.Size = new Size(104, 53);
-			label1.TabIndex = 0;
-			label1.Text = "Home";
-			label1.TextAlign = ContentAlignment.MiddleCenter;
+			lblPlace.Anchor = AnchorStyles.None;
+			lblPlace.AutoSize = true;
+			lblPlace.Font = new Font("Agency FB", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblPlace.ForeColor = Color.White;
+			lblPlace.Location = new Point(297, 13);
+			lblPlace.Margin = new Padding(0);
+			lblPlace.Name = "lblPlace";
+			lblPlace.Size = new Size(104, 53);
+			lblPlace.TabIndex = 0;
+			lblPlace.Text = "Home";
+			lblPlace.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// panelMain
 			// 
@@ -187,7 +189,7 @@
 			panelMain.Location = new Point(221, 79);
 			panelMain.Margin = new Padding(0);
 			panelMain.Name = "panelMain";
-			panelMain.Size = new Size(980, 695);
+			panelMain.Size = new Size(699, 690);
 			panelMain.TabIndex = 2;
 			// 
 			// frmMainClient
@@ -195,15 +197,15 @@
 			AutoScaleDimensions = new SizeF(7F, 24F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(10, 45, 50);
-			ClientSize = new Size(1201, 774);
+			ClientSize = new Size(920, 769);
 			Controls.Add(panelMain);
 			Controls.Add(panel1);
 			Controls.Add(panelLateral);
 			Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			Margin = new Padding(3, 4, 3, 4);
+			MinimumSize = new Size(938, 816);
 			Name = "frmMainClient";
 			Text = "Main Client";
-			Load += frmMainClient_Load;
 			panelLateral.ResumeLayout(false);
 			panelLateral.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)pictureClient).EndInit();
@@ -222,7 +224,7 @@
 		private Button btnPerfil;
 		private Button btnSalir;
 		private Panel panel1;
-		private Label label1;
+		private Label lblPlace;
 		private Panel panelMain;
 		private Button btnHome;
 	}

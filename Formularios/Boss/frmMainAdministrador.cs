@@ -20,31 +20,30 @@ namespace ProjectFinalLp2.Formularios.Boss
 {
 	public partial class frmMainAdministrador : Form
 	{
+		#region							Objetos Generales
 		public Admin adminCurrent { get; set; }
 		public Button currentButon { get; set; }
 		public Form currentForm { get; set; }
-		//public Color cForegroundActive = Color.FromArgb(255, 255, 255);
-		//public Color cForegroundDisable = Color.FromArgb(0, 0, 0);
-		//public Color cBackgroundDisable = Color.FromArgb(255, 255, 255);
-		//public Color cBackgroundActive = Color.FromArgb(0, 0, 0);
-
-
+		private void MyIniciador()
+		{
+			OpenChildFrom(new frmDefaultAdmin(), btnHome);
+		}
+		#endregion
+		#region							CONSTRUCTOR
 		public frmMainAdministrador(Admin admin)
 		{
 			InitializeComponent();
 			adminCurrent = admin;
 			MyIniciador();
 		}
-
-		private void MyIniciador()
-		{
-			OpenChildFrom(new frmDefaultAdmin(), btnHome);
-		}
+		#endregion
+		#region													Eventos
 		private void btnRentados_Click_1(object sender, EventArgs e)
 		{
 			if (sender.GetType() == typeof(Button))
 			{
 				OpenChildFrom(new frmRentados(), (Button)sender);
+
 			}
 		}
 
@@ -63,17 +62,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 			}
 		}
 		// Funciones
-		private void DisableButtons()
-		{
-			foreach (Control x in panelLateral.Controls)
-			{
-				if (x.GetType() == typeof(Button))
-				{
-					x.BackColor = cBackgroundDisable;
-					x.ForeColor = cForegroundDisable;
-				}
-			}
-		}
 
 		public void ActiveButton(Button btnactivar)
 		{
@@ -98,7 +86,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 			DisableButtons();
 
 			ActiveButton(btnsender);
-			// review that
 			currentForm = abrir;
 			currentForm.TopLevel = false;
 			currentForm.FormBorderStyle = FormBorderStyle.None;
@@ -134,6 +121,20 @@ namespace ProjectFinalLp2.Formularios.Boss
 
 
 		}
+		#endregion
+		#region													Metodos Auxiliares
+		private void DisableButtons()
+		{
+			foreach (Control x in panelLateral.Controls)
+			{
+				if (x.GetType() == typeof(Button))
+				{
+					x.BackColor = cBackgroundDisable;
+					x.ForeColor = cForegroundDisable;
+				}
+			}
+		}
 
+		#endregion
 	}
 }

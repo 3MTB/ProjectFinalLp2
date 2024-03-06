@@ -5,10 +5,6 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Contacto
 {
-	public Contacto()
-	{
-
-	}
 	public Contacto(string pais, string ciudad, string direccion, string email, string telefono)
 	{
 		Pais = pais;
@@ -17,7 +13,10 @@ public partial class Contacto
 		Email = email;
 		Telefono = telefono;
 	}
+	public Contacto()
+	{
 
+	}
 
 	public int Id { get; set; }
 

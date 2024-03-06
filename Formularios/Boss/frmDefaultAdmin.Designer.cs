@@ -43,35 +43,37 @@
 			label4.AutoSize = true;
 			label4.BackColor = Color.Black;
 			label4.FlatStyle = FlatStyle.Flat;
-			label4.Font = new Font("Ink Free", 55.7999954F, FontStyle.Underline, GraphicsUnit.Point, 0);
+			label4.Font = new Font("Ink Free", 350F, FontStyle.Underline, GraphicsUnit.Document, 0);
 			label4.ForeColor = Color.White;
-			label4.Location = new Point(58, 139);
+			label4.Location = new Point(90, 168);
 			label4.Name = "label4";
-			label4.Size = new Size(405, 116);
+			label4.Size = new Size(607, 173);
 			label4.TabIndex = 36;
 			label4.Text = "Rent Car";
 			label4.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// lblTimeMain
 			// 
+			lblTimeMain.Anchor = AnchorStyles.None;
 			lblTimeMain.AutoSize = true;
-			lblTimeMain.Font = new Font("Agency FB", 28F);
+			lblTimeMain.Font = new Font("Agency FB", 150F, FontStyle.Regular, GraphicsUnit.Document);
 			lblTimeMain.ForeColor = Color.White;
 			lblTimeMain.Location = new Point(416, 543);
 			lblTimeMain.Name = "lblTimeMain";
 			lblTimeMain.RightToLeft = RightToLeft.No;
-			lblTimeMain.Size = new Size(90, 55);
+			lblTimeMain.Size = new Size(119, 73);
 			lblTimeMain.TabIndex = 32;
 			lblTimeMain.Text = "Time";
 			// 
 			// lblDateMain
 			// 
+			lblDateMain.Anchor = AnchorStyles.None;
 			lblDateMain.AutoSize = true;
-			lblDateMain.Font = new Font("Agency FB", 28F, FontStyle.Bold);
+			lblDateMain.Font = new Font("Agency FB", 150F, FontStyle.Bold, GraphicsUnit.Document);
 			lblDateMain.ForeColor = Color.White;
-			lblDateMain.Location = new Point(108, 524);
+			lblDateMain.Location = new Point(90, 543);
 			lblDateMain.Name = "lblDateMain";
-			lblDateMain.Size = new Size(96, 57);
+			lblDateMain.Size = new Size(123, 72);
 			lblDateMain.TabIndex = 33;
 			lblDateMain.Text = "Date";
 			// 
@@ -81,12 +83,12 @@
 			label6.AutoSize = true;
 			label6.BackColor = Color.Black;
 			label6.FlatStyle = FlatStyle.Flat;
-			label6.Font = new Font("Ink Free", 52F);
+			label6.Font = new Font("Ink Free", 225F, FontStyle.Regular, GraphicsUnit.Document);
 			label6.ForeColor = Color.Yellow;
-			label6.Location = new Point(99, 265);
+			label6.Location = new Point(90, 330);
 			label6.Margin = new Padding(0);
 			label6.Name = "label6";
-			label6.Size = new Size(230, 108);
+			label6.Size = new Size(240, 112);
 			label6.TabIndex = 35;
 			label6.Text = "Goku";
 			label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -97,12 +99,12 @@
 			label7.AutoSize = true;
 			label7.BackColor = Color.Black;
 			label7.FlatStyle = FlatStyle.Flat;
-			label7.Font = new Font("Ink Free", 52F);
+			label7.Font = new Font("Ink Free", 250F, FontStyle.Regular, GraphicsUnit.Document);
 			label7.ForeColor = Color.Red;
 			label7.Location = new Point(427, 330);
 			label7.Margin = new Padding(0);
 			label7.Name = "label7";
-			label7.Size = new Size(284, 108);
+			label7.Size = new Size(327, 124);
 			label7.TabIndex = 34;
 			label7.Text = "Demon";
 			label7.TextAlign = ContentAlignment.MiddleCenter;

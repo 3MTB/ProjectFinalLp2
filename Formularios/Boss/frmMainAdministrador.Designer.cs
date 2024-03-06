@@ -28,16 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 			guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
 			btnSalir = new Button();
 			panelLateral = new Panel();
+			btnEliminarPerfil = new Button();
 			btnHome = new Button();
 			btnActualizar = new Button();
 			btnRentados = new Button();
 			panelMain = new Panel();
-			btnEliminarPerfil = new Button();
 			guna2GradientPanel1.SuspendLayout();
 			panelLateral.SuspendLayout();
 			SuspendLayout();
@@ -46,16 +46,17 @@
 			// 
 			guna2GradientPanel1.BackColor = Color.FromArgb(20, 50, 90);
 			guna2GradientPanel1.Controls.Add(btnSalir);
-			guna2GradientPanel1.CustomizableEdges = customizableEdges3;
+			guna2GradientPanel1.CustomizableEdges = customizableEdges1;
 			guna2GradientPanel1.Dock = DockStyle.Top;
 			guna2GradientPanel1.Location = new Point(0, 0);
 			guna2GradientPanel1.Name = "guna2GradientPanel1";
-			guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+			guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
 			guna2GradientPanel1.Size = new Size(1114, 56);
 			guna2GradientPanel1.TabIndex = 1;
 			// 
 			// btnSalir
 			// 
+			btnSalir.Anchor = AnchorStyles.None;
 			btnSalir.BackColor = Color.Black;
 			btnSalir.FlatStyle = FlatStyle.Flat;
 			btnSalir.ForeColor = Color.White;
@@ -80,6 +81,16 @@
 			panelLateral.Name = "panelLateral";
 			panelLateral.Size = new Size(182, 753);
 			panelLateral.TabIndex = 2;
+			// 
+			// btnEliminarPerfil
+			// 
+			btnEliminarPerfil.Location = new Point(29, 0);
+			btnEliminarPerfil.Name = "btnEliminarPerfil";
+			btnEliminarPerfil.Size = new Size(134, 69);
+			btnEliminarPerfil.TabIndex = 10;
+			btnEliminarPerfil.Text = "Eliminar Perfil";
+			btnEliminarPerfil.UseVisualStyleBackColor = true;
+			btnEliminarPerfil.Click += btnEliminarPerfil_Click;
 			// 
 			// btnHome
 			// 
@@ -120,16 +131,6 @@
 			panelMain.Name = "panelMain";
 			panelMain.Size = new Size(932, 753);
 			panelMain.TabIndex = 3;
-			// 
-			// btnEliminarPerfil
-			// 
-			btnEliminarPerfil.Location = new Point(29, 0);
-			btnEliminarPerfil.Name = "btnEliminarPerfil";
-			btnEliminarPerfil.Size = new Size(134, 69);
-			btnEliminarPerfil.TabIndex = 10;
-			btnEliminarPerfil.Text = "Eliminar Perfil";
-			btnEliminarPerfil.UseVisualStyleBackColor = true;
-			btnEliminarPerfil.Click += btnEliminarPerfil_Click;
 			// 
 			// frmMainAdministrador
 			// 

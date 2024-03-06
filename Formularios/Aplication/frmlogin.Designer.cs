@@ -49,6 +49,8 @@
 			tbPassword = new TextBox();
 			label2 = new Label();
 			btnRegistrar = new Button();
+			lblUser = new Label();
+			lblAlert = new Label();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
@@ -154,6 +156,7 @@
 			// 
 			// label1
 			// 
+			label1.Anchor = AnchorStyles.None;
 			label1.AutoSize = true;
 			label1.BackColor = Color.Transparent;
 			label1.Font = new Font("Agency FB", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -203,7 +206,7 @@
 			pgbHorizontal.CustomizableEdges = customizableEdges1;
 			pgbHorizontal.FillColor = Color.Transparent;
 			pgbHorizontal.ForeColor = Color.LightGreen;
-			pgbHorizontal.Location = new Point(239, 34);
+			pgbHorizontal.Location = new Point(244, 34);
 			pgbHorizontal.Name = "pgbHorizontal";
 			pgbHorizontal.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.SolidTransition;
 			pgbHorizontal.ProgressColor = Color.Transparent;
@@ -239,6 +242,7 @@
 			// 
 			// tbPassword
 			// 
+			tbPassword.Anchor = AnchorStyles.None;
 			tbPassword.Location = new Point(482, 386);
 			tbPassword.Name = "tbPassword";
 			tbPassword.Size = new Size(125, 31);
@@ -246,6 +250,7 @@
 			// 
 			// label2
 			// 
+			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
 			label2.Location = new Point(408, 386);
 			label2.Name = "label2";
@@ -269,12 +274,44 @@
 			btnRegistrar.UseVisualStyleBackColor = false;
 			btnRegistrar.Click += btnRegistrar_Click;
 			// 
+			// lblUser
+			// 
+			lblUser.Anchor = AnchorStyles.None;
+			lblUser.AutoSize = true;
+			lblUser.BackColor = Color.Transparent;
+			lblUser.FlatStyle = FlatStyle.Flat;
+			lblUser.ForeColor = SystemColors.ActiveBorder;
+			lblUser.Location = new Point(437, 193);
+			lblUser.Name = "lblUser";
+			lblUser.Size = new Size(41, 24);
+			lblUser.TabIndex = 10;
+			lblUser.Text = "USER";
+			lblUser.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lblAlert
+			// 
+			lblAlert.Anchor = AnchorStyles.None;
+			lblAlert.AutoSize = true;
+			lblAlert.BackColor = Color.Transparent;
+			lblAlert.FlatStyle = FlatStyle.Flat;
+			lblAlert.Font = new Font("Agency FB", 15F);
+			lblAlert.ForeColor = Color.AliceBlue;
+			lblAlert.Location = new Point(295, 57);
+			lblAlert.Margin = new Padding(0);
+			lblAlert.Name = "lblAlert";
+			lblAlert.Size = new Size(56, 29);
+			lblAlert.TabIndex = 11;
+			lblAlert.Text = "ALERT";
+			lblAlert.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// frmlogin
 			// 
 			AutoScaleDimensions = new SizeF(7F, 24F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackgroundImage = Properties.Resources.Frost;
 			ClientSize = new Size(782, 753);
+			Controls.Add(lblAlert);
+			Controls.Add(lblUser);
 			Controls.Add(btnRegistrar);
 			Controls.Add(label2);
 			Controls.Add(tbPassword);
@@ -316,5 +353,7 @@
 		private TextBox tbPassword;
 		private Label label2;
 		private Button btnRegistrar;
+		private Label lblUser;
+		private Label lblAlert;
 	}
 }

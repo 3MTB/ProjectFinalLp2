@@ -25,6 +25,8 @@ public partial class RentcargokudemonContext : DbContext
 
     public virtual DbSet<Rentado> Rentados { get; set; }
 
+    public virtual DbSet<TipoLicencium> TipoLicencia { get; set; }
+
     public virtual DbSet<Trabajador> Trabajadors { get; set; }
 
     public virtual DbSet<Vehiculo> Vehiculos { get; set; }
@@ -80,11 +82,10 @@ public partial class RentcargokudemonContext : DbContext
 
             entity.HasOne(d => d.IdContactoNavigation).WithMany(p => p.Clients)
                 .HasForeignKey(d => d.IdContacto)
-                .HasConstraintName("FK_client_contacto1");
+                .HasConstraintName("FK_client_contacto");
 
             entity.HasOne(d => d.IdLicenciaNavigation).WithMany(p => p.Clients)
                 .HasForeignKey(d => d.IdLicencia)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_client_Licencia");
         });
 
@@ -118,12 +119,13 @@ public partial class RentcargokudemonContext : DbContext
         modelBuilder.Entity<Licencium>(entity =>
         {
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Categoria)
-                .HasMaxLength(5)
-                .IsUnicode(false)
-                .HasColumnName("categoria");
             entity.Property(e => e.Emision).HasColumnName("emision");
             entity.Property(e => e.FechaVencimiento).HasColumnName("fechaVencimiento");
+            entity.Property(e => e.IdTipoLicencia).HasColumnName("idTipoLicencia");
+
+            entity.HasOne(d => d.IdTipoLicenciaNavigation).WithMany(p => p.Licencia)
+                .HasForeignKey(d => d.IdTipoLicencia)
+                .HasConstraintName("FK_Licencia_TipoLicencia");
         });
 
         modelBuilder.Entity<Rentado>(entity =>
@@ -145,12 +147,23 @@ public partial class RentcargokudemonContext : DbContext
 
             entity.HasOne(d => d.IdTrabajadorNavigation).WithMany(p => p.Rentados)
                 .HasForeignKey(d => d.IdTrabajador)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Rentados_trabajador");
 
             entity.HasOne(d => d.IdVehiculoNavigation).WithMany(p => p.Rentados)
                 .HasForeignKey(d => d.IdVehiculo)
                 .HasConstraintName("FK_Rentados_vehiculo");
+        });
+
+        modelBuilder.Entity<TipoLicencium>(entity =>
+        {
+            entity.HasKey(e => e.IdLicencia);
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(4)
+                .IsUnicode(false);
+            entity.Property(e => e.Description)
+                .HasMaxLength(100)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Trabajador>(entity =>
@@ -182,18 +195,16 @@ public partial class RentcargokudemonContext : DbContext
                 .HasMaxLength(15)
                 .IsUnicode(false)
                 .HasColumnName("color");
-            entity.Property(e => e.Desription)
+            entity.Property(e => e.Description)
                 .HasMaxLength(300)
                 .IsUnicode(false)
-                .HasColumnName("desription");
+                .HasColumnName("description");
             entity.Property(e => e.Estado)
                 .HasMaxLength(12)
                 .IsUnicode(false)
                 .HasColumnName("estado");
-            entity.Property(e => e.LicenciaRequerida)
-                .HasMaxLength(10)
-                .IsUnicode(false)
-                .HasColumnName("licenciaRequerida");
+            entity.Property(e => e.Image).HasColumnType("image");
+            entity.Property(e => e.LicenciaRequerida).HasColumnName("licenciaRequerida");
             entity.Property(e => e.Marca)
                 .HasMaxLength(25)
                 .IsUnicode(false);
@@ -203,6 +214,9 @@ public partial class RentcargokudemonContext : DbContext
             entity.Property(e => e.PrecioRenta)
                 .HasColumnType("decimal(18, 2)")
                 .HasColumnName("precioRenta");
+            entity.Property(e => e.Tipo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);
