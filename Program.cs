@@ -10,6 +10,7 @@ using ProjectFinalLp2.Formularios.Aplication;
 using ProjectFinalLp2.Formularios.Boss;
 using ProjectFinalLp2.Formularios.Client;
 using ProjectFinalLp2.Models;
+using ProjectFinalLp2.Formularios.Trabajador;
 
 namespace ProjectFinalLp2
 {
@@ -30,11 +31,11 @@ namespace ProjectFinalLp2
 			// Clear that
 
 
-			
+
 			// Programa inicial
 			//Application.Run(new frmMainAdministrador(adminDefault));
 			//Application.Run(new frmMainClient(clientDefault));
-			Application.Run(new frmLoading());
+			Application.Run(new frmCatalogo(null));
 		}
 	}
 }

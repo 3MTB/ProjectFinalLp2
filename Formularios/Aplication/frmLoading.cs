@@ -18,6 +18,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			InitializeComponent();
 		}
 		#endregion
+
 		#region						Eventos --- Gestor Animacion
 		private void timerAnimation_Tick(object sender, EventArgs e)
 		{

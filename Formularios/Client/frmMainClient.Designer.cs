@@ -205,7 +205,7 @@
 			Margin = new Padding(3, 4, 3, 4);
 			MinimumSize = new Size(938, 816);
 			Name = "frmMainClient";
-			Text = "Main Client";
+			Text = "Client";
 			panelLateral.ResumeLayout(false);
 			panelLateral.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)pictureClient).EndInit();

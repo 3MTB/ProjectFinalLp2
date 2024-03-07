@@ -13,9 +13,9 @@ using System.Windows.Forms;
 // ME
 using ProjectFinalLp2.Formularios;
 using static ProjectFinalLp2.Models.otherType.funcionesComunes;
-using ProjectFinalLp2.Formularios.Trabajador;
 using ProjectFinalLp2.Formularios.Client;
 using ProjectFinalLp2.Formularios.Boss;
+using ProjectFinalLp2.Formularios.Trabajador;
 
 namespace ProjectFinalLp2.Formularios.Aplication
 {

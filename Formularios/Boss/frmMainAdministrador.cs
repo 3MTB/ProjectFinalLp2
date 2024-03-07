@@ -101,6 +101,7 @@ namespace ProjectFinalLp2.Formularios.Boss
 			{
 				Application.Exit();
 			}
+		
 		}
 
 		private void btnEliminarPerfil_Click(object sender, EventArgs e)
@@ -118,8 +119,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 				open.Show();
 
 			}
-
-
 		}
 		#endregion
 		#region													Metodos Auxiliares
