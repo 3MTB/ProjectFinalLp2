@@ -90,7 +90,7 @@ namespace ProjectFinalLp2.Models.otherType
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show("Error al CARGAR la IMAGEN GUARDAD", "Error Cargar Imagen");
+				MessageBox.Show("Error al CARGAR la IMAGEN GUARDADA", "Error Cargar Imagen");
 				return new responseGetImage(false, null);
 			}
 		}

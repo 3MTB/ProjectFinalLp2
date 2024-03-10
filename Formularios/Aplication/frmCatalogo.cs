@@ -20,5 +20,34 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			InitializeComponent();
 			this.client = clienteOpc;
 		}
+		private void OpcionRentar()
+		{
+			MessageBox.Show("Rentando");
+		}
+
+		private void btnRentarPorsche_Click(object sender, EventArgs e)
+		{
+			OpcionRentar();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Vehiculo vh = new Vehiculo("Toyota", "Prado", "CARRO", 2024, "Bengro", "Excelente", 340, "Vehiculo para disfrutar", 2, new byte['-']);
+
+			UCVehiculos g2 = new UCVehiculos(vh, client);
+			g2.Dock = DockStyle.Top;
+
+			panelMain.Controls.Add(g2);
+		}
+
+		private void frmCatalogo_Load(object sender, EventArgs e)
+		{
+			Vehiculo vh = new Vehiculo("BMW", "X6", "CARRO", 2021, "Blanco", "Excelente", 240, "Vehiculo para disfrutar", 2, new byte[',']);
+			UCVehiculos g = new UCVehiculos(vh, client);
+			g.Dock = DockStyle.Top;
+			panelMain.Controls.Add(g);
+
+		}
+
 	}
 }
