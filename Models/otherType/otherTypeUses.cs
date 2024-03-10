@@ -13,11 +13,42 @@ namespace ProjectFinalLp2.Models.otherType
 
 		public static string[] categoriaLicencias = new string[] { catLicencia.c1, catLicencia.c2, catLicencia.c3, catLicencia.c4, catLicencia.c5 };
 
+		public static string[] estadosVehiculos = new string[]{
+			RecordEstadosVehiculos.Excelente,
+			RecordEstadosVehiculos.MuyBien,
+			RecordEstadosVehiculos.Bien,
+			RecordEstadosVehiculos.Regular
+		};
+		public static string[] tiposVehiculos = new string[]{
+			RecordTiposVehiculos.Casual,
+			RecordTiposVehiculos.ViajesLargos,
+			RecordTiposVehiculos.Carga,
+			RecordTiposVehiculos.OffRoad
+		};
 	}
-	/*public Color cForegroundActive = Color.FromArgb(255, 255, 255);
-		public Color cForegroundDisable = Color.FromArgb(0, 0, 0);
-		public Color cBackgroundDisable = Color.FromArgb(255, 255, 255);
-		public Color cBackgroundActive = Color.FromArgb(0, 0, 0);*/
+	public record ColoresDefault{
+		public static string Blanco = "Blanco";
+		public static string Negro = "Negro";
+		public static string Rojo = "Rojo";
+		public static string Azul = "Azul";
+		public static string Verde = "Verde";
+
+	}
+	public record RecordTiposVehiculos
+	{
+		public static string Casual = "Casual";
+		public static string ViajesLargos = "Viajes Largos";
+		public static string Carga = "Carga";
+		public static string OffRoad = "OffRoad";
+	}
+	public record RecordEstadosVehiculos
+	{
+		public static string Excelente = "Excelente";
+		public static string MuyBien = "Muy Bien";
+		public static string Bien = "Bien";
+		public static string Regular = "Regular";
+	}
+
 	public record ColorDefaults
 	{
 		public static Color cForegroundActive = Color.FromArgb(255, 255, 255);

@@ -14,7 +14,6 @@ public partial class TipoLicencium
 	{
 
 	}
-
 	public int IdLicencia { get; set; }
 
 	public string Codigo { get; set; } = null!;

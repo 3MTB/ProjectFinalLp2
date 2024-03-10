@@ -76,7 +76,7 @@ namespace ProjectFinalLp2.Models.otherType
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show("Error Al Convertir la imagen a guardar", "Error GUARDAR Imagen");
+				MessageBox.Show($"Error Al Convertir la imagen a guardar.\n\n{e.Message}", "Error GUARDAR Imagen");
 				return new responseConversionImage(false, null);
 			}
 		}
@@ -90,17 +90,17 @@ namespace ProjectFinalLp2.Models.otherType
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show("Error al CARGAR la IMAGEN GUARDADA", "Error Cargar Imagen");
+				MessageBox.Show($"Error al CARGAR la IMAGEN GUARDADA. \n\n{e.Message}", "Error Cargar Imagen");
 				return new responseGetImage(false, null);
 			}
 		}
-		public static void CargaImageFromLocal(PictureBox pictContenedor)
+		public static void CargaImageFromLocal(PictureBox pictContenedor, Image? ifError = null)
 		{
 			try
 			{
 				OpenFileDialog openFile = new OpenFileDialog();
-				openFile.Title = "Selecciona la imagen [ jpg . png ]";
-				openFile.Filter = "Cargar Imagen|*.jpg;*.png; *.Jpeg";
+				openFile.Title = "Selecciona la imagen [ .jpg .png ,jpg ]";
+				openFile.Filter = "Cargar Imagen|*.jpg;*.png;*.jpeg;";
 				if (openFile.ShowDialog() == DialogResult.OK)
 				{
 					pictContenedor.Image = Image.FromFile(openFile.FileName);
@@ -108,8 +108,9 @@ namespace ProjectFinalLp2.Models.otherType
 			}
 			catch (Exception e)
 			{
-				pictContenedor.Image = Properties.Resources.userDefault;
-				MessageBox.Show("Error al cargar la imagen", "Error");
+
+				pictContenedor.Image = ifError ?? Properties.Resources.userDefault;
+				MessageBox.Show($"Error al cargar la imagen.\n\n{e.Message}", "Error Cargar Imagen");
 			}
 		}
 	}

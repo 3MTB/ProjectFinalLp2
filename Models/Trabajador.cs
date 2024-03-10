@@ -11,18 +11,17 @@ public partial class Trabajador
 		Password = password;
 		Cargo = cargo;
 	}
-	public Trabajador()
-	{
+    public Trabajador()
+    {
+        
+    }
+    public int Id { get; set; }
 
-	}
+    public string Name { get; set; } = null!;
 
-	public int Id { get; set; }
+    public string Password { get; set; } = null!;
 
-	public string Name { get; set; } = null!;
+    public string Cargo { get; set; } = null!;
 
-	public string Password { get; set; } = null!;
-
-	public string Cargo { get; set; } = null!;
-
-	public virtual ICollection<Rentado> Rentados { get; set; } = new List<Rentado>();
+    public virtual ICollection<Rentado> Rentados { get; set; } = new List<Rentado>();
 }

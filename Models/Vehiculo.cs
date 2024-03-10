@@ -22,7 +22,7 @@ public partial class Vehiculo
 	{
 
 	}
-	    
+
 	public int Id { get; set; }
 
 	public string Marca { get; set; } = null!;

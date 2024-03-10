@@ -5,12 +5,12 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Licencium
 {
-	public Licencium(DateOnly emision, int idTipoLicencia, DateOnly fechaVencimiento, TipoLicencium idTipoLicenciaNavigation)
+	public Licencium(DateOnly emision, int idTipoLicencia, DateOnly fechaVencimiento, TipoLicencium tipoLicencia)
 	{
 		Emision = emision;
 		IdTipoLicencia = idTipoLicencia;
 		FechaVencimiento = fechaVencimiento;
-		IdTipoLicenciaNavigation = idTipoLicenciaNavigation;
+		IdTipoLicenciaNavigation = tipoLicencia;
 	}
 	public Licencium()
 	{
@@ -25,8 +25,7 @@ public partial class Licencium
 
 	public DateOnly FechaVencimiento { get; set; }
 
-	public virtual TipoLicencium IdTipoLicenciaNavigation { get; set; } = null!;
-
 	public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 
+	public virtual TipoLicencium IdTipoLicenciaNavigation { get; set; } = null!;
 }

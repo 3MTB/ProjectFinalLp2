@@ -28,29 +28,45 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			button1 = new Button();
 			panelMain = new Panel();
+			lblCantidad = new Label();
+			label1 = new Label();
+			panelMain.SuspendLayout();
 			SuspendLayout();
-			// 
-			// button1
-			// 
-			button1.Location = new Point(108, 13);
-			button1.Name = "button1";
-			button1.Size = new Size(94, 29);
-			button1.TabIndex = 1;
-			button1.Text = "CARGAR";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
 			// 
 			// panelMain
 			// 
-			panelMain.BackColor = SystemColors.MenuText;
-			panelMain.Dock = DockStyle.Right;
-			panelMain.Location = new Point(838, 0);
+			panelMain.AutoScroll = true;
+			panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panelMain.BackColor = Color.Transparent;
+			panelMain.Controls.Add(lblCantidad);
+			panelMain.Controls.Add(label1);
+			panelMain.Dock = DockStyle.Fill;
+			panelMain.Location = new Point(0, 0);
 			panelMain.Margin = new Padding(0);
 			panelMain.Name = "panelMain";
-			panelMain.Size = new Size(635, 723);
+			panelMain.Size = new Size(1473, 723);
 			panelMain.TabIndex = 2;
+			// 
+			// lblCantidad
+			// 
+			lblCantidad.AutoSize = true;
+			lblCantidad.BackColor = Color.Transparent;
+			lblCantidad.Location = new Point(275, 58);
+			lblCantidad.Name = "lblCantidad";
+			lblCantidad.Size = new Size(17, 20);
+			lblCantidad.TabIndex = 6;
+			lblCantidad.Text = "0";
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.BackColor = Color.Transparent;
+			label1.Location = new Point(74, 58);
+			label1.Name = "label1";
+			label1.Size = new Size(185, 20);
+			label1.TabIndex = 5;
+			label1.Text = "VEHICULOS REGISTRADOS";
 			// 
 			// frmCatalogo
 			// 
@@ -59,16 +75,18 @@
 			BackColor = SystemColors.ActiveCaptionText;
 			ClientSize = new Size(1473, 723);
 			Controls.Add(panelMain);
-			Controls.Add(button1);
 			ForeColor = SystemColors.ActiveBorder;
 			Name = "frmCatalogo";
 			Text = "frmCatalogo";
 			Load += frmCatalogo_Load;
+			panelMain.ResumeLayout(false);
+			panelMain.PerformLayout();
 			ResumeLayout(false);
 		}
 
 		#endregion
-		private Button button1;
 		private Panel panelMain;
+		private Label lblCantidad;
+		private Label label1;
 	}
 }

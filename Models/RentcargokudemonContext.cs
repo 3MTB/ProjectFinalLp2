@@ -125,6 +125,7 @@ public partial class RentcargokudemonContext : DbContext
 
             entity.HasOne(d => d.IdTipoLicenciaNavigation).WithMany(p => p.Licencia)
                 .HasForeignKey(d => d.IdTipoLicencia)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Licencia_TipoLicencia");
         });
 

@@ -35,7 +35,7 @@ namespace ProjectFinalLp2
 			// Programa inicial
 			//Application.Run(new frmMainAdministrador(adminDefault));
 			//Application.Run(new frmMainClient(clientDefault));
-			Application.Run(new frmCatalogo(null));
+			Application.Run(new test2());
 		}
 	}
 }

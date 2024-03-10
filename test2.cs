@@ -7,31 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// My NameSpace
 using ProjectFinalLp2.Models;
 
-namespace ProjectFinalLp2.Formularios.Aplication
+namespace ProjectFinalLp2
 {
-	public partial class frmCatalogo : Form
+	public partial class test2 : Form
 	{
-		public Models.Client? client { get; set; } = null;
 		public RentcargokudemonContext context { get; set; }
-		public frmCatalogo(Models.Client? clienteOpc)
+
+		public test2()
 		{
 			InitializeComponent();
-			this.client = clienteOpc;
-			this.context = new RentcargokudemonContext();
 		}
-		private void frmCatalogo_Load(object sender, EventArgs e)
+
+		private void test2_Load(object sender, EventArgs e)
 		{
-			lblCantidad.Text = context.Vehiculos.Count().ToString();
+			this.context = new RentcargokudemonContext();
 			if (context.Vehiculos.Any())
 			{
 				foreach (var x in context.Vehiculos)
 				{
-					var card = new UCVehiculos(x, client);
-					card.Dock = DockStyle.Top;
-					panelMain.Controls.Add(card);
+					var card = new UCVehiculos(x, null);
+					//card.Dock = DockStyle.Top;
+					table.Controls.Add(card);
 				}
 			}
 			else
@@ -40,6 +38,5 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			}
 
 		}
-
 	}
 }

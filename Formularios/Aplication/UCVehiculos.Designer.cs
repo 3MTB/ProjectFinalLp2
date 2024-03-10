@@ -46,6 +46,8 @@
 			// 
 			lblBrand.Anchor = AnchorStyles.None;
 			lblBrand.AutoSize = true;
+			lblBrand.BackColor = Color.Transparent;
+			lblBrand.ForeColor = Color.Black;
 			lblBrand.Location = new Point(58, 147);
 			lblBrand.Margin = new Padding(2, 0, 2, 0);
 			lblBrand.Name = "lblBrand";
@@ -58,7 +60,7 @@
 			pictImage.Anchor = AnchorStyles.None;
 			pictImage.Image = (Image)resources.GetObject("pictImage.Image");
 			pictImage.InitialImage = (Image)resources.GetObject("pictImage.InitialImage");
-			pictImage.Location = new Point(15, -2);
+			pictImage.Location = new Point(15, 11);
 			pictImage.Margin = new Padding(0);
 			pictImage.Name = "pictImage";
 			pictImage.Size = new Size(275, 136);
@@ -70,7 +72,9 @@
 			// 
 			lblModel.Anchor = AnchorStyles.None;
 			lblModel.AutoSize = true;
+			lblModel.BackColor = Color.Transparent;
 			lblModel.Font = new Font("Agency FB", 14F);
+			lblModel.ForeColor = Color.Black;
 			lblModel.Location = new Point(53, 166);
 			lblModel.Margin = new Padding(0);
 			lblModel.Name = "lblModel";
@@ -110,7 +114,9 @@
 			// 
 			label1.Anchor = AnchorStyles.None;
 			label1.AutoSize = true;
+			label1.BackColor = Color.Transparent;
 			label1.Font = new Font("Agency FB", 11F);
+			label1.ForeColor = SystemColors.ActiveCaptionText;
 			label1.Location = new Point(195, 147);
 			label1.Margin = new Padding(0);
 			label1.Name = "label1";
@@ -122,6 +128,8 @@
 			// 
 			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
+			label2.BackColor = Color.Transparent;
+			label2.ForeColor = SystemColors.ActiveCaptionText;
 			label2.Location = new Point(15, 147);
 			label2.Margin = new Padding(2, 0, 2, 0);
 			label2.Name = "label2";
@@ -133,7 +141,9 @@
 			// 
 			label3.Anchor = AnchorStyles.None;
 			label3.AutoSize = true;
+			label3.BackColor = Color.Transparent;
 			label3.Font = new Font("Agency FB", 10F);
+			label3.ForeColor = SystemColors.ActiveCaptionText;
 			label3.Location = new Point(15, 170);
 			label3.Margin = new Padding(0);
 			label3.Name = "label3";
@@ -143,7 +153,7 @@
 			// 
 			// panelContenedor
 			// 
-			panelContenedor.BackColor = SystemColors.ActiveCaption;
+			panelContenedor.BackColor = Color.DarkGray;
 			panelContenedor.BorderStyle = BorderStyle.FixedSingle;
 			panelContenedor.Controls.Add(pictImage);
 			panelContenedor.Controls.Add(label3);
@@ -159,6 +169,7 @@
 			panelContenedor.Name = "panelContenedor";
 			panelContenedor.Size = new Size(306, 222);
 			panelContenedor.TabIndex = 15;
+			panelContenedor.Paint += panelContenedor_Paint;
 			// 
 			// UCVehiculos
 			// 

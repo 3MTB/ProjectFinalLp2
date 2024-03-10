@@ -64,5 +64,10 @@ namespace ProjectFinalLp2
 		{
 			cargaValores();
 		}
+
+		private void panelContenedor_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }
