@@ -17,17 +17,26 @@ namespace ProjectFinalLp2
 	public partial class UCVehiculos : UserControl
 	{
 		public Vehiculo currentVehicule { get; set; }
-		public Models.Client? currentClient { get; set; }
-		public UCVehiculos(Vehiculo vehiculo, Models.Client? client)
+		public Models.Client currentClient { get; set; }
+		public int idTrabajador { get; set; }
+
+		public UCVehiculos(Vehiculo vehiculo, Models.Client client, int idTrabajador)
 		{
 			InitializeComponent();
 			this.currentVehicule = vehiculo;
 			this.currentClient = client;
+			this.idTrabajador = idTrabajador;
 		}
 
 		private void btnRentar_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show($"Estas rentando un {currentVehicule.Marca}");
+			if (currentClient != null)
+			{
+				/**/RentcargokudemonContext context = new RentcargokudemonContext();
+				/*Rentado rentado = new Rentado(currentClient.Id, currentVehicule.Id, idTrabajador)*/
+
+
+			}
 		}
 		private void cargaValores()
 		{

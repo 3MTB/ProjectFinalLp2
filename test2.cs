@@ -27,9 +27,9 @@ namespace ProjectFinalLp2
 			{
 				foreach (var x in context.Vehiculos)
 				{
-					var card = new UCVehiculos(x, null);
+					//var card = new UCVehiculos(x, null);
 					//card.Dock = DockStyle.Top;
-					table.Controls.Add(card);
+					//table.Controls.Add(card);
 				}
 			}
 			else

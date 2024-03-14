@@ -29,9 +29,9 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			{
 				foreach (var x in context.Vehiculos)
 				{
-					var card = new UCVehiculos(x, client);
-					card.Dock = DockStyle.Top;
-					panelMain.Controls.Add(card);
+					//var card = new UCVehiculos(x, client);
+					//card.Dock = DockStyle.Top;
+					//panelMain.Controls.Add(card);
 				}
 			}
 			else

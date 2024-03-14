@@ -307,6 +307,10 @@ namespace ProjectFinalLp2.Formularios.Client
 					context.SaveChanges();
 					context.Clients.Add(client);
 					context.SaveChanges();
+					MessageBox.Show($"Se agrego correctamente al cliente: {client.Nombre}");
+					this.Close();
+					new frmlogin().Show();
+
 
 				}
 				else
@@ -329,7 +333,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{e.ToString()}");
+				MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{ex.Message}");
 			}
 		}
 

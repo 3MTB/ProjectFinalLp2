@@ -59,6 +59,7 @@
 			ClientSize = new Size(1065, 752);
 			Controls.Add(table);
 			Name = "test2";
+			RightToLeftLayout = true;
 			Text = "test2";
 			Load += test2_Load;
 			ResumeLayout(false);
