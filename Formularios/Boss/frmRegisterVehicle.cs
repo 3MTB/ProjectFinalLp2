@@ -104,7 +104,7 @@ namespace ProjectFinalLp2.Formularios.Boss
 						if (image.Success && image.Message != null)
 						{
 
-							Vehiculo vehiculo = new Vehiculo(tbMarca.Text, tbModelo.Text, cbTipoVehiculo.Text, (int)numYear.Value, tbNameColor.Text, cbEstado.Text, numPrecioRenta.Value, rtDescripcion.Text, licencia.IdLicencia, image.Message);
+							Vehiculo vehiculo = new Vehiculo(tbMarca.Text, tbModelo.Text, cbTipoVehiculo.Text, (int)numYear.Value, tbNameColor.Text, cbEstado.Text, numPrecioRenta.Value, rtDescripcion.Text, licencia.IdLicencia, true, image.Message);
 							context.Vehiculos.Add(vehiculo);
 							context.SaveChanges();
 							MessageBox.Show("VEHICULO REGISTRADO");

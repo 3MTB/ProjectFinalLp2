@@ -11,6 +11,7 @@ using ProjectFinalLp2.Formularios.Boss;
 using ProjectFinalLp2.Formularios.Client;
 using ProjectFinalLp2.Models;
 using ProjectFinalLp2.Formularios.Trabajador;
+using System.Globalization;
 
 namespace ProjectFinalLp2
 {
@@ -34,12 +35,15 @@ namespace ProjectFinalLp2
 
 			// Programa inicial
 			//Application.Run(new frmMainAdministrador(adminDefault));
-			//Application.Run(new frmMainClient(clientDefault));
-			Vehiculo v = new RentcargokudemonContext().Vehiculos.ToList().First(x=>x.Id==7);
-			Client c = new RentcargokudemonContext().Clients.ToList().First(x=>x.Id==24);
+			//Application.Run(new frmMainClient(clientDefault));\
 
+			/*Vehiculo v = new RentcargokudemonContext().Vehiculos.ToList().First();
+			Client c = new RentcargokudemonContext().Clients.ToList().First();
 			Application.Run(new FrmRegRentarVehiculo(v, c));
-			//Application.Run(new frmLoading());
+*/
+			Client c = new RentcargokudemonContext().Clients.ToList().First();
+
+			Application.Run(new frmMainClient(c));
 		}
 	}
 }

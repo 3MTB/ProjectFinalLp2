@@ -5,37 +5,36 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Rentado
 {
-	public Rentado(int idCliente, int idVehiculo, int idTrabajador, DateTime fechaInicio, DateTime fechaFinal, Client cliente, Trabajador trabajador, Vehiculo vehiculo)
+	public Rentado(int idCliente, int idVehiculo, int idTrabajador, DateTime fechaInicio, DateTime fechaFinal, decimal totalPagar)
 	{
 		IdCliente = idCliente;
 		IdVehiculo = idVehiculo;
 		IdTrabajador = idTrabajador;
 		FechaInicio = fechaInicio;
 		FechaFinal = fechaFinal;
-		IdClienteNavigation = cliente;
-		IdTrabajadorNavigation = trabajador;
-		IdVehiculoNavigation = vehiculo;
+		TotalPagar = totalPagar;
 	}
-    public Rentado()
-    {
-        
-    }
+	public Rentado()
+	{
 
-    public int Id { get; set; }
+	}
+	public int Id { get; set; }
 
-    public int IdCliente { get; set; }
+	public int IdCliente { get; set; }
 
-    public int IdVehiculo { get; set; }
+	public int IdVehiculo { get; set; }
 
-    public int IdTrabajador { get; set; }
+	public int IdTrabajador { get; set; }
 
-    public DateTime FechaInicio { get; set; }
+	public DateTime FechaInicio { get; set; }
 
-    public DateTime FechaFinal { get; set; }
+	public DateTime FechaFinal { get; set; }
 
-    public virtual Client IdClienteNavigation { get; set; } = null!;
+	public decimal TotalPagar { get; set; }
 
-    public virtual Trabajador IdTrabajadorNavigation { get; set; } = null!;
+	public virtual Client IdClienteNavigation { get; set; } = null!;
 
-    public virtual Vehiculo IdVehiculoNavigation { get; set; } = null!;
+	public virtual Trabajador IdTrabajadorNavigation { get; set; } = null!;
+
+	public virtual Vehiculo IdVehiculoNavigation { get; set; } = null!;
 }

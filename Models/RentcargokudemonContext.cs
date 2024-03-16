@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace ProjectFinalLp2.Models;
 
@@ -32,14 +31,11 @@ public partial class RentcargokudemonContext : DbContext
 
     public virtual DbSet<Vehiculo> Vehiculos { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-         optionsBuilder.UseSqlServer("Server=DRAKO\\SQLEXPRESS; Database=rentcargokudemon; Trusted_Connection=True;TrustServerCertificate=True");
-    }
-    
-	/*.LogTo(Console.WriteLine, LogLevel.Information);*/
+        => optionsBuilder.UseSqlServer("Server=DRAKO\\SQLEXPRESS; Database=rentcargokudemon; Trusted_Connection=True;TrustServerCertificate=True");
 
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Admin>(entity =>
         {
@@ -145,6 +141,9 @@ public partial class RentcargokudemonContext : DbContext
             entity.Property(e => e.IdCliente).HasColumnName("idCliente");
             entity.Property(e => e.IdTrabajador).HasColumnName("idTrabajador");
             entity.Property(e => e.IdVehiculo).HasColumnName("idVehiculo");
+            entity.Property(e => e.TotalPagar)
+                .HasColumnType("decimal(18, 0)")
+                .HasColumnName("totalPagar");
 
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Rentados)
                 .HasForeignKey(d => d.IdCliente)
@@ -201,9 +200,10 @@ public partial class RentcargokudemonContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("color");
             entity.Property(e => e.Description)
-                .HasMaxLength(300)
+                .HasMaxLength(800)
                 .IsUnicode(false)
                 .HasColumnName("description");
+            entity.Property(e => e.Disponible).HasColumnName("disponible");
             entity.Property(e => e.Estado)
                 .HasMaxLength(12)
                 .IsUnicode(false)

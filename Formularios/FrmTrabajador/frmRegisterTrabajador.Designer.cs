@@ -1,6 +1,6 @@
-﻿namespace ProjectFinalLp2.Formularios.Aplication
+﻿namespace ProjectFinalLp2.Formularios.FrmTrabajador
 {
-	partial class frmVehiculosRentar
+	partial class frmRegisterTrabajador
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,10 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "frmVehiculosRentar";
+			SuspendLayout();
+			// 
+			// frmRegisterTrabajador
+			// 
+			AutoScaleDimensions = new SizeF(8F, 20F);
+			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.FromArgb(10, 25, 76);
+			ClientSize = new Size(933, 773);
+			ForeColor = Color.White;
+			Name = "frmRegisterTrabajador";
+			Text = "frmRegisterTrabajador";
+			ResumeLayout(false);
 		}
 
 		#endregion

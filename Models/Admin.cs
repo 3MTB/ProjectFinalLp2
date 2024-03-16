@@ -14,6 +14,7 @@ public partial class Admin
     {
         
     }
+
     public int Id { get; set; }
 
     public string Nombre { get; set; } = null!;

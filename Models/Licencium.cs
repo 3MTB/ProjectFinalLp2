@@ -12,12 +12,11 @@ public partial class Licencium
 		FechaVencimiento = fechaVencimiento;
 		IdTipoLicenciaNavigation = tipoLicencia;
 	}
-	public Licencium()
-	{
-
-	}
-
-	public int Id { get; set; }
+    public Licencium()
+    {
+        
+    }
+    public int Id { get; set; }
 
 	public DateOnly Emision { get; set; }
 

@@ -33,20 +33,20 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			InitializeComponent();
 			// Inicalizador por defecto
 
+		
+		}
+
+		
+		#endregion
+
+		#region							Eventos
+
+		private void frmlogin_Load(object sender, EventArgs e)
+		{
 			// Mi inicalizador personal
 			MyInitializer();
 			// Mi inicalizador personal
 		}
-
-		public void MyInitializer()
-		{
-			cbRoll.DataSource = otherTypeUses.roles;
-			cbUser.DataSource = dbContext.Clients.ToList();
-			cbUser.DisplayMember = "Nombre";
-		}
-		#endregion
-
-		#region							Eventos
 		private void timerAnimation_Tick(object sender, EventArgs e)
 		{
 			if (IsUpAnimation)
@@ -221,6 +221,16 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				new frmRegisterAdmin().Show();
 			}
 		}
+
+		public void MyInitializer()
+		{
+			cbRoll.DataSource = otherTypeUses.roles;
+			cbUser.DataSource = dbContext.Clients.ToList();
+			cbUser.DisplayMember = "Nombre";
+		}
+
 		#endregion
+
+
 	}
 }

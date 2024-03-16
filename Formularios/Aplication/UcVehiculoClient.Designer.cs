@@ -38,6 +38,7 @@
 			label2 = new Label();
 			label3 = new Label();
 			panelContenedor = new Panel();
+			btnMoreInformation = new Button();
 			((System.ComponentModel.ISupportInitialize)pictImage).BeginInit();
 			panelContenedor.SuspendLayout();
 			SuspendLayout();
@@ -48,7 +49,7 @@
 			lblBrand.AutoSize = true;
 			lblBrand.BackColor = Color.Transparent;
 			lblBrand.ForeColor = Color.Black;
-			lblBrand.Location = new Point(58, 147);
+			lblBrand.Location = new Point(63, 156);
 			lblBrand.Margin = new Padding(2, 0, 2, 0);
 			lblBrand.Name = "lblBrand";
 			lblBrand.Size = new Size(42, 23);
@@ -60,7 +61,7 @@
 			pictImage.Anchor = AnchorStyles.None;
 			pictImage.Image = (Image)resources.GetObject("pictImage.Image");
 			pictImage.InitialImage = (Image)resources.GetObject("pictImage.InitialImage");
-			pictImage.Location = new Point(15, 11);
+			pictImage.Location = new Point(20, 20);
 			pictImage.Margin = new Padding(0);
 			pictImage.Name = "pictImage";
 			pictImage.Size = new Size(275, 136);
@@ -75,7 +76,7 @@
 			lblModel.BackColor = Color.Transparent;
 			lblModel.Font = new Font("Agency FB", 14F);
 			lblModel.ForeColor = Color.Black;
-			lblModel.Location = new Point(53, 166);
+			lblModel.Location = new Point(58, 175);
 			lblModel.Margin = new Padding(0);
 			lblModel.Name = "lblModel";
 			lblModel.Size = new Size(56, 28);
@@ -87,7 +88,7 @@
 			btnAction.Anchor = AnchorStyles.None;
 			btnAction.BackColor = SystemColors.InactiveCaption;
 			btnAction.FlatStyle = FlatStyle.Flat;
-			btnAction.Location = new Point(185, 191);
+			btnAction.Location = new Point(190, 200);
 			btnAction.Margin = new Padding(0);
 			btnAction.Name = "btnAction";
 			btnAction.Size = new Size(94, 29);
@@ -103,7 +104,7 @@
 			lblPrice.Font = new Font("Agency FB", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			lblPrice.ForeColor = Color.MediumBlue;
 			lblPrice.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-			lblPrice.Location = new Point(213, 147);
+			lblPrice.Location = new Point(218, 156);
 			lblPrice.Margin = new Padding(0);
 			lblPrice.Name = "lblPrice";
 			lblPrice.Size = new Size(48, 22);
@@ -117,7 +118,7 @@
 			label1.BackColor = Color.Transparent;
 			label1.Font = new Font("Agency FB", 11F);
 			label1.ForeColor = SystemColors.ActiveCaptionText;
-			label1.Location = new Point(195, 147);
+			label1.Location = new Point(200, 156);
 			label1.Margin = new Padding(0);
 			label1.Name = "label1";
 			label1.Size = new Size(18, 24);
@@ -130,7 +131,7 @@
 			label2.AutoSize = true;
 			label2.BackColor = Color.Transparent;
 			label2.ForeColor = SystemColors.ActiveCaptionText;
-			label2.Location = new Point(15, 147);
+			label2.Location = new Point(20, 156);
 			label2.Margin = new Padding(2, 0, 2, 0);
 			label2.Name = "label2";
 			label2.Size = new Size(42, 23);
@@ -144,7 +145,7 @@
 			label3.BackColor = Color.Transparent;
 			label3.Font = new Font("Agency FB", 10F);
 			label3.ForeColor = SystemColors.ActiveCaptionText;
-			label3.Location = new Point(15, 170);
+			label3.Location = new Point(20, 179);
 			label3.Margin = new Padding(0);
 			label3.Name = "label3";
 			label3.Size = new Size(38, 22);
@@ -155,6 +156,7 @@
 			// 
 			panelContenedor.BackColor = Color.DarkGray;
 			panelContenedor.BorderStyle = BorderStyle.FixedSingle;
+			panelContenedor.Controls.Add(btnMoreInformation);
 			panelContenedor.Controls.Add(pictImage);
 			panelContenedor.Controls.Add(label3);
 			panelContenedor.Controls.Add(lblBrand);
@@ -167,9 +169,21 @@
 			panelContenedor.Location = new Point(0, 0);
 			panelContenedor.Margin = new Padding(0);
 			panelContenedor.Name = "panelContenedor";
-			panelContenedor.Size = new Size(306, 222);
+			panelContenedor.Size = new Size(316, 240);
 			panelContenedor.TabIndex = 15;
-			panelContenedor.Paint += panelContenedor_Paint;
+			// 
+			// btnMoreInformation
+			// 
+			btnMoreInformation.Anchor = AnchorStyles.None;
+			btnMoreInformation.BackColor = Color.Transparent;
+			btnMoreInformation.BackgroundImage = (Image)resources.GetObject("btnMoreInformation.BackgroundImage");
+			btnMoreInformation.BackgroundImageLayout = ImageLayout.Zoom;
+			btnMoreInformation.Location = new Point(13, 210);
+			btnMoreInformation.Name = "btnMoreInformation";
+			btnMoreInformation.Size = new Size(49, 25);
+			btnMoreInformation.TabIndex = 15;
+			btnMoreInformation.UseVisualStyleBackColor = false;
+			btnMoreInformation.Click += btnMoreInformation_Click;
 			// 
 			// UCVehiculos
 			// 
@@ -179,7 +193,7 @@
 			Font = new Font("Agency FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			Margin = new Padding(0);
 			Name = "UCVehiculos";
-			Size = new Size(306, 222);
+			Size = new Size(316, 240);
 			Load += UCVehiculos_Load;
 			((System.ComponentModel.ISupportInitialize)pictImage).EndInit();
 			panelContenedor.ResumeLayout(false);
@@ -197,5 +211,6 @@
 		private Label label2;
 		private Label label3;
 		private Panel panelContenedor;
+		private Button btnMoreInformation;
 	}
 }

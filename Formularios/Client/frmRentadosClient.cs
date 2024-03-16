@@ -52,7 +52,7 @@ namespace ProjectFinalLp2.Formularios.Client
 		private void btnRentar_Click(object sender, EventArgs e)
 		{
 			this.Close();
-			new frmRentar().Show();
+			/*new FrmRegRentarVehiculo(CLIEN).Show();*/
 		}
 		#endregion
 	}

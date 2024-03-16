@@ -34,7 +34,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			try
 			{
 				lblNameClient.Text = $"{clientCurrent.Nombre} {clientCurrent.Apellido}";
-				OpenChildFrom(new frmVehiculosRentar(), btnHome);
+				OpenChildFrom(new frmCatalogo(clientCurrent), btnHome);
 				var img = ByteToImage(clientCurrent.Imagen);
 				if (img.Success && img.Message != null)
 				{
@@ -45,8 +45,6 @@ namespace ProjectFinalLp2.Formularios.Client
 					MessageBox.Show($"Error al momento de cargar la foto del usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					pictureClient.Image = Properties.Resources.userDefault;
 				}
-
-
 			}
 			catch (Exception ex)
 			{
@@ -116,7 +114,6 @@ namespace ProjectFinalLp2.Formularios.Client
 				lblPlace.Text = "Mis Rentados";
 				OpenChildFrom(new frmRentadosClient(clientCurrent), btnMyVehicule);
 			}
-
 		}
 
 		private void btnHome_Click(object sender, EventArgs e)
@@ -136,8 +133,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			{
 				lblPlace.Text = "Rentar";
 
-				MessageBox.Show("Función no desarrollada 0- Rentar");
-				//OpenChildFrom(new frmRentados(), btnMyVehicule);
+				OpenChildFrom(new frmCatalogo( clientCurrent), btnMyVehicule);
 			}
 		}
 

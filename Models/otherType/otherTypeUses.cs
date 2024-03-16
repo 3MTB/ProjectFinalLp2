@@ -25,6 +25,7 @@ namespace ProjectFinalLp2.Models.otherType
 			RecordTiposVehiculos.Carga,
 			RecordTiposVehiculos.OffRoad
 		};
+
 	}
 	public record ColoresDefault{
 		public static string Blanco = "Blanco";

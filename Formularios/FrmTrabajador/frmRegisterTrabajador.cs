@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectFinalLp2.Formularios.Aplication
+namespace ProjectFinalLp2.Formularios.FrmTrabajador
 {
-	public partial class frmVehiculosRentar : Form
+	public partial class frmRegisterTrabajador : Form
 	{
-		#region						CONSTRUCTOR
-		public frmVehiculosRentar()
+		public frmRegisterTrabajador()
 		{
 			InitializeComponent();
 		}
-		#endregion
 	}
 }

@@ -13,22 +13,21 @@ public partial class Contacto
 		Email = email;
 		Telefono = telefono;
 	}
-    public Contacto()
-    {
-        
-    }
+	public Contacto()
+	{
 
-    public int Id { get; set; }
+	}
+	public int Id { get; set; }
 
-    public string Pais { get; set; } = null!;
+	public string Pais { get; set; } = null!;
 
-    public string Ciudad { get; set; } = null!;
+	public string Ciudad { get; set; } = null!;
 
-    public string Direccion { get; set; } = null!;
+	public string Direccion { get; set; } = null!;
 
-    public string Email { get; set; } = null!;
+	public string Email { get; set; } = null!;
 
-    public string Telefono { get; set; } = null!;
+	public string Telefono { get; set; } = null!;
 
-    public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
+	public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 }

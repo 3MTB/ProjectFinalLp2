@@ -14,12 +14,12 @@ namespace ProjectFinalLp2.Formularios.Aplication
 {
 	public partial class frmCatalogo : Form
 	{
-		public Models.Client? client { get; set; } = null;
+		public Models.Client client { get; set; } = null;
 		public RentcargokudemonContext context { get; set; }
-		public frmCatalogo(Models.Client? clienteOpc)
+		public frmCatalogo(Models.Client client)
 		{
 			InitializeComponent();
-			this.client = clienteOpc;
+			this.client = client;
 			this.context = new RentcargokudemonContext();
 		}
 		private void frmCatalogo_Load(object sender, EventArgs e)
@@ -29,9 +29,9 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			{
 				foreach (var x in context.Vehiculos)
 				{
-					//var card = new UCVehiculos(x, client);
-					//card.Dock = DockStyle.Top;
-					//panelMain.Controls.Add(card);
+					var card = new UCVehiculos(x, client);
+					card.Dock = DockStyle.Top;
+					panelMain.Controls.Add(card);
 				}
 			}
 			else

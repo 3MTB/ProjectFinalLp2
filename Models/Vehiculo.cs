@@ -5,7 +5,7 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Vehiculo
 {
-	public Vehiculo(string marca, string modelo, string tipo, int anio, string color, string estado, decimal precioRenta, string description, int licenciaRequerida, byte[] image)
+	public Vehiculo(string marca, string modelo, string tipo, int anio, string color, string estado, decimal precioRenta, string description, int licenciaRequerida, bool disponible, byte[] image)
 	{
 		Marca = marca;
 		Modelo = modelo;
@@ -16,6 +16,7 @@ public partial class Vehiculo
 		PrecioRenta = precioRenta;
 		Description = description;
 		LicenciaRequerida = licenciaRequerida;
+		Disponible = disponible;
 		Image = image;
 	}
 	public Vehiculo()
@@ -42,6 +43,8 @@ public partial class Vehiculo
 	public string Description { get; set; } = null!;
 
 	public int LicenciaRequerida { get; set; }
+
+	public bool Disponible { get; set; }
 
 	public byte[] Image { get; set; } = null!;
 

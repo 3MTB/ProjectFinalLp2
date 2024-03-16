@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectFinalLp2.Formularios.Aplication;
 using ProjectFinalLp2.Models;
 // my namespace
 using static ProjectFinalLp2.Models.otherType.funcionesComunes;
@@ -18,25 +19,21 @@ namespace ProjectFinalLp2
 	{
 		public Vehiculo currentVehicule { get; set; }
 		public Models.Client currentClient { get; set; }
-		public int idTrabajador { get; set; }
+		/*public bool IsNotDisponible { get; set; }
+*/
 
-		public UCVehiculos(Vehiculo vehiculo, Models.Client client, int idTrabajador)
+		public UCVehiculos(Vehiculo vehiculo, Models.Client client/*, bool IsNotDisponible*/)
 		{
 			InitializeComponent();
 			this.currentVehicule = vehiculo;
 			this.currentClient = client;
-			this.idTrabajador = idTrabajador;
+			/*	this.IsNotDisponible = IsNotDisponible;*/
 		}
 
 		private void btnRentar_Click(object sender, EventArgs e)
 		{
-			if (currentClient != null)
-			{
-				/**/RentcargokudemonContext context = new RentcargokudemonContext();
-				/*Rentado rentado = new Rentado(currentClient.Id, currentVehicule.Id, idTrabajador)*/
+			SeeRentar();
 
-
-			}
 		}
 		private void cargaValores()
 		{
@@ -53,14 +50,17 @@ namespace ProjectFinalLp2
 				MessageBox.Show($"Error al momento de cargar la foto del AUTO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				pictImage.Image = Properties.Resources.error;
 			}
+
 			if (currentClient != null)
 			{
-				if (currentClient.Rentados.Any(x => x.IdVehiculo == currentVehicule.Id))
+				if (currentClient.Rentados.Any(x => x.IdVehiculoNavigation == currentVehicule))
 				{
 					btnAction.Enabled = false;
 					btnAction.Text = "YA RENTADO";
+					btnAction.BackColor = Color.DarkRed;
+					btnAction.ForeColor = Color.Black;
 					panelContenedor.BackColor = Color.IndianRed;
-
+					MessageBox.Show("Ya lo has registrado");
 				}
 			}
 			else
@@ -74,9 +74,14 @@ namespace ProjectFinalLp2
 			cargaValores();
 		}
 
-		private void panelContenedor_Paint(object sender, PaintEventArgs e)
+		private void btnMoreInformation_Click(object sender, EventArgs e)
 		{
-
+			SeeRentar();
+		}
+		private void SeeRentar()
+		{
+			this.Hide();
+			new FrmRegRentarVehiculo(currentVehicule, currentClient).Show();
 		}
 	}
 }
