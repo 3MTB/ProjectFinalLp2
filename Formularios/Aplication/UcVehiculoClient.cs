@@ -19,21 +19,20 @@ namespace ProjectFinalLp2
 	{
 		public Vehiculo currentVehicule { get; set; }
 		public Models.Client currentClient { get; set; }
-		/*public bool IsNotDisponible { get; set; }
-*/
+		public bool IsNotDisponible { get; set; }
 
-		public UCVehiculos(Vehiculo vehiculo, Models.Client client/*, bool IsNotDisponible*/)
+
+		public UCVehiculos(Vehiculo vehiculo, Models.Client client, bool IsNotDisponible)
 		{
 			InitializeComponent();
 			this.currentVehicule = vehiculo;
 			this.currentClient = client;
-			/*	this.IsNotDisponible = IsNotDisponible;*/
+			this.IsNotDisponible = IsNotDisponible;
 		}
 
 		private void btnRentar_Click(object sender, EventArgs e)
 		{
 			SeeRentar();
-
 		}
 		private void cargaValores()
 		{
@@ -51,22 +50,18 @@ namespace ProjectFinalLp2
 				pictImage.Image = Properties.Resources.error;
 			}
 
-			if (currentClient != null)
+			if (IsNotDisponible)
 			{
-				if (currentClient.Rentados.Any(x => x.IdVehiculoNavigation == currentVehicule))
-				{
-					btnAction.Enabled = false;
-					btnAction.Text = "YA RENTADO";
-					btnAction.BackColor = Color.DarkRed;
-					btnAction.ForeColor = Color.Black;
-					panelContenedor.BackColor = Color.IndianRed;
-					MessageBox.Show("Ya lo has registrado");
-				}
+				btnAction.Enabled = false;
+				btnAction.Text = "YA RENTADO";
+				btnAction.BackColor = Color.DarkRed;
+				btnAction.ForeColor = Color.Black;
 			}
 			else
 			{
-				btnAction.Visible = false;
+				btnAction.Enabled = true;
 			}
+
 		}
 
 		private void UCVehiculos_Load(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,6 @@ namespace ProjectFinalLp2.Formularios.Aplication
 		private Panel panelLateral { get; set; }
 		private Label lblNameFrmCurrent { get; set; }
 
-
-
 		public void OpenChildFrom(Form abrir, Button btnsender)
 		{
 			try
@@ -41,6 +40,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				currentForm = abrir;
 				currentForm.TopLevel = false;
 				currentForm.FormBorderStyle = FormBorderStyle.None;
+				currentForm.StartPosition = FormStartPosition.WindowsDefaultBounds;
 				currentForm.BringToFront();
 				panelMain.Controls.Add(currentForm);
 				currentForm.Show();
@@ -59,6 +59,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				{
 					x.BackColor = cBackgroundDisable;
 					x.ForeColor = cForegroundDisable;
+
 				}
 			}
 		}
@@ -71,6 +72,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 					currentButon = btnactivar;
 					currentButon.BackColor = cBackgroundActive;
 					currentButon.ForeColor = cForegroundActive;
+					
 				}
 			}
 		}

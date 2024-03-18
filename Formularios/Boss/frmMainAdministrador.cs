@@ -24,87 +24,43 @@ namespace ProjectFinalLp2.Formularios.Boss
 		public Admin adminCurrent { get; set; }
 		public Button currentButon { get; set; }
 		public Form currentForm { get; set; }
+		public GestorTransformacionPanel gestorPanel { get; set; }
 		private void MyIniciador()
 		{
-			OpenChildFrom(new frmDefaultAdmin(), btnHome);
+			lblName.Text = $" >{adminCurrent.Nombre}<";
+			gestorPanel = new GestorTransformacionPanel(new frmMainAdministrador(adminCurrent), panelMain, panelLateral, lblPlace);
+			gestorPanel.OpenChildFrom(new frmDefaultHour(), btnHome);
 		}
 		#endregion
-		#region							CONSTRUCTOR
+
+		#region							CONSTRUCTOR  - Iniciador
 		public frmMainAdministrador(Admin admin)
 		{
 			InitializeComponent();
 			adminCurrent = admin;
+		}
+		private void frmMainAdministrador_Load(object sender, EventArgs e)
+		{
 			MyIniciador();
+
 		}
 		#endregion
+
 		#region													Eventos
-		private void btnRentados_Click_1(object sender, EventArgs e)
+
+
+
+
+		private void btnRentados_Click(object sender, EventArgs e)
 		{
 			if (sender.GetType() == typeof(Button))
 			{
-				OpenChildFrom(new frmRentados(), (Button)sender);
+				gestorPanel.OpenChildFrom(new frmRentados(), (Button)sender);
 
 			}
 		}
 
-
-		private void btnHome_Click_1(object sender, EventArgs e)
-		{
-			OpenChildFrom(new frmDefaultAdmin(), btnHome);
-
-		}
-
-		private void btnActualizar_Click_1(object sender, EventArgs e)
-		{
-			if (sender.GetType() == typeof(Button))
-			{
-				OpenChildFrom(new frmUpdateAdmin(adminCurrent), (Button)sender);
-			}
-		}
-		// Funciones
-
-		public void ActiveButton(Button btnactivar)
-		{
-			if (currentButon != null)
-			{
-				if (currentButon != btnactivar)
-				{
-					currentButon = btnactivar;
-					currentButon.BackColor = cBackgroundActive;
-					currentButon.ForeColor = cForegroundActive;
-				}
-			}
-		}
-
-
-		private void OpenChildFrom(Form abrir, Button btnsender)
-		{
-			if (currentForm != null)
-			{
-				currentForm.Close();
-			}
-			DisableButtons();
-
-			ActiveButton(btnsender);
-			currentForm = abrir;
-			currentForm.TopLevel = false;
-			currentForm.FormBorderStyle = FormBorderStyle.None;
-			currentForm.BringToFront();
-			panelMain.Controls.Add(currentForm);
-			currentForm.Show();
-		}
-
-
-		private void btnSalir_Click(object sender, EventArgs e)
-		{
-			if (MessageBox.Show("¿Seguro que quieres salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-			{
-				Application.Exit();
-			}
-		
-		}
-
-		private void btnEliminarPerfil_Click(object sender, EventArgs e)
+		private void btnEliminarPerfil_Click_1(object sender, EventArgs e)
 		{
 			string MessageEliminacion = $"{adminCurrent.Nombre}, ¿Estas seguro que deseas eliminar tu perfil?\n Esto implica que perderás tu acceso al programa.";
 			if (MessageBox.Show(MessageEliminacion, "Eliminación de Perfil", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -115,25 +71,29 @@ namespace ProjectFinalLp2.Formularios.Boss
 				context.SaveChanges();
 				this.Hide();
 
-				var open = new frmLoading();
-				open.Show();
+				new frmLoading().Show();
 
 			}
 		}
-		#endregion
-		#region													Metodos Auxiliares
-		private void DisableButtons()
+
+		private void btnActualizar_Click(object sender, EventArgs e)
 		{
-			foreach (Control x in panelLateral.Controls)
+			if (sender.GetType() == typeof(Button))
 			{
-				if (x.GetType() == typeof(Button))
-				{
-					x.BackColor = cBackgroundDisable;
-					x.ForeColor = cForegroundDisable;
-				}
+				gestorPanel.OpenChildFrom(new frmUpdateAdmin(adminCurrent), (Button)sender);
 			}
 		}
 
+		private void btnHome_Click(object sender, EventArgs e)
+		{
+			if (sender.GetType() == typeof(Button))
+			{
+				gestorPanel.OpenChildFrom(new frmDefaultHour(), (Button)sender);
+			}
+		}
+
+
 		#endregion
+
 	}
 }

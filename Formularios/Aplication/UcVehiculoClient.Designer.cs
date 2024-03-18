@@ -88,10 +88,10 @@
 			btnAction.Anchor = AnchorStyles.None;
 			btnAction.BackColor = SystemColors.InactiveCaption;
 			btnAction.FlatStyle = FlatStyle.Flat;
-			btnAction.Location = new Point(190, 200);
+			btnAction.Location = new Point(190, 197);
 			btnAction.Margin = new Padding(0);
 			btnAction.Name = "btnAction";
-			btnAction.Size = new Size(94, 29);
+			btnAction.Size = new Size(94, 32);
 			btnAction.TabIndex = 10;
 			btnAction.Text = "Rentar";
 			btnAction.UseVisualStyleBackColor = false;

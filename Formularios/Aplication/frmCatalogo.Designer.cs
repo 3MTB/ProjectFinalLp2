@@ -38,23 +38,24 @@
 			// 
 			panelMain.AutoScroll = true;
 			panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			panelMain.BackColor = Color.Transparent;
+			panelMain.BackColor = Color.FromArgb(10, 20, 45);
 			panelMain.Controls.Add(lblCantidad);
 			panelMain.Controls.Add(label1);
 			panelMain.Dock = DockStyle.Fill;
 			panelMain.Location = new Point(0, 0);
 			panelMain.Margin = new Padding(0);
 			panelMain.Name = "panelMain";
-			panelMain.Size = new Size(1473, 723);
+			panelMain.Size = new Size(1473, 1012);
 			panelMain.TabIndex = 2;
+			panelMain.Tag = "Catalogo";
 			// 
 			// lblCantidad
 			// 
 			lblCantidad.AutoSize = true;
 			lblCantidad.BackColor = Color.Transparent;
-			lblCantidad.Location = new Point(275, 58);
+			lblCantidad.Location = new Point(275, 81);
 			lblCantidad.Name = "lblCantidad";
-			lblCantidad.Size = new Size(17, 20);
+			lblCantidad.Size = new Size(22, 28);
 			lblCantidad.TabIndex = 6;
 			lblCantidad.Text = "0";
 			// 
@@ -62,22 +63,25 @@
 			// 
 			label1.AutoSize = true;
 			label1.BackColor = Color.Transparent;
-			label1.Location = new Point(74, 58);
+			label1.Location = new Point(74, 81);
 			label1.Name = "label1";
-			label1.Size = new Size(185, 20);
+			label1.Size = new Size(177, 28);
 			label1.TabIndex = 5;
 			label1.Text = "VEHICULOS REGISTRADOS";
 			// 
 			// frmCatalogo
 			// 
-			AutoScaleDimensions = new SizeF(8F, 20F);
-			AutoScaleMode = AutoScaleMode.Font;
+			AutoScaleDimensions = new SizeF(120F, 120F);
+			AutoScaleMode = AutoScaleMode.Dpi;
 			BackColor = SystemColors.ActiveCaptionText;
-			ClientSize = new Size(1473, 723);
+			ClientSize = new Size(1473, 1012);
 			Controls.Add(panelMain);
+			Font = new Font("Agency FB", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			ForeColor = SystemColors.ActiveBorder;
+			Margin = new Padding(3, 4, 3, 4);
 			Name = "frmCatalogo";
-			Text = "frmCatalogo";
+			Tag = "Catalógo";
+			Text = "Catalógo";
 			Load += frmCatalogo_Load;
 			panelMain.ResumeLayout(false);
 			panelMain.PerformLayout();

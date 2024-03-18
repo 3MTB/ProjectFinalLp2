@@ -41,9 +41,11 @@ namespace ProjectFinalLp2
 			Client c = new RentcargokudemonContext().Clients.ToList().First();
 			Application.Run(new FrmRegRentarVehiculo(v, c));
 */
-			Client c = new RentcargokudemonContext().Clients.ToList().First();
+			Client c = new RentcargokudemonContext().Clients.ToList().First(x=>x.Id==21);
+			Admin a = new RentcargokudemonContext().Admins.ToList().First();
 
-			Application.Run(new frmMainClient(c));
+			Application.Run(new frmMainAdministrador(a));
+			/*Application.Run(new frmDefaultHour());*/
 		}
 	}
 }

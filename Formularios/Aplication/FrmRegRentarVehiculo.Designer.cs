@@ -448,7 +448,7 @@
 			// 
 			// FrmRegRentarVehiculo
 			// 
-			AutoScaleMode = AutoScaleMode.None;
+			AutoScaleMode = AutoScaleMode.Inherit;
 			ClientSize = new Size(947, 869);
 			Controls.Add(lblDescription);
 			Controls.Add(label11);
@@ -484,7 +484,8 @@
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "FrmRegRentarVehiculo";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "FrmRegRentarVehiculo";
+			Tag = "Rentar Vehículo";
+			Text = "Rentar Vehículo";
 			Load += FrmRegRentarVehiculo_Load;
 			((System.ComponentModel.ISupportInitialize)pictImage).EndInit();
 			ResumeLayout(false);

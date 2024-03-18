@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xaml.Permissions;
+
 // My NameSpace
 using ProjectFinalLp2.Models;
 
@@ -25,11 +27,13 @@ namespace ProjectFinalLp2.Formularios.Aplication
 		private void frmCatalogo_Load(object sender, EventArgs e)
 		{
 			lblCantidad.Text = context.Vehiculos.Count().ToString();
+			var renta = context.Rentados.ToArray();
 			if (context.Vehiculos.Any())
 			{
 				foreach (var x in context.Vehiculos)
 				{
-					var card = new UCVehiculos(x, client);
+					bool IsNotDisponible = renta.Any(x => x.IdCliente == client.Id);
+					var card = new UCVehiculos(x, client, IsNotDisponible);
 					card.Dock = DockStyle.Top;
 					panelMain.Controls.Add(card);
 				}

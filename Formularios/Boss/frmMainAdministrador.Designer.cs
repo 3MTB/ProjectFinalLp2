@@ -28,137 +28,215 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-			btnSalir = new Button();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainAdministrador));
+			panelMain = new Panel();
 			panelLateral = new Panel();
+			pictureBox1 = new PictureBox();
+			lblName = new Label();
+			label1 = new Label();
 			btnEliminarPerfil = new Button();
 			btnHome = new Button();
 			btnActualizar = new Button();
 			btnRentados = new Button();
-			panelMain = new Panel();
-			guna2GradientPanel1.SuspendLayout();
+			panel1 = new Panel();
+			lblPlace = new Label();
 			panelLateral.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+			panel1.SuspendLayout();
 			SuspendLayout();
 			// 
-			// guna2GradientPanel1
+			// panelMain
 			// 
-			guna2GradientPanel1.BackColor = Color.FromArgb(20, 50, 90);
-			guna2GradientPanel1.Controls.Add(btnSalir);
-			guna2GradientPanel1.CustomizableEdges = customizableEdges1;
-			guna2GradientPanel1.Dock = DockStyle.Top;
-			guna2GradientPanel1.Location = new Point(0, 0);
-			guna2GradientPanel1.Name = "guna2GradientPanel1";
-			guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-			guna2GradientPanel1.Size = new Size(1114, 56);
-			guna2GradientPanel1.TabIndex = 1;
-			// 
-			// btnSalir
-			// 
-			btnSalir.Anchor = AnchorStyles.None;
-			btnSalir.BackColor = Color.Black;
-			btnSalir.FlatStyle = FlatStyle.Flat;
-			btnSalir.ForeColor = Color.White;
-			btnSalir.Location = new Point(998, 3);
-			btnSalir.Margin = new Padding(0);
-			btnSalir.Name = "btnSalir";
-			btnSalir.Size = new Size(76, 50);
-			btnSalir.TabIndex = 10;
-			btnSalir.Text = "Salir";
-			btnSalir.UseVisualStyleBackColor = false;
-			btnSalir.Click += btnSalir_Click;
+			panelMain.AutoScroll = true;
+			panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panelMain.BackColor = Color.FromArgb(9, 38, 53);
+			panelMain.Dock = DockStyle.Fill;
+			panelMain.Location = new Point(250, 0);
+			panelMain.Margin = new Padding(0);
+			panelMain.Name = "panelMain";
+			panelMain.Size = new Size(971, 833);
+			panelMain.TabIndex = 3;
 			// 
 			// panelLateral
 			// 
-			panelLateral.BackColor = Color.Red;
+			panelLateral.BackColor = Color.FromArgb(49, 54, 63);
+			panelLateral.BackgroundImage = Properties.Resources.Frost;
+			panelLateral.Controls.Add(pictureBox1);
+			panelLateral.Controls.Add(lblName);
+			panelLateral.Controls.Add(label1);
 			panelLateral.Controls.Add(btnEliminarPerfil);
 			panelLateral.Controls.Add(btnHome);
 			panelLateral.Controls.Add(btnActualizar);
 			panelLateral.Controls.Add(btnRentados);
 			panelLateral.Dock = DockStyle.Left;
-			panelLateral.Location = new Point(0, 56);
+			panelLateral.Location = new Point(0, 0);
 			panelLateral.Name = "panelLateral";
-			panelLateral.Size = new Size(182, 753);
-			panelLateral.TabIndex = 2;
+			panelLateral.Size = new Size(250, 833);
+
+			panelLateral.TabIndex = 1;
+			// 
+			// pictureBox1
+			// 
+			pictureBox1.BackColor = Color.Transparent;
+			pictureBox1.Dock = DockStyle.Bottom;
+			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+			pictureBox1.Location = new Point(0, 646);
+			pictureBox1.Margin = new Padding(0);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(250, 187);
+			pictureBox1.TabIndex = 5;
+			pictureBox1.TabStop = false;
+			// 
+			// lblName
+			// 
+			lblName.AutoSize = true;
+			lblName.Font = new Font("Agency FB", 19F);
+			lblName.ForeColor = Color.White;
+			lblName.Location = new Point(61, 42);
+			lblName.Margin = new Padding(0);
+			lblName.Name = "lblName";
+			lblName.Size = new Size(73, 40);
+			lblName.TabIndex = 4;
+			lblName.Text = "Name";
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Font = new Font("Agency FB", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			label1.ForeColor = Color.White;
+			label1.Location = new Point(56, 111);
+			label1.Margin = new Padding(0);
+			label1.Name = "label1";
+			label1.Size = new Size(143, 36);
+			label1.TabIndex = 1;
+			label1.Text = "Administrador";
 			// 
 			// btnEliminarPerfil
 			// 
-			btnEliminarPerfil.Location = new Point(29, 0);
+			btnEliminarPerfil.BackColor = Color.FromArgb(10, 56, 67);
+			btnEliminarPerfil.FlatAppearance.BorderColor = Color.Black;
+			btnEliminarPerfil.FlatAppearance.BorderSize = 2;
+			btnEliminarPerfil.FlatAppearance.MouseDownBackColor = Color.Red;
+			btnEliminarPerfil.FlatAppearance.MouseOverBackColor = Color.Yellow;
+			btnEliminarPerfil.FlatStyle = FlatStyle.System;
+			btnEliminarPerfil.Font = new Font("Agency FB", 12F, FontStyle.Underline, GraphicsUnit.Point, 0);
+			btnEliminarPerfil.ForeColor = Color.White;
+			btnEliminarPerfil.Location = new Point(61, 524);
+			btnEliminarPerfil.Margin = new Padding(0);
 			btnEliminarPerfil.Name = "btnEliminarPerfil";
-			btnEliminarPerfil.Size = new Size(134, 69);
-			btnEliminarPerfil.TabIndex = 10;
+			btnEliminarPerfil.Size = new Size(128, 89);
+			btnEliminarPerfil.TabIndex = 3;
+			btnEliminarPerfil.Tag = "Eliminar Perfil";
 			btnEliminarPerfil.Text = "Eliminar Perfil";
-			btnEliminarPerfil.UseVisualStyleBackColor = true;
-			btnEliminarPerfil.Click += btnEliminarPerfil_Click;
+			btnEliminarPerfil.UseVisualStyleBackColor = false;
+			btnEliminarPerfil.Click += btnEliminarPerfil_Click_1;
 			// 
 			// btnHome
 			// 
-			btnHome.Location = new Point(0, 333);
+			btnHome.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 128);
+			btnHome.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 255, 128);
+			btnHome.FlatStyle = FlatStyle.System;
+			btnHome.Font = new Font("Agency FB", 12F);
+			btnHome.Location = new Point(61, 405);
+			btnHome.Margin = new Padding(0);
 			btnHome.Name = "btnHome";
-			btnHome.Size = new Size(134, 84);
-			btnHome.TabIndex = 9;
-			btnHome.Text = "Home";
+			btnHome.Size = new Size(128, 89);
+			btnHome.TabIndex = 0;
+			btnHome.Tag = "Inicio";
+			btnHome.Text = "Inicio";
 			btnHome.UseVisualStyleBackColor = true;
-			btnHome.Click += btnHome_Click_1;
+			btnHome.Click += btnHome_Click;
 			// 
 			// btnActualizar
 			// 
-			btnActualizar.Location = new Point(-10, 161);
+			btnActualizar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 128);
+			btnActualizar.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 255, 128);
+			btnActualizar.FlatStyle = FlatStyle.System;
+			btnActualizar.Location = new Point(61, 286);
+			btnActualizar.Margin = new Padding(0);
 			btnActualizar.Name = "btnActualizar";
-			btnActualizar.Size = new Size(173, 78);
-			btnActualizar.TabIndex = 7;
+			btnActualizar.Size = new Size(128, 89);
+			btnActualizar.TabIndex = 2;
+			btnActualizar.Tag = "Actualizar Perfil";
 			btnActualizar.Text = "Actualizar perfil";
 			btnActualizar.UseVisualStyleBackColor = true;
-			btnActualizar.Click += btnActualizar_Click_1;
+			btnActualizar.Click += btnActualizar_Click;
 			// 
 			// btnRentados
 			// 
-			btnRentados.Location = new Point(0, 245);
+			btnRentados.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 128);
+			btnRentados.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 255, 128);
+			btnRentados.FlatStyle = FlatStyle.System;
+			btnRentados.Location = new Point(61, 167);
+			btnRentados.Margin = new Padding(0);
 			btnRentados.Name = "btnRentados";
-			btnRentados.Size = new Size(160, 66);
-			btnRentados.TabIndex = 8;
+			btnRentados.Size = new Size(128, 89);
+			btnRentados.TabIndex = 1;
+			btnRentados.Tag = "Rentados";
 			btnRentados.Text = "Rentados";
 			btnRentados.UseVisualStyleBackColor = true;
-			btnRentados.Click += btnRentados_Click_1;
+			btnRentados.Click += btnRentados_Click;
 			// 
-			// panelMain
+			// panel1
 			// 
-			panelMain.BackColor = Color.FromArgb(10, 90, 80);
-			panelMain.Dock = DockStyle.Fill;
-			panelMain.Location = new Point(182, 56);
-			panelMain.Margin = new Padding(0);
-			panelMain.Name = "panelMain";
-			panelMain.Size = new Size(932, 753);
-			panelMain.TabIndex = 3;
+			panel1.BackColor = Color.FromArgb(34, 40, 49);
+			panel1.Controls.Add(lblPlace);
+			panel1.Dock = DockStyle.Top;
+			panel1.Location = new Point(250, 0);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(971, 73);
+			panel1.TabIndex = 4;
+			// 
+			// lblPlace
+			// 
+			lblPlace.AutoSize = true;
+			lblPlace.Font = new Font("Agency FB", 18F);
+			lblPlace.ForeColor = Color.White;
+			lblPlace.Location = new Point(454, 24);
+			lblPlace.Margin = new Padding(0);
+			lblPlace.Name = "lblPlace";
+			lblPlace.Size = new Size(62, 36);
+			lblPlace.TabIndex = 0;
+			lblPlace.Text = "Inicio";
 			// 
 			// frmMainAdministrador
 			// 
 			AutoScaleDimensions = new SizeF(7F, 24F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(10, 25, 50);
-			ClientSize = new Size(1114, 809);
+			ClientSize = new Size(1221, 833);
+			Controls.Add(panel1);
 			Controls.Add(panelMain);
 			Controls.Add(panelLateral);
-			Controls.Add(guna2GradientPanel1);
 			Font = new Font("Agency FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			FormBorderStyle = FormBorderStyle.SizableToolWindow;
 			Margin = new Padding(3, 4, 3, 4);
+			MaximumSize = new Size(1239, 880);
+			MinimumSize = new Size(1239, 880);
 			Name = "frmMainAdministrador";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Main Administrador";
-			guna2GradientPanel1.ResumeLayout(false);
+			TransparencyKey = Color.FromArgb(255, 128, 0);
+			Load += frmMainAdministrador_Load;
 			panelLateral.ResumeLayout(false);
+			panelLateral.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+			panel1.ResumeLayout(false);
+			panel1.PerformLayout();
 			ResumeLayout(false);
 		}
 
 		#endregion
-		private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+		private Panel panelMain;
 		private Panel panelLateral;
+		private Button btnEliminarPerfil;
 		private Button btnHome;
 		private Button btnActualizar;
 		private Button btnRentados;
-		private Panel panelMain;
-		private Button btnSalir;
-		private Button btnEliminarPerfil;
+		private Panel panel1;
+		private Label lblPlace;
+		private Label label1;
+		private Label lblName;
+		private PictureBox pictureBox1;
 	}
 }

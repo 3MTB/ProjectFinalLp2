@@ -19,22 +19,27 @@ namespace ProjectFinalLp2.Formularios.Client
 	public partial class frmMainClient : Form
 	{
 		#region					OBJETOS GENERALES
+
+		public GestorTransformacionPanel gestorPanel { get; set; }
+
 		public Models.Client clientCurrent { get; set; }
 		#endregion
 
-		#region Constructor
+		#region									Constructor - INICIADOR
 		public frmMainClient(Models.Client clientCurrent)
 		{
 			InitializeComponent();
 			this.clientCurrent = clientCurrent;
-			MyInitializer();
+
 		}
 		private void MyInitializer()
 		{
 			try
 			{
+				gestorPanel = new GestorTransformacionPanel(new frmMainClient(clientCurrent), panelMain, panelLateral, lblPlace);
+				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnHome);
+
 				lblNameClient.Text = $"{clientCurrent.Nombre} {clientCurrent.Apellido}";
-				OpenChildFrom(new frmCatalogo(clientCurrent), btnHome);
 				var img = ByteToImage(clientCurrent.Imagen);
 				if (img.Success && img.Message != null)
 				{
@@ -42,7 +47,6 @@ namespace ProjectFinalLp2.Formularios.Client
 				}
 				else
 				{
-					MessageBox.Show($"Error al momento de cargar la foto del usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					pictureClient.Image = Properties.Resources.userDefault;
 				}
 			}
@@ -51,50 +55,10 @@ namespace ProjectFinalLp2.Formularios.Client
 				MessageBox.Show($"Error al momento de cargar los datos del usuarios.\n\nError: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-		#endregion
+		private void frmMainClient_Load(object sender, EventArgs e)
+		{
 
-		#region Menu dinámico
-		public Button currentButon { get; set; }
-		public Form currentForm { get; set; }
-		private void DisableButtons()
-		{
-			foreach (Control x in panelLateral.Controls)
-			{
-				if (x.GetType() == typeof(Button))
-				{
-					x.BackColor = cBackgroundDisable;
-					x.ForeColor = cForegroundDisable;
-				}
-			}
-		}
-		public void ActiveButton(Button btnactivar)
-		{
-			if (currentButon != null)
-			{
-				if (currentButon != btnactivar)
-				{
-					currentButon = btnactivar;
-					currentButon.BackColor = cBackgroundActive;
-					currentButon.ForeColor = cForegroundActive;
-				}
-			}
-		}
-		private void OpenChildFrom(Form abrir, Button btnsender)
-		{
-			if (currentForm != null)
-			{
-				currentForm.Close();
-			}
-			DisableButtons();
-
-			ActiveButton(btnsender);
-			// review that
-			currentForm = abrir;
-			currentForm.TopLevel = false;
-			currentForm.FormBorderStyle = FormBorderStyle.None;
-			currentForm.BringToFront();
-			panelMain.Controls.Add(currentForm);
-			currentForm.Show();
+			MyInitializer();
 		}
 		#endregion
 
@@ -111,29 +75,24 @@ namespace ProjectFinalLp2.Formularios.Client
 		{
 			if (sender.GetType() == btnMyVehicule.GetType())
 			{
-				lblPlace.Text = "Mis Rentados";
-				OpenChildFrom(new frmRentadosClient(clientCurrent), btnMyVehicule);
+				gestorPanel.OpenChildFrom(new frmRentadosClient(clientCurrent), btnMyVehicule);
 			}
 		}
 
 		private void btnHome_Click(object sender, EventArgs e)
 		{
-			// cambiat por home
 			if (sender.GetType() == btnHome.GetType())
 			{
-				lblPlace.Text = "HOME";
-				OpenChildFrom(new frmDefaultAdmin(), btnMyVehicule);
+				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnMyVehicule);
 			}
-			// cargar vehivulos para rentat
 		}
 
 		private void btnRentar_Click(object sender, EventArgs e)
 		{
 			if (sender.GetType() == btnRentar.GetType())
 			{
-				lblPlace.Text = "Rentar";
 
-				OpenChildFrom(new frmCatalogo( clientCurrent), btnMyVehicule);
+				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnMyVehicule);
 			}
 		}
 
@@ -141,10 +100,9 @@ namespace ProjectFinalLp2.Formularios.Client
 		{
 			if (sender.GetType() == btnPerfil.GetType())
 			{
-				lblPlace.Text = "Perfil";
 
 				MessageBox.Show("Función no desarrollada 0- Rentar");
-				//OpenChildFrom(new frmRentados(), btnMyVehicule);
+				//gestorPanel.OpenChildFrom(new frmRentados(), btnMyVehicule);
 			}
 		}
 		#endregion

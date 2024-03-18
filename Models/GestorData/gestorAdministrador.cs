@@ -1,22 +1,9 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Mysqlx.Crud;
-using ProjectFinalLp2.Models.otherType;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using static ProjectFinalLp2.Models.otherType.funcionesComunes;
+﻿using static ProjectFinalLp2.Models.otherType.funcionesComunes;
 
 namespace ProjectFinalLp2.Models.GestorData
 {
 	public class gestorAdministrador
 	{
-		//! TODO: PROBAR ESTO
 		private static RentcargokudemonContext context = new RentcargokudemonContext();
 
 		public static bool InsertaAdmin(Admin insert)
@@ -29,19 +16,22 @@ namespace ProjectFinalLp2.Models.GestorData
 			{
 				context.Admins.Add(insert);
 				context.SaveChanges();
-				MakeMessage($"Administrador Registrado", "Administrador Guardado", MessageBoxIcon.Information);
+				MessageBox.Show($"Administrador Registrado", "Administrador Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 				return true;
 			}
 			else if (!context.Admins.Any(x => x.Nombre == insert.Nombre))
 			{
 				context.Admins.Add(insert);
 				context.SaveChanges();
-				MakeMessage($"Administrador Registrado", "Administrador Guardado", MessageBoxIcon.Information);
+
+				MessageBox.Show($"Administrador Registrado", "Administrador Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return true;
 			}
 			else
 			{
-				MakeMessage($"Ya existe un Administrador con nombre: {insert.Nombre}", "Error de Existencia", TipoAviso.error);
+				MessageBox.Show($"Ya existe un Administrador con nombre: {insert.Nombre}", "Error de Existencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 				return false;
 			}
 		}
@@ -52,13 +42,15 @@ namespace ProjectFinalLp2.Models.GestorData
 			var usar = context.Admins.FirstOrDefault(x => x.Id == idOld);
 			if (usar != null)
 			{
-				if (string.IsNullOrWhiteSpace(update.Nombre) && string.IsNullOrWhiteSpace(update.Password))
+
+				if (!VerificaString(update.Nombre) && !VerificaString(update.Password))
 				{
-					MakeMessage("Debes ingresar nuevos valores", "Error", TipoAviso.error);
+					MessageBox.Show("Debes ingresar nuevos valores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
 					devolver.Name = true;
 					devolver.Password = true;
 				}
-				if (!string.IsNullOrWhiteSpace(update.Nombre))
+				if (VerificaString(update.Nombre))
 				{
 					if (usar.Nombre != update.Nombre)
 					{
@@ -66,7 +58,7 @@ namespace ProjectFinalLp2.Models.GestorData
 						{
 							if (!context.Admins.Any(x => x.Nombre == update.Nombre))
 							{
-								if (MakeMessage($"Seguro que quieres Modificar al nombre del administrador {usar.Nombre} por: {update.Nombre}", "Confirmación de Actualización Nombre", MessageBoxIcon.Question, DialogResult.Yes))
+								if (MessageBox.Show($"Seguro que quieres Modificar al nombre del administrador {usar.Nombre} por: {update.Nombre}", "Confirmación de Actualización Nombre", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 								{
 									usar.Nombre = update.Nombre;
 									context.SaveChanges();
@@ -75,29 +67,31 @@ namespace ProjectFinalLp2.Models.GestorData
 							}
 							else
 							{
-								MakeMessage($"Ya existe un Administrador con nombre: {update.Nombre}", "Error de Existencia", TipoAviso.error);
+								MessageBox.Show($"Ya existe un Administrador con nombre: {update.Nombre}", "Error de Existencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 								devolver.Name = true;
 							}
 						}
 						else
 						{
-							MakeMessage($"El campo nombre no cumple las reglas: <=30 caracteres.\n Por lo que no se puede realizar la actualización de: {usar.Nombre} => {update.Nombre}", "Error de Datos - Nombre", TipoAviso.error);
+							MessageBox.Show($"El campo nombre no cumple las reglas: <=30 caracteres.\n Por lo que no se puede realizar la actualización de: {usar.Nombre} => {update.Nombre}", "Error de Datos - Nombre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 							devolver.Name = true;
 						}
 					}
 					else
 					{
-						MakeMessage("Sin cambios en Nombre", "Sin cambios", TipoAviso.Warning);
-						devolver.Name = true;
+						MessageBox.Show("Sin cambios en Nombre", "Sin cambios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					}
 				}
-				if (!string.IsNullOrWhiteSpace(update.Password))
+				if (VerificaString(update.Password))
 				{
 					if (update.Password.Length <= 15)
 					{
 						if (usar.Password != update.Password)
 						{
-							if (MakeMessage($"Seguro que quieres Modificar la password del a: {update.Password}", "Confirmación de Actualización Contraseña", MessageBoxIcon.Question, DialogResult.Yes))
+
+							if (MessageBox.Show($"Seguro que quieres Modificar la password {usar.Password} por {new String('*', update.Password.Length)}", "Confirmación de Actualización Contraseña", MessageBoxButtons.YesNo, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 							{
 								usar.Password = update.Password;
 								context.SaveChanges();
@@ -106,13 +100,15 @@ namespace ProjectFinalLp2.Models.GestorData
 						}
 						else
 						{
-							MakeMessage("Sin cambios en Contraseña", "Sin cambios", TipoAviso.Warning);
+
+							MessageBox.Show("Sin cambios en Contraseña", "Sin cambios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 							devolver.Password = true;
 						}
 					}
 					else
 					{
-						MakeMessage($"El campo Contraseña no cumple las reglas: <=15 caracteres", "Error de Datos - Password", TipoAviso.error);
+						MessageBox.Show("El campo Contraseña no cumple las reglas: <=15 caracteres", "Error de Datos - Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 						devolver.Password = true;
 
 					}
@@ -120,34 +116,12 @@ namespace ProjectFinalLp2.Models.GestorData
 			}
 			else
 			{
-				MakeMessage("No se encontró el Administrador seleccionado", "Error", TipoAviso.error);
+				MessageBox.Show("No se encontró el Administrador seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			return devolver;
 
 		}
 
-		public static void DeleteAdmin(int Id)
-		{
-			var eliminar = context.Admins.FirstOrDefault(x => x.Id == Id);
-			if (eliminar != null)
-			{
-				if (MakeMessage($"Seguro que quieres eliminar el Administrador: {eliminar.Nombre}", "Confirmación de Eliminación Admin", MessageBoxIcon.Question, DialogResult.Yes))
-				{
-					context.Admins.Remove(eliminar);
-					context.SaveChanges();
-				}
-			}
-			else
-			{
-				MakeMessage("No se encontró el Administrador a eliminar", "Error", TipoAviso.error);
-			}
-		}
-
-		public static List<Admin> ObtenerAdmin()
-		{
-			context.SaveChanges();
-			return context.Admins.ToList();
-		}
 
 		// Other Methods
 		private static bool verificaCaracteristicasAdmin(Admin verificar)
@@ -160,12 +134,14 @@ namespace ProjectFinalLp2.Models.GestorData
 				}
 				else
 				{
-					MakeMessage($"El campo PASSWORD no cumple las reglas: <=15 caracteres", "Error de Datos - Password", TipoAviso.error);
+					MessageBox.Show("El campo Contraseña no cumple las reglas: <=15 caracteres", "Error de Datos - Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 				}
 			}
 			else
 			{
-				MakeMessage($"El campo nombre no cumple las reglas: <=30 caracteres", "Error de Datos - Nombre", TipoAviso.error);
+				MessageBox.Show($"El campo nombre no cumple las reglas: <=30 caracteres", "Error de Datos - Nombre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 			}
 			return false;
 

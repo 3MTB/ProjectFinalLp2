@@ -32,7 +32,7 @@ namespace ProjectFinalLp2.Formularios.Boss
 		#endregion
 
 		#region						EVENTOS
-		private void btnUpdate_Click(object sender, EventArgs e)
+		private void btnUpdate_Click_1(object sender, EventArgs e)
 		{
 			focusTo focus = gestorAdministrador.UpdateAdmin(admin.Id, new Admin(tbName.Text, tbPassword.Text));
 			if (focus.Name)
@@ -51,7 +51,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 			}
 			else if (!focus.Password)
 			{
-				//lblPassword.Text = lblPassword.Text;
 				lblPassword.ForeColor = Color.Green;
 				tbPassword.Text = string.Empty;
 			}
@@ -65,9 +64,11 @@ namespace ProjectFinalLp2.Formularios.Boss
 		{
 			lblName.Text = admin.Nombre;
 			lblPassword.Text = new String('*', admin.Password.Length);
-
 		}
 		#endregion
+
+
+
 
 	}
 }

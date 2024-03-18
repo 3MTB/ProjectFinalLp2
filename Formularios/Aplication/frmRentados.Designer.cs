@@ -79,11 +79,11 @@
 			dgRentados.DefaultCellStyle = dataGridViewCellStyle3;
 			dgRentados.Dock = DockStyle.Bottom;
 			dgRentados.GridColor = Color.Red;
-			dgRentados.Location = new Point(0, 188);
+			dgRentados.Location = new Point(0, 481);
 			dgRentados.Margin = new Padding(0);
 			dgRentados.Name = "dgRentados";
 			dgRentados.RowHeadersWidth = 51;
-			dgRentados.Size = new Size(700, 352);
+			dgRentados.Size = new Size(971, 352);
 			dgRentados.TabIndex = 1;
 			// 
 			// label2
@@ -114,7 +114,7 @@
 			AutoScaleDimensions = new SizeF(7F, 24F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(10, 25, 40);
-			ClientSize = new Size(700, 540);
+			ClientSize = new Size(971, 833);
 			Controls.Add(lblCantidad);
 			Controls.Add(label2);
 			Controls.Add(dgRentados);
@@ -124,7 +124,7 @@
 			FormBorderStyle = FormBorderStyle.None;
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "frmRentados";
-			Text = "13";
+			Text = "Rentados";
 			Load += frmRentados_Load;
 			((System.ComponentModel.ISupportInitialize)dgRentados).EndInit();
 			ResumeLayout(false);

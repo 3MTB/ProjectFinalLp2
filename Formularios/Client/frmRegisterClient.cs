@@ -29,7 +29,6 @@ namespace ProjectFinalLp2.Formularios.Client
 		RentcargokudemonContext context = new RentcargokudemonContext();
 		#endregion
 
-		//! TODO: ADD API FOR COUNTRY AND CITIES -- https://restcountries.com/
 		#region Constructor
 		public frmRegisterClient()
 		{
