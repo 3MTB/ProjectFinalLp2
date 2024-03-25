@@ -29,10 +29,10 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 			panel1 = new Panel();
 			btnOut = new Button();
 			cbRoll = new ComboBox();
@@ -51,6 +51,7 @@
 			btnRegistrar = new Button();
 			lblUser = new Label();
 			lblAlert = new Label();
+			toolTip = new ToolTip(components);
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
@@ -82,6 +83,7 @@
 			btnOut.Size = new Size(118, 44);
 			btnOut.TabIndex = 22;
 			btnOut.Text = "Out";
+			toolTip.SetToolTip(btnOut, "Salir");
 			btnOut.UseVisualStyleBackColor = false;
 			btnOut.Click += btnOut_Click;
 			// 
@@ -96,6 +98,7 @@
 			cbRoll.Name = "cbRoll";
 			cbRoll.Size = new Size(151, 32);
 			cbRoll.TabIndex = 21;
+			toolTip.SetToolTip(cbRoll, "Cambiar Tipo Usuario");
 			cbRoll.SelectedIndexChanged += cbRoll_SelectedIndexChanged;
 			// 
 			// label4
@@ -161,7 +164,7 @@
 			label1.BackColor = Color.Transparent;
 			label1.Font = new Font("Agency FB", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			label1.ForeColor = Color.White;
-			label1.Location = new Point(387, 100);
+			label1.Location = new Point(371, 117);
 			label1.Margin = new Padding(0);
 			label1.Name = "label1";
 			label1.Size = new Size(148, 72);
@@ -176,11 +179,12 @@
 			cbUser.FlatStyle = FlatStyle.Flat;
 			cbUser.Font = new Font("Agency FB", 15F);
 			cbUser.FormattingEnabled = true;
-			cbUser.Location = new Point(482, 307);
+			cbUser.Location = new Point(466, 324);
 			cbUser.Margin = new Padding(0);
 			cbUser.Name = "cbUser";
 			cbUser.Size = new Size(151, 37);
 			cbUser.TabIndex = 2;
+			toolTip.SetToolTip(cbUser, "Selecciona el Usuario");
 			// 
 			// btnEntrar
 			// 
@@ -189,12 +193,13 @@
 			btnEntrar.FlatStyle = FlatStyle.Flat;
 			btnEntrar.Font = new Font("Agency FB", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnEntrar.ForeColor = Color.White;
-			btnEntrar.Location = new Point(437, 498);
+			btnEntrar.Location = new Point(421, 515);
 			btnEntrar.Margin = new Padding(0);
 			btnEntrar.Name = "btnEntrar";
 			btnEntrar.Size = new Size(147, 56);
 			btnEntrar.TabIndex = 4;
 			btnEntrar.Text = "Entrar";
+			toolTip.SetToolTip(btnEntrar, "Ingresar");
 			btnEntrar.UseVisualStyleBackColor = false;
 			btnEntrar.Click += btnEntrar_Click;
 			// 
@@ -203,7 +208,7 @@
 			pgbHorizontal.Anchor = AnchorStyles.None;
 			pgbHorizontal.BackColor = Color.Transparent;
 			pgbHorizontal.BorderColor = Color.Transparent;
-			pgbHorizontal.CustomizableEdges = customizableEdges1;
+			pgbHorizontal.CustomizableEdges = customizableEdges5;
 			pgbHorizontal.FillColor = Color.Transparent;
 			pgbHorizontal.ForeColor = Color.LightGreen;
 			pgbHorizontal.Location = new Point(244, 34);
@@ -211,7 +216,7 @@
 			pgbHorizontal.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.SolidTransition;
 			pgbHorizontal.ProgressColor = Color.Transparent;
 			pgbHorizontal.ProgressColor2 = Color.FromArgb(25, 10, 92);
-			pgbHorizontal.ShadowDecoration.CustomizableEdges = customizableEdges2;
+			pgbHorizontal.ShadowDecoration.CustomizableEdges = customizableEdges6;
 			pgbHorizontal.Size = new Size(375, 10);
 			pgbHorizontal.Style = ProgressBarStyle.Continuous;
 			pgbHorizontal.TabIndex = 5;
@@ -221,7 +226,7 @@
 			// 
 			pgbVertical.Anchor = AnchorStyles.None;
 			pgbVertical.BackColor = Color.Transparent;
-			pgbVertical.CustomizableEdges = customizableEdges3;
+			pgbVertical.CustomizableEdges = customizableEdges7;
 			pgbVertical.FillColor = Color.Transparent;
 			pgbVertical.Location = new Point(258, 12);
 			pgbVertical.Margin = new Padding(0);
@@ -229,7 +234,7 @@
 			pgbVertical.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.SolidTransition;
 			pgbVertical.ProgressColor = Color.FromArgb(25, 10, 92);
 			pgbVertical.ProgressColor2 = Color.Transparent;
-			pgbVertical.ShadowDecoration.CustomizableEdges = customizableEdges4;
+			pgbVertical.ShadowDecoration.CustomizableEdges = customizableEdges8;
 			pgbVertical.Size = new Size(10, 614);
 			pgbVertical.Style = ProgressBarStyle.Continuous;
 			pgbVertical.TabIndex = 6;
@@ -243,16 +248,19 @@
 			// tbPassword
 			// 
 			tbPassword.Anchor = AnchorStyles.None;
-			tbPassword.Location = new Point(482, 386);
+			tbPassword.Location = new Point(478, 403);
+			tbPassword.MaxLength = 15;
 			tbPassword.Name = "tbPassword";
+			tbPassword.PasswordChar = '*';
 			tbPassword.Size = new Size(125, 31);
 			tbPassword.TabIndex = 7;
+			toolTip.SetToolTip(tbPassword, "Ingresa la contraseña");
 			// 
 			// label2
 			// 
 			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
-			label2.Location = new Point(408, 386);
+			label2.Location = new Point(371, 403);
 			label2.Name = "label2";
 			label2.Size = new Size(68, 24);
 			label2.TabIndex = 8;
@@ -271,6 +279,7 @@
 			btnRegistrar.Size = new Size(85, 44);
 			btnRegistrar.TabIndex = 9;
 			btnRegistrar.Text = "Registrar";
+			toolTip.SetToolTip(btnRegistrar, "Registrar");
 			btnRegistrar.UseVisualStyleBackColor = false;
 			btnRegistrar.Click += btnRegistrar_Click;
 			// 
@@ -281,7 +290,7 @@
 			lblUser.BackColor = Color.Transparent;
 			lblUser.FlatStyle = FlatStyle.Flat;
 			lblUser.ForeColor = SystemColors.ActiveBorder;
-			lblUser.Location = new Point(437, 193);
+			lblUser.Location = new Point(421, 210);
 			lblUser.Name = "lblUser";
 			lblUser.Size = new Size(41, 24);
 			lblUser.TabIndex = 10;
@@ -296,13 +305,18 @@
 			lblAlert.FlatStyle = FlatStyle.Flat;
 			lblAlert.Font = new Font("Agency FB", 15F);
 			lblAlert.ForeColor = Color.AliceBlue;
-			lblAlert.Location = new Point(295, 57);
+			lblAlert.Location = new Point(222, 57);
 			lblAlert.Margin = new Padding(0);
 			lblAlert.Name = "lblAlert";
 			lblAlert.Size = new Size(56, 29);
 			lblAlert.TabIndex = 11;
 			lblAlert.Text = "ALERT";
 			lblAlert.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// toolTip
+			// 
+			toolTip.AutomaticDelay = 200;
+			toolTip.IsBalloon = true;
 			// 
 			// frmlogin
 			// 
@@ -356,5 +370,6 @@
 		private Button btnRegistrar;
 		private Label lblUser;
 		private Label lblAlert;
+		private ToolTip toolTip;
 	}
 }

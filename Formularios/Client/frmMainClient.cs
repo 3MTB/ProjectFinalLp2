@@ -39,11 +39,12 @@ namespace ProjectFinalLp2.Formularios.Client
 				gestorPanel = new GestorTransformacionPanel(new frmMainClient(clientCurrent), panelMain, panelLateral, lblPlace);
 				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnHome);
 
-				lblNameClient.Text = $"{clientCurrent.Nombre} {clientCurrent.Apellido}";
+				lblNameClient.Text = $"{clientCurrent.Nombre}\n{clientCurrent.Apellido}";
 				var img = ByteToImage(clientCurrent.Imagen);
-				if (img.Success && img.Message != null)
+				if (img.Success && img.Message != null && img != null)
 				{
-					pictureClient.Image = img.Message;
+
+					pictCliente.Image = img.Message;
 				}
 				else
 				{
@@ -65,9 +66,10 @@ namespace ProjectFinalLp2.Formularios.Client
 		#region							Eventos
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("¿Seguro que quieres salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+			if (MessageBox.Show("¿Seguro que quieres Cerrar Seccion?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 			{
-				Application.Exit();
+				this.Hide();
+				new frmLoading().Show();
 			}
 		}
 
@@ -96,16 +98,18 @@ namespace ProjectFinalLp2.Formularios.Client
 			}
 		}
 
+		private void btnAboutWe_Click(object sender, EventArgs e)
+		{
+			gestorPanel.OpenChildFrom(new AcercaNosotros(), btnAboutWe);
+		}
+
+		#endregion
+
 		private void btnPerfil_Click(object sender, EventArgs e)
 		{
-			if (sender.GetType() == btnPerfil.GetType())
-			{
-
-				MessageBox.Show("Función no desarrollada 0- Rentar");
-				//gestorPanel.OpenChildFrom(new frmRentados(), btnMyVehicule);
-			}
+			gestorPanel.OpenChildFrom(new frmPerfilClient(clientCurrent), btnPerfil);
 		}
-		#endregion
+
 
 	}
 }

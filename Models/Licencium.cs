@@ -5,12 +5,12 @@ namespace ProjectFinalLp2.Models;
 
 public partial class Licencium
 {
-	public Licencium(DateOnly emision, int idTipoLicencia, DateOnly fechaVencimiento, TipoLicencium tipoLicencia)
+	public Licencium(DateOnly emision, int idTipoLicencia, DateOnly fechaVencimiento)
 	{
 		Emision = emision;
 		IdTipoLicencia = idTipoLicencia;
 		FechaVencimiento = fechaVencimiento;
-		IdTipoLicenciaNavigation = tipoLicencia;
+		//IdTipoLicenciaNavigation = tipoLicencia;
 	}
     public Licencium()
     {

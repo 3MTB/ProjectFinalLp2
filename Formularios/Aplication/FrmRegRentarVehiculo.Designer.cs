@@ -47,7 +47,7 @@
 			label8 = new Label();
 			lblDescuentoPagar = new Label();
 			lblAviso = new Label();
-			tbRentar = new Button();
+			btnRentar = new Button();
 			panelColorVehiculo = new Panel();
 			label9 = new Label();
 			lblNameColor = new Label();
@@ -302,20 +302,20 @@
 			lblAviso.TabIndex = 33;
 			lblAviso.Text = "Aviso General";
 			// 
-			// tbRentar
+			// btnRentar
 			// 
-			tbRentar.Anchor = AnchorStyles.None;
-			tbRentar.BackColor = Color.FromArgb(10, 78, 98);
-			tbRentar.Font = new Font("Agency FB", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			tbRentar.ForeColor = Color.White;
-			tbRentar.Location = new Point(503, 630);
-			tbRentar.Margin = new Padding(3, 4, 3, 4);
-			tbRentar.Name = "tbRentar";
-			tbRentar.Size = new Size(177, 100);
-			tbRentar.TabIndex = 34;
-			tbRentar.Text = "RENTAR";
-			tbRentar.UseVisualStyleBackColor = false;
-			tbRentar.Click += tbRentar_Click;
+			btnRentar.Anchor = AnchorStyles.None;
+			btnRentar.BackColor = Color.FromArgb(10, 78, 98);
+			btnRentar.Font = new Font("Agency FB", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnRentar.ForeColor = Color.White;
+			btnRentar.Location = new Point(503, 630);
+			btnRentar.Margin = new Padding(3, 4, 3, 4);
+			btnRentar.Name = "btnRentar";
+			btnRentar.Size = new Size(177, 100);
+			btnRentar.TabIndex = 34;
+			btnRentar.Text = "RENTAR";
+			btnRentar.UseVisualStyleBackColor = false;
+			btnRentar.Click += tbRentar_Click;
 			// 
 			// panelColorVehiculo
 			// 
@@ -461,7 +461,7 @@
 			Controls.Add(lblNameColor);
 			Controls.Add(panelColorVehiculo);
 			Controls.Add(label9);
-			Controls.Add(tbRentar);
+			Controls.Add(btnRentar);
 			Controls.Add(lblAviso);
 			Controls.Add(lblDescuentoPagar);
 			Controls.Add(label8);
@@ -510,7 +510,7 @@
 		private Label label8;
 		private Label lblDescuentoPagar;
 		private Label lblAviso;
-		private Button tbRentar;
+		private Button btnRentar;
 		private Panel panelColorVehiculo;
 		private Label label9;
 		private Label lblNameColor;

@@ -215,6 +215,7 @@
 			Name = "frmUpdateAdmin";
 			StartPosition = FormStartPosition.CenterParent;
 			Text = "Actualizar Administrador";
+			Load += frmUpdateAdmin_Load;
 			ResumeLayout(false);
 			PerformLayout();
 		}

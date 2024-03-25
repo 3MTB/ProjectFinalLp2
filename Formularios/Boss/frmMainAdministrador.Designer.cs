@@ -39,7 +39,10 @@
 			btnActualizar = new Button();
 			btnRentados = new Button();
 			panel1 = new Panel();
+			btnAboutWe = new Button();
+			btnAddVehicle = new Button();
 			lblPlace = new Label();
+			btnCerrarSeccion = new Button();
 			panelLateral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			panel1.SuspendLayout();
@@ -61,6 +64,7 @@
 			// 
 			panelLateral.BackColor = Color.FromArgb(49, 54, 63);
 			panelLateral.BackgroundImage = Properties.Resources.Frost;
+			panelLateral.Controls.Add(btnCerrarSeccion);
 			panelLateral.Controls.Add(pictureBox1);
 			panelLateral.Controls.Add(lblName);
 			panelLateral.Controls.Add(label1);
@@ -72,7 +76,6 @@
 			panelLateral.Location = new Point(0, 0);
 			panelLateral.Name = "panelLateral";
 			panelLateral.Size = new Size(250, 833);
-
 			panelLateral.TabIndex = 1;
 			// 
 			// pictureBox1
@@ -121,10 +124,10 @@
 			btnEliminarPerfil.FlatStyle = FlatStyle.System;
 			btnEliminarPerfil.Font = new Font("Agency FB", 12F, FontStyle.Underline, GraphicsUnit.Point, 0);
 			btnEliminarPerfil.ForeColor = Color.White;
-			btnEliminarPerfil.Location = new Point(61, 524);
+			btnEliminarPerfil.Location = new Point(61, 503);
 			btnEliminarPerfil.Margin = new Padding(0);
 			btnEliminarPerfil.Name = "btnEliminarPerfil";
-			btnEliminarPerfil.Size = new Size(128, 89);
+			btnEliminarPerfil.Size = new Size(138, 89);
 			btnEliminarPerfil.TabIndex = 3;
 			btnEliminarPerfil.Tag = "Eliminar Perfil";
 			btnEliminarPerfil.Text = "Eliminar Perfil";
@@ -140,7 +143,7 @@
 			btnHome.Location = new Point(61, 405);
 			btnHome.Margin = new Padding(0);
 			btnHome.Name = "btnHome";
-			btnHome.Size = new Size(128, 89);
+			btnHome.Size = new Size(138, 89);
 			btnHome.TabIndex = 0;
 			btnHome.Tag = "Inicio";
 			btnHome.Text = "Inicio";
@@ -155,7 +158,7 @@
 			btnActualizar.Location = new Point(61, 286);
 			btnActualizar.Margin = new Padding(0);
 			btnActualizar.Name = "btnActualizar";
-			btnActualizar.Size = new Size(128, 89);
+			btnActualizar.Size = new Size(138, 89);
 			btnActualizar.TabIndex = 2;
 			btnActualizar.Tag = "Actualizar Perfil";
 			btnActualizar.Text = "Actualizar perfil";
@@ -170,7 +173,7 @@
 			btnRentados.Location = new Point(61, 167);
 			btnRentados.Margin = new Padding(0);
 			btnRentados.Name = "btnRentados";
-			btnRentados.Size = new Size(128, 89);
+			btnRentados.Size = new Size(138, 89);
 			btnRentados.TabIndex = 1;
 			btnRentados.Tag = "Rentados";
 			btnRentados.Text = "Rentados";
@@ -180,12 +183,41 @@
 			// panel1
 			// 
 			panel1.BackColor = Color.FromArgb(34, 40, 49);
+			panel1.Controls.Add(btnAboutWe);
+			panel1.Controls.Add(btnAddVehicle);
 			panel1.Controls.Add(lblPlace);
 			panel1.Dock = DockStyle.Top;
 			panel1.Location = new Point(250, 0);
+			panel1.Margin = new Padding(0);
 			panel1.Name = "panel1";
 			panel1.Size = new Size(971, 73);
-			panel1.TabIndex = 4;
+			panel1.TabIndex = 5;
+			// 
+			// btnAboutWe
+			// 
+			btnAboutWe.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			btnAboutWe.FlatStyle = FlatStyle.Flat;
+			btnAboutWe.ForeColor = Color.WhiteSmoke;
+			btnAboutWe.Location = new Point(726, 23);
+			btnAboutWe.Margin = new Padding(0);
+			btnAboutWe.Name = "btnAboutWe";
+			btnAboutWe.Size = new Size(84, 37);
+			btnAboutWe.TabIndex = 2;
+			btnAboutWe.Text = "About We";
+			btnAboutWe.UseVisualStyleBackColor = true;
+			btnAboutWe.Click += btnAboutWe_Click;
+			// 
+			// btnAddVehicle
+			// 
+			btnAddVehicle.Anchor = AnchorStyles.None;
+			btnAddVehicle.FlatStyle = FlatStyle.System;
+			btnAddVehicle.Location = new Point(32, 3);
+			btnAddVehicle.Name = "btnAddVehicle";
+			btnAddVehicle.Size = new Size(133, 67);
+			btnAddVehicle.TabIndex = 1;
+			btnAddVehicle.Text = "Reg Vehiculo";
+			btnAddVehicle.UseVisualStyleBackColor = true;
+			btnAddVehicle.Click += btnAddVehicle_Click_1;
 			// 
 			// lblPlace
 			// 
@@ -198,6 +230,19 @@
 			lblPlace.Size = new Size(62, 36);
 			lblPlace.TabIndex = 0;
 			lblPlace.Text = "Inicio";
+			// 
+			// btnCerrarSeccion
+			// 
+			btnCerrarSeccion.FlatStyle = FlatStyle.Flat;
+			btnCerrarSeccion.ForeColor = Color.WhiteSmoke;
+			btnCerrarSeccion.Location = new Point(0, 613);
+			btnCerrarSeccion.Margin = new Padding(0);
+			btnCerrarSeccion.Name = "btnCerrarSeccion";
+			btnCerrarSeccion.Size = new Size(250, 33);
+			btnCerrarSeccion.TabIndex = 6;
+			btnCerrarSeccion.Text = "Cerrar Seccion";
+			btnCerrarSeccion.UseVisualStyleBackColor = true;
+			btnCerrarSeccion.Click += btnCerrarSeccion_Click;
 			// 
 			// frmMainAdministrador
 			// 
@@ -233,10 +278,13 @@
 		private Button btnHome;
 		private Button btnActualizar;
 		private Button btnRentados;
-		private Panel panel1;
-		private Label lblPlace;
 		private Label label1;
 		private Label lblName;
 		private PictureBox pictureBox1;
+		private Panel panel1;
+		private Button btnAddVehicle;
+		private Label lblPlace;
+		private Button btnAboutWe;
+		private Button btnCerrarSeccion;
 	}
 }

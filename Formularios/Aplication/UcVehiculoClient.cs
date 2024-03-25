@@ -39,6 +39,7 @@ namespace ProjectFinalLp2
 			lblBrand.Text = currentVehicule.Marca;
 			lblModel.Text = currentVehicule.Modelo;
 			lblPrice.Text = currentVehicule.PrecioRenta.ToString();
+			// cargar la imagen
 			var img = ByteToImage(currentVehicule.Image);
 			if (img.Success && img.Message != null)
 			{
@@ -49,7 +50,6 @@ namespace ProjectFinalLp2
 				MessageBox.Show($"Error al momento de cargar la foto del AUTO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				pictImage.Image = Properties.Resources.error;
 			}
-
 			if (IsNotDisponible)
 			{
 				btnAction.Enabled = false;
@@ -61,9 +61,41 @@ namespace ProjectFinalLp2
 			{
 				btnAction.Enabled = true;
 			}
+			VerificaLicencia();
+
+
+
 
 		}
 
+		private void VerificaLicencia()
+		{
+			try
+			{
+				RentcargokudemonContext context = new RentcargokudemonContext();
+
+				var idTipolicencia = context.Licencia.FirstOrDefault(x => x.Id == currentClient.IdLicencia)!.IdTipoLicencia;
+
+				if (idTipolicencia < currentVehicule.LicenciaRequerida)
+				{
+					lblALert.Text = $"Necesitas una licencia CAT: {currentVehicule.LicenciaRequerida}";
+					btnAction.Enabled = false;
+					btnAction.Text = "Necesitas otra licencia";
+					btnAction.BackColor = Color.DarkRed;
+					btnAction.ForeColor = Color.Black;
+				}
+				else
+				{
+					btnAction.Enabled = true;
+					lblALert.Text = string.Empty;
+				}
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Algo fallo al verificar tus datos de licencia.\n {e}");
+
+			}
+		}
 		private void UCVehiculos_Load(object sender, EventArgs e)
 		{
 			cargaValores();
@@ -75,8 +107,13 @@ namespace ProjectFinalLp2
 		}
 		private void SeeRentar()
 		{
-			this.Hide();
-			new FrmRegRentarVehiculo(currentVehicule, currentClient).Show();
+
+			new FrmRegRentarVehiculo(currentVehicule, currentClient, IsNotDisponible).Show();
+		}
+
+		private void panelContenedor_Paint(object sender, PaintEventArgs e)
+		{
+
 		}
 	}
 }

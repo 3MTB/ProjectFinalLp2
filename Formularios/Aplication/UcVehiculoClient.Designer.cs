@@ -39,6 +39,7 @@
 			label3 = new Label();
 			panelContenedor = new Panel();
 			btnMoreInformation = new Button();
+			lblALert = new Label();
 			((System.ComponentModel.ISupportInitialize)pictImage).BeginInit();
 			panelContenedor.SuspendLayout();
 			SuspendLayout();
@@ -156,6 +157,7 @@
 			// 
 			panelContenedor.BackColor = Color.DarkGray;
 			panelContenedor.BorderStyle = BorderStyle.FixedSingle;
+			panelContenedor.Controls.Add(lblALert);
 			panelContenedor.Controls.Add(btnMoreInformation);
 			panelContenedor.Controls.Add(pictImage);
 			panelContenedor.Controls.Add(label3);
@@ -171,6 +173,7 @@
 			panelContenedor.Name = "panelContenedor";
 			panelContenedor.Size = new Size(316, 240);
 			panelContenedor.TabIndex = 15;
+			panelContenedor.Paint += panelContenedor_Paint;
 			// 
 			// btnMoreInformation
 			// 
@@ -184,6 +187,19 @@
 			btnMoreInformation.TabIndex = 15;
 			btnMoreInformation.UseVisualStyleBackColor = false;
 			btnMoreInformation.Click += btnMoreInformation_Click;
+			// 
+			// lblALert
+			// 
+			lblALert.AutoSize = true;
+			lblALert.Font = new Font("Microsoft Sans Serif", 8.25F);
+			lblALert.ForeColor = Color.IndianRed;
+			lblALert.Location = new Point(76, 1);
+			lblALert.Margin = new Padding(0);
+			lblALert.Name = "lblALert";
+			lblALert.Size = new Size(36, 17);
+			lblALert.TabIndex = 16;
+			lblALert.Text = "alert";
+			lblALert.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// UCVehiculos
 			// 
@@ -212,5 +228,6 @@
 		private Label label3;
 		private Panel panelContenedor;
 		private Button btnMoreInformation;
+		private Label lblALert;
 	}
 }

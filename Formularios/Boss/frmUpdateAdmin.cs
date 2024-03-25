@@ -70,5 +70,9 @@ namespace ProjectFinalLp2.Formularios.Boss
 
 
 
+		private void frmUpdateAdmin_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

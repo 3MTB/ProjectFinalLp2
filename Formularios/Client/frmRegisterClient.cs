@@ -302,15 +302,14 @@ namespace ProjectFinalLp2.Formularios.Client
 					Models.Client client = new Models.Client(nombre, apellido, edad, password, imageResponse.Message, contacto.Id, licencia.Id, contacto, licencia);
 
 					context.Contactos.Add(contacto);
+
 					context.Licencia.Add(licencia);
 					context.SaveChanges();
 					context.Clients.Add(client);
 					context.SaveChanges();
-					MessageBox.Show($"Se agrego correctamente al cliente: {client.Nombre}");
+					MessageBox.Show($"Se agregó correctamente al cliente: {client.Nombre}");
 					this.Close();
 					new frmlogin().Show();
-
-
 				}
 				else
 				{
@@ -332,8 +331,10 @@ namespace ProjectFinalLp2.Formularios.Client
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{ex.Message}");
+			//	MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{ex.Message}");
+				MessageBox.Show($"Algo  fallo al momento de registrar tus datos :( \n\n{ex.ToString()}");
 			}
+		
 		}
 
 		#endregion
@@ -355,7 +356,8 @@ namespace ProjectFinalLp2.Formularios.Client
 
 			if (FaseCurrent == 2)
 			{
-				cbCategoria.DataSource = otherTypeUses.categoriaLicencias;
+				cbCategoria.DataSource = otherTypeUses.categoriaLicencia();
+				cbCategoria.DisplayMember = "Codigo";
 			}
 			if (FaseCurrent == 3)
 			{
@@ -383,7 +385,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show($"Algo  fallo al momento de registrar tus datos de contacto :( \n\n{e.ToString()}");
+				MessageBox.Show($"Algo  falló al momento de registrar tus datos de contacto :( \n\n{e.ToString()}");
 				return null;
 			}
 		}
@@ -394,9 +396,13 @@ namespace ProjectFinalLp2.Formularios.Client
 				DateOnly emision = DateOnly.FromDateTime(getEmisionLicencia.Value);
 				var categoria = cbCategoria.Text;
 				DateOnly vencimiento = DateOnly.FromDateTime(getVencimientoLicencia.Value);
-				// cambiar esto
-				TipoLicencium tpl = new TipoLicencium("01", "Motores");
-				Licencium add = new Licencium(emision, tpl.IdLicencia, vencimiento, tpl);
+				var tpl = cbCategoria.SelectedItem as TipoLicencium;
+				if(tpl is null){
+					MessageBox.Show("ALGO FALLO AL OBTENER EL TIPO DE LICENCIA");
+					return null;
+				}
+				//Licencium ad = new Licencium(emision, tpl.IdLicencia, vencimiento);
+				Licencium add = new Licencium(emision, tpl.IdLicencia, vencimiento);
 				return add;
 			}
 			catch (Exception e)

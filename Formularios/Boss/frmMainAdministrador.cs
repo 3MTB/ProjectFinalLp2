@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-//My NameSpace
+﻿//My NameSpace
 using ProjectFinalLp2.Formularios.Aplication;
 using ProjectFinalLp2.Models;
-using ProjectFinalLp2.Models.otherType;
-using static ProjectFinalLp2.Models.otherType.ColorDefaults;
 //My NameSpace
 
 namespace ProjectFinalLp2.Formularios.Boss
@@ -47,9 +34,6 @@ namespace ProjectFinalLp2.Formularios.Boss
 		#endregion
 
 		#region													Eventos
-
-
-
 
 		private void btnRentados_Click(object sender, EventArgs e)
 		{
@@ -91,9 +75,25 @@ namespace ProjectFinalLp2.Formularios.Boss
 				gestorPanel.OpenChildFrom(new frmDefaultHour(), (Button)sender);
 			}
 		}
+		private void btnAddVehicle_Click_1(object sender, EventArgs e)
+		{
+			gestorPanel.OpenChildFrom(new frmRegisterVehicle(), btnAddVehicle);
 
-
+		}
 		#endregion
 
+
+
+
+		private void btnAboutWe_Click(object sender, EventArgs e)
+		{
+			gestorPanel.OpenChildFrom(new AcercaNosotros(), btnAboutWe);
+		}
+
+		private void btnCerrarSeccion_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			new frmlogin().Show();
+		}
 	}
 }

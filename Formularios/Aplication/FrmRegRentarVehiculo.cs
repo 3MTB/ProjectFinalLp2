@@ -21,17 +21,19 @@ namespace ProjectFinalLp2.Formularios.Aplication
 		public Vehiculo vehiculo { get; set; }
 		public Models.Client cliente { get; set; }
 		public decimal totalPagar { get; set; } = 0;
+		public bool IsNotDisponible { get; set; }
 
 		public RentcargokudemonContext context { get; set; }
 
 		#endregion
 
 		#region Constructor - Mi Iniciador
-		public FrmRegRentarVehiculo(Vehiculo vehiculo, Models.Client cliente)
+		public FrmRegRentarVehiculo(Vehiculo vehiculo, Models.Client cliente, bool IsNotDisponible)
 		{
 			InitializeComponent();
 			this.vehiculo = vehiculo;
 			this.cliente = cliente;
+			this.IsNotDisponible = IsNotDisponible;
 			context = new RentcargokudemonContext();
 		}
 
@@ -74,70 +76,6 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				return;
 			}
 		}
-		#endregion
-
-		#region									Metodos
-		private void ActualizaPrecioPagar()
-		{
-			var time = dtFechaFinal.Value - dtFechaInicio.Value;
-			if (time.TotalDays > 2)
-			{
-				// APLICA DESCUESNTO DE 2%	
-				totalPagar = Math.Round((vehiculo.PrecioRenta * (decimal)time.TotalHours) * (0.2m),2);
-				lblDescuentoPagar.Text = "-2%";
-				lblAviso.Text = "Aplicando descuento 2%";
-			}
-			else
-			{
-				totalPagar = vehiculo.PrecioRenta * (decimal)time.TotalHours;
-				lblDescuentoPagar.Text = string.Empty;
-				lblAviso.Text = string.Empty;
-
-			}
-			lblTotalPagar.Text = totalPagar.ToString();
-
-		}
-		private void MiInicializador()
-		{
-			try
-			{
-				cbTrabajador.DataSource = context.Trabajadors.Where(x => x.Cargo.ToUpper().Contains("VENDEDOR")).ToList();
-				cbTrabajador.DisplayMember = "Name";
-				dtFechaInicio.MinDate = DateTime.Now;
-				dtFechaFinal.Value = dtFechaInicio.Value.AddDays(3);
-				lblPrice.Text = vehiculo.PrecioRenta.ToString();
-				lblBrand.Text = vehiculo.Marca;
-				lblModel.Text = vehiculo.Modelo;
-				lblDescription.Text = vehiculo.Description;
-				lblEstado.Text = vehiculo.Estado;
-				lblLicenciaRequerida.Text = vehiculo.LicenciaRequerida.ToString();
-				lblYear.Text = vehiculo.Anio.ToString();
-				lblNameColor.Text = vehiculo.Color;
-				var clr = Color.FromName(vehiculo.Color);
-
-				if(clr.IsKnownColor){
-					panelColorVehiculo.BackColor = clr;
-				}
-				ActualizaPrecioPagar();
-
-				var imgResponse = ByteToImage(vehiculo.Image);
-				if (imgResponse.Success && imgResponse.Message != null)
-				{
-					pictImage.Image = imgResponse.Message;
-				}
-				else
-				{
-					MessageBox.Show($"Error al momento de cargar la foto del usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					pictImage.Image = Properties.Resources.userDefault;
-				}
-			}
-			catch (Exception e)
-			{
-				MessageBox.Show("Algo fallo al momento de cargar unos valores :(");
-			}
-
-		}
-		#endregion
 
 		private void tbRentar_Click(object sender, EventArgs e)
 		{
@@ -164,5 +102,88 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				MessageBox.Show($"Algo fallo al momento de la inserción: {ex}");
 			}
 		}
+
+		#endregion
+
+		#region									Metodos
+		private void ActualizaPrecioPagar()
+		{
+			var time = dtFechaFinal.Value - dtFechaInicio.Value;
+			if (time.TotalDays > 2)
+			{
+				// APLICA DESCUESNTO DE 2%	
+				totalPagar = Math.Round((vehiculo.PrecioRenta * (decimal)time.TotalHours) * (0.2m), 2);
+				lblDescuentoPagar.Text = "-2%";
+				lblAviso.Text = "Aplicando descuento 2%";
+			}
+			else
+			{
+				totalPagar = vehiculo.PrecioRenta * (decimal)time.TotalHours;
+				lblDescuentoPagar.Text = string.Empty;
+				lblAviso.Text = string.Empty;
+
+			}
+			lblTotalPagar.Text = totalPagar.ToString();
+
+		}
+		private void MiInicializador()
+		{
+			try
+			{
+
+				if (IsNotDisponible)
+				{
+					btnRentar.Enabled = false;
+					btnRentar.Text = "YA RENTADO";
+					btnRentar.BackColor = Color.DarkRed;
+					btnRentar.ForeColor = Color.Black;
+				}
+				cbTrabajador.DataSource = context.Trabajadors.Where(x => x.Cargo.ToUpper().Contains("VENDEDOR")).ToList();
+				cbTrabajador.DisplayMember = "Name";
+				dtFechaInicio.MinDate = DateTime.Now;
+				dtFechaFinal.Value = dtFechaInicio.Value.AddDays(3);
+				lblPrice.Text = vehiculo.PrecioRenta.ToString();
+				lblBrand.Text = vehiculo.Marca;
+				lblModel.Text = vehiculo.Modelo;
+				lblDescription.Text = vehiculo.Description;
+				lblEstado.Text = vehiculo.Estado;
+				lblLicenciaRequerida.Text = vehiculo.LicenciaRequerida.ToString();
+				lblYear.Text = vehiculo.Anio.ToString();
+				lblNameColor.Text = vehiculo.Color;
+				var clr = Color.FromName(vehiculo.Color);
+
+				if (clr.IsKnownColor)
+				{
+					panelColorVehiculo.BackColor = clr;
+
+					var clr2 = Color.FromName(clr.ToString());
+					if (clr2.IsKnownColor)
+					{
+						panelColorVehiculo.BackColor = clr2;
+					}
+				}
+				ActualizaPrecioPagar();
+
+				var imgResponse = ByteToImage(vehiculo.Image);
+				if (imgResponse.Success && imgResponse.Message != null)
+				{
+					pictImage.Image = imgResponse.Message;
+				}
+				else
+				{
+					MessageBox.Show($"Error al momento de cargar la foto del usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					pictImage.Image = Properties.Resources.userDefault;
+				}
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show("Algo fallo al momento de cargar unos valores :(");
+			}
+
+		}
+		#endregion
+
+
+
 	}
 }
