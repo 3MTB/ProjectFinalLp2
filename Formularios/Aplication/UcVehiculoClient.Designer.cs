@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCVehiculos));
 			lblBrand = new Label();
 			pictImage = new PictureBox();
@@ -40,6 +41,7 @@
 			panelContenedor = new Panel();
 			lblALert = new Label();
 			btnMoreInformation = new Button();
+			toolTip = new ToolTip(components);
 			((System.ComponentModel.ISupportInitialize)pictImage).BeginInit();
 			panelContenedor.SuspendLayout();
 			SuspendLayout();
@@ -97,6 +99,7 @@
 			btnAction.Size = new Size(94, 32);
 			btnAction.TabIndex = 10;
 			btnAction.Text = "Rentar";
+			toolTip.SetToolTip(btnAction, "Rentar");
 			btnAction.UseVisualStyleBackColor = false;
 			btnAction.Click += btnRentar_Click;
 			// 
@@ -203,8 +206,14 @@
 			btnMoreInformation.Name = "btnMoreInformation";
 			btnMoreInformation.Size = new Size(49, 25);
 			btnMoreInformation.TabIndex = 15;
+			toolTip.SetToolTip(btnMoreInformation, "Mas Información");
 			btnMoreInformation.UseVisualStyleBackColor = false;
 			btnMoreInformation.Click += btnMoreInformation_Click;
+			// 
+			// toolTip
+			// 
+			toolTip.AutomaticDelay = 50;
+			toolTip.IsBalloon = true;
 			// 
 			// UCVehiculos
 			// 
@@ -234,5 +243,6 @@
 		private Panel panelContenedor;
 		private Button btnMoreInformation;
 		private Label lblALert;
+		private ToolTip toolTip;
 	}
 }

@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainAdministrador));
 			panelMain = new Panel();
 			panelLateral = new Panel();
+			btnCerrarSeccion = new Button();
 			pictureBox1 = new PictureBox();
 			lblName = new Label();
 			label1 = new Label();
@@ -42,7 +43,7 @@
 			btnAboutWe = new Button();
 			btnAddVehicle = new Button();
 			lblPlace = new Label();
-			btnCerrarSeccion = new Button();
+			btnVehiculoRentados = new Button();
 			panelLateral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			panel1.SuspendLayout();
@@ -77,6 +78,19 @@
 			panelLateral.Name = "panelLateral";
 			panelLateral.Size = new Size(250, 833);
 			panelLateral.TabIndex = 1;
+			// 
+			// btnCerrarSeccion
+			// 
+			btnCerrarSeccion.FlatStyle = FlatStyle.Flat;
+			btnCerrarSeccion.ForeColor = Color.WhiteSmoke;
+			btnCerrarSeccion.Location = new Point(0, 613);
+			btnCerrarSeccion.Margin = new Padding(0);
+			btnCerrarSeccion.Name = "btnCerrarSeccion";
+			btnCerrarSeccion.Size = new Size(250, 33);
+			btnCerrarSeccion.TabIndex = 6;
+			btnCerrarSeccion.Text = "Cerrar Seccion";
+			btnCerrarSeccion.UseVisualStyleBackColor = true;
+			btnCerrarSeccion.Click += btnCerrarSeccion_Click;
 			// 
 			// pictureBox1
 			// 
@@ -183,6 +197,7 @@
 			// panel1
 			// 
 			panel1.BackColor = Color.FromArgb(34, 40, 49);
+			panel1.Controls.Add(btnVehiculoRentados);
 			panel1.Controls.Add(btnAboutWe);
 			panel1.Controls.Add(btnAddVehicle);
 			panel1.Controls.Add(lblPlace);
@@ -231,18 +246,17 @@
 			lblPlace.TabIndex = 0;
 			lblPlace.Text = "Inicio";
 			// 
-			// btnCerrarSeccion
+			// btnVehiculoRentados
 			// 
-			btnCerrarSeccion.FlatStyle = FlatStyle.Flat;
-			btnCerrarSeccion.ForeColor = Color.WhiteSmoke;
-			btnCerrarSeccion.Location = new Point(0, 613);
-			btnCerrarSeccion.Margin = new Padding(0);
-			btnCerrarSeccion.Name = "btnCerrarSeccion";
-			btnCerrarSeccion.Size = new Size(250, 33);
-			btnCerrarSeccion.TabIndex = 6;
-			btnCerrarSeccion.Text = "Cerrar Seccion";
-			btnCerrarSeccion.UseVisualStyleBackColor = true;
-			btnCerrarSeccion.Click += btnCerrarSeccion_Click;
+			btnVehiculoRentados.Anchor = AnchorStyles.None;
+			btnVehiculoRentados.FlatStyle = FlatStyle.System;
+			btnVehiculoRentados.Location = new Point(183, 3);
+			btnVehiculoRentados.Name = "btnVehiculoRentados";
+			btnVehiculoRentados.Size = new Size(133, 67);
+			btnVehiculoRentados.TabIndex = 3;
+			btnVehiculoRentados.Text = "Rep. Veh Rent";
+			btnVehiculoRentados.UseVisualStyleBackColor = true;
+			btnVehiculoRentados.Click += btnVehiculoRentados_Click;
 			// 
 			// frmMainAdministrador
 			// 
@@ -286,5 +300,6 @@
 		private Label lblPlace;
 		private Button btnAboutWe;
 		private Button btnCerrarSeccion;
+		private Button btnVehiculoRentados;
 	}
 }

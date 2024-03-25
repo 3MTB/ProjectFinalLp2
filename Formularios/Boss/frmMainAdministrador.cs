@@ -1,5 +1,7 @@
 ﻿//My NameSpace
+using Mysqlx.Crud;
 using ProjectFinalLp2.Formularios.Aplication;
+using ProjectFinalLp2.Formularios.Reportes;
 using ProjectFinalLp2.Models;
 //My NameSpace
 
@@ -94,6 +96,20 @@ namespace ProjectFinalLp2.Formularios.Boss
 		{
 			this.Hide();
 			new frmlogin().Show();
+		}
+
+		private void btnVehiculoRentados_Click(object sender, EventArgs e)
+		{
+			var obt = new RentcargokudemonContext().Rentados.OrderBy(x => x.FechaInicio).ToList();
+			if (obt.Count > 0)
+			{
+				gestorPanel.OpenChildFrom(new GeneraFactura(obt, "TODOS LOS VEHICULOS RENTADOS"), btnHome);
+			}
+			else
+			{
+				MessageBox.Show("Sin rentas registradas");
+			}
+
 		}
 	}
 }

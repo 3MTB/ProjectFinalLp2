@@ -46,17 +46,8 @@ namespace ProjectFinalLp2
 			Client c = new RentcargokudemonContext().Clients.ToList().First();
 			Admin a = new RentcargokudemonContext().Admins.ToList().First();
 
-			List<Rentado> obt = new RentcargokudemonContext().Rentados.Where(x => x.IdCliente == c.Id).ToList();
-			if (obt.Count > 0)
-			{
-				Application.Run(new FacturaClient(c,obt));
-
-			}
-			else
-			{
-				MessageBox.Show("NO TIENES COCHES RENTADOS !!");
-			}
-			//Application.Run(new frmLoading());
+			
+			Application.Run(new frmMainClient(c));
 			//Application.Run(new frmPerfilClient(c));
 		}
 	}

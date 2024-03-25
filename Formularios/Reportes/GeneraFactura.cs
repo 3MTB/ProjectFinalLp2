@@ -13,19 +13,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProjectFinalLp2.Formularios.Reportes
 {
-	public partial class FacturaClient : Form
+	public partial class GeneraFactura : Form
 	{
 
-		public Models.Client client { get; set; }
 		public List<Rentado> rentados { get; set; }
 
 		public RentcargokudemonContext context { get; set; }
-		public FacturaClient(Models.Client client, List<Rentado> rentados)
+		public string Message { get; set; }
+
+		public bool IsAdmin { get; set; }
+		public GeneraFactura(List<Rentado> rentados, string Message, bool IsAdmin)
 		{
 			InitializeComponent();
-			this.client = client;
 			this.rentados = rentados;
 			context = new RentcargokudemonContext();
+			this.IsAdmin = IsAdmin;
 		}
 
 		private void FacturaClient_Load(object sender, EventArgs e)
@@ -55,13 +57,14 @@ namespace ProjectFinalLp2.Formularios.Reportes
 			int positionY = 100;
 			e.Graphics.DrawImage(Properties.Resources.logo, new Point((pageSize.Width / 4), positionY));
 			positionY += 220;
-			string TiTle = $"Factura Cliente: {client.Nombre}";
-			PointF pf = new Point(pageSize.Width / 4 , positionY);
-			e.Graphics.DrawString(TiTle, fontTitle, Brushes.Black, pf);
-			positionY +=(int) fontTitle.GetHeight() + 20;
+
+			PointF pf = new Point(pageSize.Width / 4, positionY);
+			e.Graphics.DrawString(Message, fontTitle, Brushes.Black, pf);
+			positionY += (int)fontTitle.GetHeight() + 20;
 
 			using (var g = e.Graphics)
 			{
+
 				// Encabezados de la tabla
 				string[] headers = { "Marca", "Modelo", "Color", "Año", "Precio", "Fecha Inicio", "Fecha Final", "SubTotal" };
 				float[] columnWidths = { 100, 100, 100, 100, 100, 100, 100, 100 };
@@ -111,15 +114,17 @@ namespace ProjectFinalLp2.Formularios.Reportes
 				float totalTextX = pageBounds.Width - totalTextWidth - tableLeft;
 				g.DrawString(totalText, fontTotal, Brushes.Black, totalTextX, tableTop + totalTableHeight + fontTotal.GetHeight());
 
-				y += fontTotal.GetHeight()+50;
+				y += fontTotal.GetHeight() + 50;
 
 
 
 				g.DrawString("Gracias Por Preferirnos", headerFont, Brushes.Black, pageSize.Width / 3, y);
+
+				this.Hide();
 			}
-		
-			
-			}
+
+
+		}
 
 	}
 }

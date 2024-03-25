@@ -16,13 +16,20 @@ namespace ProjectFinalLp2.Formularios.Aplication
 {
 	public partial class frmCatalogo : Form
 	{
+		#region				                   	OBJETOS
 		public Models.Client client { get; set; } = null;
 		public RentcargokudemonContext context { get; set; }
+
+		#endregion
+
+		#region                                     Contructor e inicializador
+
 		public frmCatalogo(Models.Client client, Size size)
 		{
 			InitializeComponent();
 			this.client = client;
 			this.context = new RentcargokudemonContext();
+			this.Size = size;
 			this.Size = size;
 		}
 		private void frmCatalogo_Load(object sender, EventArgs e)
@@ -31,7 +38,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			var panelwidth = panelLayout.Width - 5;
 			var objWith = new UCVehiculos().Width + 10;
 			panelLayout.ColumnCount = (int)panelwidth / objWith;
-			
+
 			lblCantidad.Text = context.Vehiculos.Count().ToString();
 			var renta = context.Rentados.ToArray();
 			if (context.Vehiculos.Any())
@@ -49,29 +56,10 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				MessageBox.Show("SIN VEHICULOS DISPONIBLES");
 			}
 
-		}/*private void frmCatalogo_Load(object sender, EventArgs e)
-		{
+		}
 
+		#endregion
 
-
-			lblCantidad.Text = context.Vehiculos.Count().ToString();
-			var renta = context.Rentados.ToArray();
-			if (context.Vehiculos.Any())
-			{
-				foreach (var x in context.Vehiculos)
-				{
-					bool IsNotDisponible = renta.Any(x => x.IdCliente == client.Id);
-					var card = new UCVehiculos(x, client, IsNotDisponible);
-					card.Dock = DockStyle.Top;
-					panelMain.Controls.Add(card);
-				}
-			}
-			else
-			{
-				MessageBox.Show("SIN VEHICULOS DISPONIBLES");
-			}
-
-		}*/
 
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProjectFinalLp2.Formularios.Reportes
 {
-	partial class FacturaClient
+	partial class GeneraFactura
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturaClient));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneraFactura));
 			printDocument1 = new System.Drawing.Printing.PrintDocument();
 			printPreviewDialog1 = new PrintPreviewDialog();
 			SuspendLayout();
