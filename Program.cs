@@ -12,6 +12,7 @@ using ProjectFinalLp2.Formularios.Client;
 using ProjectFinalLp2.Models;
 using ProjectFinalLp2.Formularios.Trabajador;
 using System.Globalization;
+using ProjectFinalLp2.Formularios.Reportes;
 
 namespace ProjectFinalLp2
 {
@@ -45,8 +46,17 @@ namespace ProjectFinalLp2
 			Client c = new RentcargokudemonContext().Clients.ToList().First();
 			Admin a = new RentcargokudemonContext().Admins.ToList().First();
 
+			List<Rentado> obt = new RentcargokudemonContext().Rentados.Where(x => x.IdCliente == c.Id).ToList();
+			if (obt.Count > 0)
+			{
+				Application.Run(new FacturaClient(c,obt));
 
-			Application.Run(new frmLoading());
+			}
+			else
+			{
+				MessageBox.Show("NO TIENES COCHES RENTADOS !!");
+			}
+			//Application.Run(new frmLoading());
 			//Application.Run(new frmPerfilClient(c));
 		}
 	}
