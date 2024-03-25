@@ -29,10 +29,10 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 			panel1 = new Panel();
 			btnOut = new Button();
 			cbRoll = new ComboBox();
@@ -208,7 +208,7 @@
 			pgbHorizontal.Anchor = AnchorStyles.None;
 			pgbHorizontal.BackColor = Color.Transparent;
 			pgbHorizontal.BorderColor = Color.Transparent;
-			pgbHorizontal.CustomizableEdges = customizableEdges5;
+			pgbHorizontal.CustomizableEdges = customizableEdges1;
 			pgbHorizontal.FillColor = Color.Transparent;
 			pgbHorizontal.ForeColor = Color.LightGreen;
 			pgbHorizontal.Location = new Point(244, 34);
@@ -216,7 +216,7 @@
 			pgbHorizontal.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.SolidTransition;
 			pgbHorizontal.ProgressColor = Color.Transparent;
 			pgbHorizontal.ProgressColor2 = Color.FromArgb(25, 10, 92);
-			pgbHorizontal.ShadowDecoration.CustomizableEdges = customizableEdges6;
+			pgbHorizontal.ShadowDecoration.CustomizableEdges = customizableEdges2;
 			pgbHorizontal.Size = new Size(375, 10);
 			pgbHorizontal.Style = ProgressBarStyle.Continuous;
 			pgbHorizontal.TabIndex = 5;
@@ -226,7 +226,7 @@
 			// 
 			pgbVertical.Anchor = AnchorStyles.None;
 			pgbVertical.BackColor = Color.Transparent;
-			pgbVertical.CustomizableEdges = customizableEdges7;
+			pgbVertical.CustomizableEdges = customizableEdges3;
 			pgbVertical.FillColor = Color.Transparent;
 			pgbVertical.Location = new Point(258, 12);
 			pgbVertical.Margin = new Padding(0);
@@ -234,7 +234,7 @@
 			pgbVertical.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.SolidTransition;
 			pgbVertical.ProgressColor = Color.FromArgb(25, 10, 92);
 			pgbVertical.ProgressColor2 = Color.Transparent;
-			pgbVertical.ShadowDecoration.CustomizableEdges = customizableEdges8;
+			pgbVertical.ShadowDecoration.CustomizableEdges = customizableEdges4;
 			pgbVertical.Size = new Size(10, 614);
 			pgbVertical.Style = ProgressBarStyle.Continuous;
 			pgbVertical.TabIndex = 6;
@@ -273,10 +273,10 @@
 			btnRegistrar.FlatStyle = FlatStyle.Flat;
 			btnRegistrar.Font = new Font("Agency FB", 12F);
 			btnRegistrar.ForeColor = Color.White;
-			btnRegistrar.Location = new Point(645, 682);
+			btnRegistrar.Location = new Point(533, 682);
 			btnRegistrar.Margin = new Padding(0);
 			btnRegistrar.Name = "btnRegistrar";
-			btnRegistrar.Size = new Size(85, 44);
+			btnRegistrar.Size = new Size(197, 44);
 			btnRegistrar.TabIndex = 9;
 			btnRegistrar.Text = "Registrar";
 			toolTip.SetToolTip(btnRegistrar, "Registrar");

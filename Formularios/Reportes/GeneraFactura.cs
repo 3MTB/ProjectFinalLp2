@@ -84,13 +84,11 @@ namespace ProjectFinalLp2.Formularios.Reportes
 				float tableLeft = 50;
 				float y = tableTop;
 
-				// Dibujar encabezados
 				for (int i = 0; i < headers.Length; i++)
 				{
 					g.DrawString(headers[i], headerFont, Brushes.Black, tableLeft + (i * columnWidths[i]), positionY);
 				}
 
-				// Incrementar la posición Y
 				y += font.GetHeight() + 3;
 				foreach (Rentado x in rentados)
 				{
@@ -98,7 +96,6 @@ namespace ProjectFinalLp2.Formularios.Reportes
 					if (IsAdmin)
 					{
 
-						// Dibujar valores de cada columna
 						g.DrawString(vehiculo.Marca, font, Brushes.Black, tableLeft + (0 * columnWidths[0]), y);
 						g.DrawString(vehiculo.Modelo, font, Brushes.Black, tableLeft + (1 * columnWidths[1]), y);
 						g.DrawString(vehiculo.PrecioRenta.ToString(), font, Brushes.Green, tableLeft + (2 * columnWidths[2]), y);
@@ -118,17 +115,13 @@ namespace ProjectFinalLp2.Formularios.Reportes
 						g.DrawString(x.TotalPagar.ToString("N2"), font, Brushes.Black, tableLeft + (7 * columnWidths[7]), y);
 					}
 					
-					// Incrementar la posición Y para la siguiente fila
 					y += font.GetHeight() + 4;
 				}
-				// Dibujar una línea debajo de la tabla
 				float totalTableHeight = y - tableTop;
 				g.DrawLine(pen, tableLeft, tableTop + totalTableHeight, tableLeft + headers.Length * columnWidths.Last(), tableTop + totalTableHeight);
 
-				// Calcular el total a pagar
 				decimal total = rentados.Sum(x => x.TotalPagar);
 
-				// Mostrar el total debajo de la línea
 				Font fontTotal = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point);
 
 				string totalText = $"Total a pagar: {total.ToString("C")}";

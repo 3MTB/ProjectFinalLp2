@@ -47,7 +47,7 @@ namespace ProjectFinalLp2
 			Admin a = new RentcargokudemonContext().Admins.ToList().First();
 
 			
-			Application.Run(new frmMainClient(c));
+			Application.Run(new frmLoading());
 			//Application.Run(new frmPerfilClient(c));
 		}
 	}

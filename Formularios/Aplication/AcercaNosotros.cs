@@ -29,5 +29,10 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			Clipboard.SetText(@"https://github.com/3MTB/ProjectFinalLp2");
 
 		}
+
+		private void label7_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

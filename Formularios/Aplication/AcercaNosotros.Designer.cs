@@ -49,6 +49,8 @@
 			label6 = new Label();
 			pictureBox2 = new PictureBox();
 			tabCode = new TabPage();
+			label7 = new Label();
+			label8 = new Label();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictRepositorio).BeginInit();
@@ -66,7 +68,7 @@
 			label4.AutoSize = true;
 			label4.BackColor = Color.Transparent;
 			label4.Font = new Font("Agency FB", 20.2F);
-			label4.Location = new Point(353, 287);
+			label4.Location = new Point(353, 275);
 			label4.Margin = new Padding(0);
 			label4.Name = "label4";
 			label4.Size = new Size(100, 42);
@@ -81,7 +83,7 @@
 			label5.BackColor = Color.Transparent;
 			label5.Font = new Font("Agency FB", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			label5.ForeColor = Color.Red;
-			label5.Location = new Point(214, 338);
+			label5.Location = new Point(214, 326);
 			label5.Margin = new Padding(0);
 			label5.Name = "label5";
 			label5.Size = new Size(346, 53);
@@ -97,7 +99,7 @@
 			panel1.Controls.Add(label3);
 			panel1.Controls.Add(label2);
 			panel1.Controls.Add(label1);
-			panel1.Location = new Point(39, 52);
+			panel1.Location = new Point(39, 40);
 			panel1.Name = "panel1";
 			panel1.Size = new Size(453, 353);
 			panel1.TabIndex = 6;
@@ -169,7 +171,7 @@
 			linkLabelGitHub.BackColor = Color.Transparent;
 			linkLabelGitHub.LinkBehavior = LinkBehavior.AlwaysUnderline;
 			linkLabelGitHub.LinkColor = SystemColors.InfoText;
-			linkLabelGitHub.Location = new Point(243, 329);
+			linkLabelGitHub.Location = new Point(243, 323);
 			linkLabelGitHub.Margin = new Padding(0);
 			linkLabelGitHub.Name = "linkLabelGitHub";
 			linkLabelGitHub.Size = new Size(363, 33);
@@ -184,7 +186,7 @@
 			pictRepositorio.Anchor = AnchorStyles.None;
 			pictRepositorio.BackColor = Color.Transparent;
 			pictRepositorio.Image = (Image)resources.GetObject("pictRepositorio.Image");
-			pictRepositorio.Location = new Point(262, 37);
+			pictRepositorio.Location = new Point(262, 31);
 			pictRepositorio.Margin = new Padding(0);
 			pictRepositorio.Name = "pictRepositorio";
 			pictRepositorio.Size = new Size(290, 274);
@@ -245,6 +247,7 @@
 			// 
 			// tabCreator
 			// 
+			tabCreator.Controls.Add(label8);
 			tabCreator.Controls.Add(label6);
 			tabCreator.Controls.Add(pictureBox2);
 			tabCreator.Controls.Add(label4);
@@ -261,12 +264,12 @@
 			// 
 			label6.AutoSize = true;
 			label6.Font = new Font("Agency FB", 14F);
-			label6.Location = new Point(275, 476);
+			label6.Location = new Point(122, 476);
 			label6.Margin = new Padding(0);
 			label6.Name = "label6";
-			label6.Size = new Size(164, 28);
+			label6.Size = new Size(564, 28);
 			label6.TabIndex = 7;
-			label6.Text = "Estudiante de Inform";
+			label6.Text = "Estudiante de Informática en la Universidad Tecnólogica Del Cibao Oriental\r\n";
 			// 
 			// pictureBox2
 			// 
@@ -291,11 +294,36 @@
 			tabCode.Text = "Code";
 			tabCode.UseVisualStyleBackColor = true;
 			// 
+			// label7
+			// 
+			label7.AutoSize = true;
+			label7.Font = new Font("Agency FB", 14F);
+			label7.Location = new Point(343, 722);
+			label7.Margin = new Padding(0);
+			label7.Name = "label7";
+			label7.Size = new Size(267, 28);
+			label7.TabIndex = 8;
+			label7.Text = "©Todos los Derechos Reservados";
+			label7.Click += label7_Click;
+			// 
+			// label8
+			// 
+			label8.AutoSize = true;
+			label8.Font = new Font("Agency FB", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label8.ForeColor = Color.DarkGreen;
+			label8.Location = new Point(375, 519);
+			label8.Margin = new Padding(0);
+			label8.Name = "label8";
+			label8.Size = new Size(59, 28);
+			label8.TabIndex = 8;
+			label8.Text = "UTECO";
+			// 
 			// AcercaNosotros
 			// 
 			AutoScaleMode = AutoScaleMode.None;
 			BackColor = Color.Gainsboro;
 			ClientSize = new Size(955, 759);
+			Controls.Add(label7);
 			Controls.Add(pictureBox3);
 			Controls.Add(tabControl1);
 			Font = new Font("Agency FB", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -318,6 +346,7 @@
 			tabCode.ResumeLayout(false);
 			tabCode.PerformLayout();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -340,5 +369,7 @@
 		private TabPage tabCode;
 		private PictureBox pictureBox2;
 		private Label label6;
+		private Label label7;
+		private Label label8;
 	}
 }
