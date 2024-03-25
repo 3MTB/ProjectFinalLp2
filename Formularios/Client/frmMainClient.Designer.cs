@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainClient));
 			panelLateral = new Panel();
 			btnAboutWe = new Button();
@@ -40,9 +41,10 @@
 			lblNameClient = new Label();
 			btnLogOut = new Button();
 			panel1 = new Panel();
+			btnFactura = new Button();
 			lblPlace = new Label();
 			panelMain = new Panel();
-			btnFactura = new Button();
+			toolTip1 = new ToolTip(components);
 			panelLateral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictCliente).BeginInit();
@@ -77,6 +79,7 @@
 			btnAboutWe.Size = new Size(84, 37);
 			btnAboutWe.TabIndex = 3;
 			btnAboutWe.Text = "About We";
+			toolTip1.SetToolTip(btnAboutWe, "Acerca del Programa");
 			btnAboutWe.UseVisualStyleBackColor = true;
 			btnAboutWe.Click += btnAboutWe_Click;
 			// 
@@ -92,13 +95,14 @@
 			btnPerfil.TabIndex = 7;
 			btnPerfil.Tag = " ";
 			btnPerfil.Text = "Perfi;";
+			toolTip1.SetToolTip(btnPerfil, "Editar Perfil");
 			btnPerfil.UseVisualStyleBackColor = true;
 			btnPerfil.Click += btnPerfil_Click;
 			// 
 			// pictureBox1
 			// 
+			pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			pictureBox1.BackColor = Color.Transparent;
-			pictureBox1.Dock = DockStyle.Bottom;
 			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
 			pictureBox1.Location = new Point(0, 671);
 			pictureBox1.Margin = new Padding(0);
@@ -107,6 +111,7 @@
 			pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 			pictureBox1.TabIndex = 6;
 			pictureBox1.TabStop = false;
+			toolTip1.SetToolTip(pictureBox1, "Sr Bills: Representa el Poder del cual dispones :)\r\n");
 			// 
 			// pictCliente
 			// 
@@ -120,6 +125,8 @@
 			pictCliente.SizeMode = PictureBoxSizeMode.Zoom;
 			pictCliente.TabIndex = 4;
 			pictCliente.TabStop = false;
+			toolTip1.SetToolTip(pictCliente, "Foto Perfil");
+			pictCliente.Click += pictCliente_Click;
 			// 
 			// btnHome
 			// 
@@ -133,6 +140,7 @@
 			btnHome.TabIndex = 3;
 			btnHome.Tag = " ";
 			btnHome.Text = " Home";
+			toolTip1.SetToolTip(btnHome, "Inicio");
 			btnHome.UseVisualStyleBackColor = true;
 			btnHome.Click += btnHome_Click;
 			// 
@@ -146,6 +154,7 @@
 			btnRentar.TabIndex = 3;
 			btnRentar.Tag = " ";
 			btnRentar.Text = "Rentar";
+			toolTip1.SetToolTip(btnRentar, "Rentar Vehículo");
 			btnRentar.UseVisualStyleBackColor = true;
 			btnRentar.Click += btnRentar_Click;
 			// 
@@ -174,6 +183,7 @@
 			lblNameClient.Size = new Size(122, 28);
 			lblNameClient.TabIndex = 1;
 			lblNameClient.Text = "Name Of CLient";
+			toolTip1.SetToolTip(lblNameClient, "Nombre Cliente");
 			// 
 			// btnLogOut
 			// 
@@ -182,13 +192,14 @@
 			btnLogOut.FlatStyle = FlatStyle.Flat;
 			btnLogOut.Font = new Font("Agency FB", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			btnLogOut.ForeColor = Color.White;
-			btnLogOut.Location = new Point(766, 23);
+			btnLogOut.Location = new Point(991, 20);
 			btnLogOut.Margin = new Padding(0);
 			btnLogOut.Name = "btnLogOut";
-			btnLogOut.Size = new Size(127, 43);
+			btnLogOut.Size = new Size(117, 43);
 			btnLogOut.TabIndex = 3;
 			btnLogOut.Tag = " ";
-			btnLogOut.Text = "Salir";
+			btnLogOut.Text = "Sign Out";
+			toolTip1.SetToolTip(btnLogOut, "Cerrar Sección");
 			btnLogOut.UseVisualStyleBackColor = true;
 			btnLogOut.Click += btnSalir_Click;
 			// 
@@ -203,6 +214,22 @@
 			panel1.Name = "panel1";
 			panel1.Size = new Size(1117, 79);
 			panel1.TabIndex = 1;
+			// 
+			// btnFactura
+			// 
+			btnFactura.Anchor = AnchorStyles.None;
+			btnFactura.FlatStyle = FlatStyle.Flat;
+			btnFactura.ForeColor = Color.White;
+			btnFactura.Location = new Point(25, 23);
+			btnFactura.Margin = new Padding(0);
+			btnFactura.Name = "btnFactura";
+			btnFactura.Size = new Size(127, 43);
+			btnFactura.TabIndex = 8;
+			btnFactura.Tag = " ";
+			btnFactura.Text = "Factura";
+			toolTip1.SetToolTip(btnFactura, "Generar Factura");
+			btnFactura.UseVisualStyleBackColor = true;
+			btnFactura.Click += btnFactura_Click;
 			// 
 			// lblPlace
 			// 
@@ -228,20 +255,12 @@
 			panelMain.Size = new Size(1117, 753);
 			panelMain.TabIndex = 2;
 			// 
-			// btnFactura
+			// toolTip1
 			// 
-			btnFactura.Anchor = AnchorStyles.None;
-			btnFactura.FlatStyle = FlatStyle.Flat;
-			btnFactura.ForeColor = Color.White;
-			btnFactura.Location = new Point(25, 23);
-			btnFactura.Margin = new Padding(0);
-			btnFactura.Name = "btnFactura";
-			btnFactura.Size = new Size(127, 43);
-			btnFactura.TabIndex = 8;
-			btnFactura.Tag = " ";
-			btnFactura.Text = "Factura";
-			btnFactura.UseVisualStyleBackColor = true;
-			btnFactura.Click += btnFactura_Click;
+			toolTip1.AutoPopDelay = 5000;
+			toolTip1.InitialDelay = 500;
+			toolTip1.IsBalloon = true;
+			toolTip1.ReshowDelay = 100;
 			// 
 			// frmMainClient
 			// 
@@ -286,6 +305,7 @@
 		private Button btnPerfil;
 		private Button btnAboutWe;
 		private Button btnFactura;
+		private ToolTip toolTip1;
 		//private PictureBox pictureClient;
 	}
 }

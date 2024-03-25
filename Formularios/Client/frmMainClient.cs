@@ -115,7 +115,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			List<Rentado> obt = new RentcargokudemonContext().Rentados.Where(x => x.IdCliente == clientCurrent.Id).ToList();
 			if (obt.Count > 0)
 			{
-				gestorPanel.OpenChildFrom(new GeneraFactura(obt, $"Factura cliente: {clientCurrent.Nombre}"), btnFactura);
+				gestorPanel.OpenChildFrom(new GeneraFactura(obt, $"Factura cliente: {clientCurrent.Nombre}", false), btnFactura);
 			}
 			else
 			{
@@ -123,6 +123,13 @@ namespace ProjectFinalLp2.Formularios.Client
 			}
 
 		}
+
+		private void pictCliente_Click(object sender, EventArgs e)
+		{
+			gestorPanel.OpenChildFrom(new frmPerfilClient(clientCurrent), btnPerfil);
+
+		}
 		#endregion
+
 	}
 }

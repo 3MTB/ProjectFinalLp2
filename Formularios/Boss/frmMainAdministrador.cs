@@ -103,7 +103,7 @@ namespace ProjectFinalLp2.Formularios.Boss
 			var obt = new RentcargokudemonContext().Rentados.OrderBy(x => x.FechaInicio).ToList();
 			if (obt.Count > 0)
 			{
-				gestorPanel.OpenChildFrom(new GeneraFactura(obt, "TODOS LOS VEHICULOS RENTADOS"), btnHome);
+				gestorPanel.OpenChildFrom(new GeneraFactura(obt, "TODOS LOS VEHICULOS RENTADOS",true), btnHome);
 			}
 			else
 			{

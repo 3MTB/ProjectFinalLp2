@@ -124,7 +124,6 @@ namespace ProjectFinalLp2.Formularios.Client
 			var licencia = context.Licencia.FirstOrDefault(x => x.Id == client.IdLicencia);
 			if (licencia is not null)
 			{
-				//DELETE THAT: var cat = client.IdLicenciaNavigation.IdTipoLicencia.ToString().Insert(0, "0");
 				// PONER QUE SEA EL ID DEL QUE TIENE EL USUARIO
 				cbCategoria.SelectedIndex = licencia.IdTipoLicencia;
 				// PONER QUE SEA EL ID DEL QUE TIENE EL USUARIO
@@ -134,7 +133,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			else
 			{
 				// PONER QUE SEA EL ID DEL QUE TIENE EL USUARIO
-				cbCategoria.SelectedIndex = client.IdLicencia - 1;
+				//cbCategoria.SelectedIndex = client.IdLicencia;
 				// PONER QUE SEA EL ID DEL QUE TIENE EL USUARIO
 				getEmisionLicencia.Value = DateTime.Now;
 				getVencimientoLicencia.Value = DateTime.Now;
