@@ -13,6 +13,7 @@ using static ProjectFinalLp2.Models.otherType.funcionesComunes;
 using static ProjectFinalLp2.Models.otherType.ColorDefaults;
 using ProjectFinalLp2.Formularios.Aplication;
 using ProjectFinalLp2.Formularios.Boss;
+using ProjectFinalLp2.Formularios.Reportes;
 
 namespace ProjectFinalLp2.Formularios.Client
 {
@@ -37,7 +38,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			try
 			{
 				gestorPanel = new GestorTransformacionPanel(new frmMainClient(clientCurrent), panelMain, panelLateral, lblPlace);
-				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnHome);
+				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent, panelMain.Size), btnHome);
 
 				lblNameClient.Text = $"{clientCurrent.Nombre}\n{clientCurrent.Apellido}";
 				var img = ByteToImage(clientCurrent.Imagen);
@@ -85,7 +86,7 @@ namespace ProjectFinalLp2.Formularios.Client
 		{
 			if (sender.GetType() == btnHome.GetType())
 			{
-				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnMyVehicule);
+				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent, panelMain.Size), btnMyVehicule);
 			}
 		}
 
@@ -94,7 +95,7 @@ namespace ProjectFinalLp2.Formularios.Client
 			if (sender.GetType() == btnRentar.GetType())
 			{
 
-				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent), btnMyVehicule);
+				gestorPanel.OpenChildFrom(new frmCatalogo(clientCurrent, panelMain.Size), btnMyVehicule);
 			}
 		}
 
@@ -110,6 +111,18 @@ namespace ProjectFinalLp2.Formularios.Client
 			gestorPanel.OpenChildFrom(new frmPerfilClient(clientCurrent), btnPerfil);
 		}
 
+		private void btnFactura_Click(object sender, EventArgs e)
+		{
+			List<Rentado> obt = new RentcargokudemonContext().Rentados.Where(x => x.IdCliente == clientCurrent.Id).ToList();
+			if (obt.Count > 0)
+			{
+				gestorPanel.OpenChildFrom(new FacturaClient(clientCurrent, obt), btnFactura);
+			}
+			else
+			{
+				MessageBox.Show("NO TIENES COCHES RENTADOS !!");
+			}
 
+		}
 	}
 }

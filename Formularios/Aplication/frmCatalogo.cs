@@ -18,11 +18,12 @@ namespace ProjectFinalLp2.Formularios.Aplication
 	{
 		public Models.Client client { get; set; } = null;
 		public RentcargokudemonContext context { get; set; }
-		public frmCatalogo(Models.Client client)
+		public frmCatalogo(Models.Client client, Size size)
 		{
 			InitializeComponent();
 			this.client = client;
 			this.context = new RentcargokudemonContext();
+			this.Size = size;
 		}
 		private void frmCatalogo_Load(object sender, EventArgs e)
 		{
@@ -30,6 +31,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			var panelwidth = panelLayout.Width - 5;
 			var objWith = new UCVehiculos().Width + 10;
 			panelLayout.ColumnCount = (int)panelwidth / objWith;
+			
 			lblCantidad.Text = context.Vehiculos.Count().ToString();
 			var renta = context.Rentados.ToArray();
 			if (context.Vehiculos.Any())

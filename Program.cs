@@ -37,16 +37,16 @@ namespace ProjectFinalLp2
 			//Application.Run(new frmMainAdministrador(adminDefault));
 			//Application.Run(new frmMainClient(clientDefault));\
 
-		/*	Vehiculo v = new RentcargokudemonContext().Vehiculos.ToList().First();
-			Client c = new RentcargokudemonContext().Clients.ToList().First();
-*/
+			/*	Vehiculo v = new RentcargokudemonContext().Vehiculos.ToList().First();
+				Client c = new RentcargokudemonContext().Clients.ToList().First();
+	*/
 
 
 			Client c = new RentcargokudemonContext().Clients.ToList().First();
 			Admin a = new RentcargokudemonContext().Admins.ToList().First();
 
 
-			Application.Run(new  frmLoading());
+			Application.Run(new frmLoading());
 			//Application.Run(new frmPerfilClient(c));
 		}
 	}

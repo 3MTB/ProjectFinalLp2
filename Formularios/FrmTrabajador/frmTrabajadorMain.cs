@@ -41,7 +41,7 @@ namespace ProjectFinalLp2.Formularios.Trabajador
 
 		private void btnCatalogo_Click(object sender, EventArgs e)
 		{
-			gestorPanel.OpenChildFrom(new frmCatalogo(null), btnCatalogo);
+			gestorPanel.OpenChildFrom(new frmCatalogo(null, panelMain.Size), btnCatalogo);
 
 		}
 

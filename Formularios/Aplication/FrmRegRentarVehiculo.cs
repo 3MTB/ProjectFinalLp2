@@ -136,8 +136,12 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				{
 					btnRentar.Enabled = false;
 					btnRentar.Text = "YA RENTADO";
-					btnRentar.BackColor = Color.DarkRed;
+					btnRentar.BackColor = Color.Yellow;
 					btnRentar.ForeColor = Color.Black;
+					dtFechaFinal.Enabled = false;
+					dtFechaInicio.Enabled = false;
+					cbTrabajador.Enabled = false;
+
 				}
 				VerificaLicencia();
 				cbTrabajador.DataSource = context.Trabajadors.Where(x => x.Cargo.ToUpper().Contains("VENDEDOR")).ToList();

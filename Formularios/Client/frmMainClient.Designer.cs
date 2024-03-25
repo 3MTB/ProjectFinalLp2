@@ -42,6 +42,7 @@
 			panel1 = new Panel();
 			lblPlace = new Label();
 			panelMain = new Panel();
+			btnFactura = new Button();
 			panelLateral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictCliente).BeginInit();
@@ -62,7 +63,7 @@
 			panelLateral.Dock = DockStyle.Left;
 			panelLateral.Location = new Point(0, 0);
 			panelLateral.Name = "panelLateral";
-			panelLateral.Size = new Size(221, 769);
+			panelLateral.Size = new Size(221, 832);
 			panelLateral.TabIndex = 0;
 			// 
 			// btnAboutWe
@@ -70,7 +71,7 @@
 			btnAboutWe.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
 			btnAboutWe.FlatStyle = FlatStyle.Flat;
 			btnAboutWe.ForeColor = Color.WhiteSmoke;
-			btnAboutWe.Location = new Point(0, 571);
+			btnAboutWe.Location = new Point(0, 634);
 			btnAboutWe.Margin = new Padding(0);
 			btnAboutWe.Name = "btnAboutWe";
 			btnAboutWe.Size = new Size(84, 37);
@@ -84,7 +85,7 @@
 			btnPerfil.Anchor = AnchorStyles.None;
 			btnPerfil.FlatStyle = FlatStyle.Flat;
 			btnPerfil.ForeColor = Color.White;
-			btnPerfil.Location = new Point(50, 216);
+			btnPerfil.Location = new Point(50, 248);
 			btnPerfil.Margin = new Padding(0);
 			btnPerfil.Name = "btnPerfil";
 			btnPerfil.Size = new Size(127, 43);
@@ -99,7 +100,7 @@
 			pictureBox1.BackColor = Color.Transparent;
 			pictureBox1.Dock = DockStyle.Bottom;
 			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-			pictureBox1.Location = new Point(0, 608);
+			pictureBox1.Location = new Point(0, 671);
 			pictureBox1.Margin = new Padding(0);
 			pictureBox1.Name = "pictureBox1";
 			pictureBox1.Size = new Size(221, 161);
@@ -112,7 +113,7 @@
 			pictCliente.Anchor = AnchorStyles.None;
 			pictCliente.Image = Properties.Resources.clientDefaultWhite;
 			pictCliente.InitialImage = Properties.Resources.userDefault;
-			pictCliente.Location = new Point(60, 50);
+			pictCliente.Location = new Point(60, 82);
 			pictCliente.Margin = new Padding(0);
 			pictCliente.Name = "pictCliente";
 			pictCliente.Size = new Size(117, 95);
@@ -125,7 +126,7 @@
 			btnHome.Anchor = AnchorStyles.None;
 			btnHome.FlatStyle = FlatStyle.Flat;
 			btnHome.ForeColor = Color.White;
-			btnHome.Location = new Point(47, 440);
+			btnHome.Location = new Point(47, 472);
 			btnHome.Margin = new Padding(0);
 			btnHome.Name = "btnHome";
 			btnHome.Size = new Size(127, 43);
@@ -138,7 +139,7 @@
 			// btnRentar
 			// 
 			btnRentar.Anchor = AnchorStyles.None;
-			btnRentar.Location = new Point(47, 356);
+			btnRentar.Location = new Point(47, 388);
 			btnRentar.Margin = new Padding(0);
 			btnRentar.Name = "btnRentar";
 			btnRentar.Size = new Size(127, 43);
@@ -151,7 +152,7 @@
 			// btnMyVehicule
 			// 
 			btnMyVehicule.Anchor = AnchorStyles.None;
-			btnMyVehicule.Location = new Point(47, 272);
+			btnMyVehicule.Location = new Point(47, 304);
 			btnMyVehicule.Margin = new Padding(0);
 			btnMyVehicule.Name = "btnMyVehicule";
 			btnMyVehicule.Size = new Size(127, 43);
@@ -167,7 +168,7 @@
 			lblNameClient.AutoSize = true;
 			lblNameClient.Font = new Font("Agency FB", 14F);
 			lblNameClient.ForeColor = Color.White;
-			lblNameClient.Location = new Point(36, 145);
+			lblNameClient.Location = new Point(36, 177);
 			lblNameClient.Margin = new Padding(0);
 			lblNameClient.Name = "lblNameClient";
 			lblNameClient.Size = new Size(122, 28);
@@ -181,7 +182,7 @@
 			btnLogOut.FlatStyle = FlatStyle.Flat;
 			btnLogOut.Font = new Font("Agency FB", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			btnLogOut.ForeColor = Color.White;
-			btnLogOut.Location = new Point(566, 23);
+			btnLogOut.Location = new Point(766, 23);
 			btnLogOut.Margin = new Padding(0);
 			btnLogOut.Name = "btnLogOut";
 			btnLogOut.Size = new Size(127, 43);
@@ -194,12 +195,13 @@
 			// panel1
 			// 
 			panel1.BackColor = Color.FromArgb(10, 5, 60);
+			panel1.Controls.Add(btnFactura);
 			panel1.Controls.Add(lblPlace);
 			panel1.Controls.Add(btnLogOut);
 			panel1.Dock = DockStyle.Top;
 			panel1.Location = new Point(221, 0);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(716, 79);
+			panel1.Size = new Size(1117, 79);
 			panel1.TabIndex = 1;
 			// 
 			// lblPlace
@@ -208,7 +210,7 @@
 			lblPlace.AutoSize = true;
 			lblPlace.Font = new Font("Agency FB", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			lblPlace.ForeColor = Color.White;
-			lblPlace.Location = new Point(306, 13);
+			lblPlace.Location = new Point(506, 13);
 			lblPlace.Margin = new Padding(0);
 			lblPlace.Name = "lblPlace";
 			lblPlace.Size = new Size(104, 53);
@@ -223,15 +225,30 @@
 			panelMain.Location = new Point(221, 79);
 			panelMain.Margin = new Padding(0);
 			panelMain.Name = "panelMain";
-			panelMain.Size = new Size(716, 690);
+			panelMain.Size = new Size(1117, 753);
 			panelMain.TabIndex = 2;
+			// 
+			// btnFactura
+			// 
+			btnFactura.Anchor = AnchorStyles.None;
+			btnFactura.FlatStyle = FlatStyle.Flat;
+			btnFactura.ForeColor = Color.White;
+			btnFactura.Location = new Point(25, 23);
+			btnFactura.Margin = new Padding(0);
+			btnFactura.Name = "btnFactura";
+			btnFactura.Size = new Size(127, 43);
+			btnFactura.TabIndex = 8;
+			btnFactura.Tag = " ";
+			btnFactura.Text = "Factura";
+			btnFactura.UseVisualStyleBackColor = true;
+			btnFactura.Click += btnFactura_Click;
 			// 
 			// frmMainClient
 			// 
 			AutoScaleDimensions = new SizeF(7F, 24F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(10, 45, 50);
-			ClientSize = new Size(937, 769);
+			ClientSize = new Size(1338, 832);
 			Controls.Add(panelMain);
 			Controls.Add(panel1);
 			Controls.Add(panelLateral);
@@ -241,6 +258,7 @@
 			Name = "frmMainClient";
 			Tag = "Main Client";
 			Text = "Client";
+			WindowState = FormWindowState.Maximized;
 			Load += frmMainClient_Load;
 			panelLateral.ResumeLayout(false);
 			panelLateral.PerformLayout();
@@ -267,6 +285,7 @@
 		private PictureBox pictureBox1;
 		private Button btnPerfil;
 		private Button btnAboutWe;
+		private Button btnFactura;
 		//private PictureBox pictureClient;
 	}
 }
