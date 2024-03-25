@@ -29,7 +29,10 @@ namespace ProjectFinalLp2
 			this.currentClient = client;
 			this.IsNotDisponible = IsNotDisponible;
 		}
+		public UCVehiculos()
+		{
 
+		}
 		private void btnRentar_Click(object sender, EventArgs e)
 		{
 			SeeRentar();
@@ -54,7 +57,7 @@ namespace ProjectFinalLp2
 			{
 				btnAction.Enabled = false;
 				btnAction.Text = "YA RENTADO";
-				btnAction.BackColor = Color.DarkRed;
+				btnAction.BackColor = Color.Yellow;
 				btnAction.ForeColor = Color.Black;
 			}
 			else
@@ -96,6 +99,7 @@ namespace ProjectFinalLp2
 
 			}
 		}
+	
 		private void UCVehiculos_Load(object sender, EventArgs e)
 		{
 			cargaValores();

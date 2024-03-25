@@ -38,8 +38,8 @@
 			label2 = new Label();
 			label3 = new Label();
 			panelContenedor = new Panel();
-			btnMoreInformation = new Button();
 			lblALert = new Label();
+			btnMoreInformation = new Button();
 			((System.ComponentModel.ISupportInitialize)pictImage).BeginInit();
 			panelContenedor.SuspendLayout();
 			SuspendLayout();
@@ -87,8 +87,10 @@
 			// btnAction
 			// 
 			btnAction.Anchor = AnchorStyles.None;
-			btnAction.BackColor = SystemColors.InactiveCaption;
+			btnAction.BackColor = SystemColors.ControlDark;
 			btnAction.FlatStyle = FlatStyle.Flat;
+			btnAction.Font = new Font("Agency FB", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnAction.ForeColor = Color.SpringGreen;
 			btnAction.Location = new Point(190, 197);
 			btnAction.Margin = new Padding(0);
 			btnAction.Name = "btnAction";
@@ -170,10 +172,26 @@
 			panelContenedor.Dock = DockStyle.Fill;
 			panelContenedor.Location = new Point(0, 0);
 			panelContenedor.Margin = new Padding(0);
+			panelContenedor.MaximumSize = new Size(316, 240);
 			panelContenedor.Name = "panelContenedor";
 			panelContenedor.Size = new Size(316, 240);
 			panelContenedor.TabIndex = 15;
 			panelContenedor.Paint += panelContenedor_Paint;
+			// 
+			// lblALert
+			// 
+			lblALert.AutoSize = true;
+			lblALert.BackColor = Color.Black;
+			lblALert.Dock = DockStyle.Top;
+			lblALert.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblALert.ForeColor = Color.Red;
+			lblALert.Location = new Point(0, 0);
+			lblALert.Margin = new Padding(0);
+			lblALert.Name = "lblALert";
+			lblALert.Size = new Size(38, 16);
+			lblALert.TabIndex = 16;
+			lblALert.Text = "alert";
+			lblALert.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// btnMoreInformation
 			// 
@@ -187,19 +205,6 @@
 			btnMoreInformation.TabIndex = 15;
 			btnMoreInformation.UseVisualStyleBackColor = false;
 			btnMoreInformation.Click += btnMoreInformation_Click;
-			// 
-			// lblALert
-			// 
-			lblALert.AutoSize = true;
-			lblALert.Font = new Font("Microsoft Sans Serif", 8.25F);
-			lblALert.ForeColor = Color.IndianRed;
-			lblALert.Location = new Point(76, 1);
-			lblALert.Margin = new Padding(0);
-			lblALert.Name = "lblALert";
-			lblALert.Size = new Size(36, 17);
-			lblALert.TabIndex = 16;
-			lblALert.Text = "alert";
-			lblALert.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// UCVehiculos
 			// 

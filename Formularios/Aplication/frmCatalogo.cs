@@ -26,6 +26,32 @@ namespace ProjectFinalLp2.Formularios.Aplication
 		}
 		private void frmCatalogo_Load(object sender, EventArgs e)
 		{
+
+			var panelwidth = panelLayout.Width - 5;
+			var objWith = new UCVehiculos().Width + 10;
+			panelLayout.ColumnCount = (int)panelwidth / objWith;
+			lblCantidad.Text = context.Vehiculos.Count().ToString();
+			var renta = context.Rentados.ToArray();
+			if (context.Vehiculos.Any())
+			{
+				foreach (var x in context.Vehiculos)
+				{
+					bool IsNotDisponible = renta.Any(r => r.IdVehiculo == x.Id);
+					var card = new UCVehiculos(x, client, IsNotDisponible);
+
+					panelLayout.Controls.Add(card);
+				}
+			}
+			else
+			{
+				MessageBox.Show("SIN VEHICULOS DISPONIBLES");
+			}
+
+		}/*private void frmCatalogo_Load(object sender, EventArgs e)
+		{
+
+
+
 			lblCantidad.Text = context.Vehiculos.Count().ToString();
 			var renta = context.Rentados.ToArray();
 			if (context.Vehiculos.Any())
@@ -43,7 +69,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				MessageBox.Show("SIN VEHICULOS DISPONIBLES");
 			}
 
-		}
+		}*/
 
 	}
 }

@@ -59,6 +59,7 @@
 			label14 = new Label();
 			label11 = new Label();
 			lblDescription = new Label();
+			lblAvisoDisponibilidad = new Label();
 			label5 = new Label();
 			label6 = new Label();
 			((System.ComponentModel.ISupportInitialize)pictImage).BeginInit();
@@ -446,10 +447,25 @@
 			lblDescription.TabIndex = 45;
 			lblDescription.Text = "Description";
 			// 
+			// lblAvisoDisponibilidad
+			// 
+			lblAvisoDisponibilidad.Anchor = AnchorStyles.None;
+			lblAvisoDisponibilidad.AutoSize = true;
+			lblAvisoDisponibilidad.BackColor = Color.Transparent;
+			lblAvisoDisponibilidad.Font = new Font("Agency FB", 15F, FontStyle.Bold);
+			lblAvisoDisponibilidad.ForeColor = Color.Red;
+			lblAvisoDisponibilidad.Location = new Point(543, 595);
+			lblAvisoDisponibilidad.Margin = new Padding(0);
+			lblAvisoDisponibilidad.Name = "lblAvisoDisponibilidad";
+			lblAvisoDisponibilidad.Size = new Size(121, 31);
+			lblAvisoDisponibilidad.TabIndex = 46;
+			lblAvisoDisponibilidad.Text = "Aviso General";
+			// 
 			// FrmRegRentarVehiculo
 			// 
 			AutoScaleMode = AutoScaleMode.Inherit;
 			ClientSize = new Size(947, 869);
+			Controls.Add(lblAvisoDisponibilidad);
 			Controls.Add(lblDescription);
 			Controls.Add(label11);
 			Controls.Add(lblLicenciaRequerida);
@@ -522,5 +538,6 @@
 		private Label label14;
 		private Label label11;
 		private Label lblDescription;
+		private Label lblAvisoDisponibilidad;
 	}
 }

@@ -90,7 +90,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 					context.SaveChanges();
 					MessageBox.Show("RENTA GUARDADA");
 					this.Close();
-					new frmCatalogo(cliente).Show();
+
 				}
 				else
 				{
@@ -128,6 +128,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 		}
 		private void MiInicializador()
 		{
+			lblAvisoDisponibilidad.Text = string.Empty;
 			try
 			{
 
@@ -138,6 +139,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 					btnRentar.BackColor = Color.DarkRed;
 					btnRentar.ForeColor = Color.Black;
 				}
+				VerificaLicencia();
 				cbTrabajador.DataSource = context.Trabajadors.Where(x => x.Cargo.ToUpper().Contains("VENDEDOR")).ToList();
 				cbTrabajador.DisplayMember = "Name";
 				dtFechaInicio.MinDate = DateTime.Now;
@@ -171,7 +173,7 @@ namespace ProjectFinalLp2.Formularios.Aplication
 				}
 				else
 				{
-					MessageBox.Show($"Error al momento de cargar la foto del usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show($"Error al momento de cargar la foto del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					pictImage.Image = Properties.Resources.userDefault;
 				}
 			}
@@ -181,6 +183,35 @@ namespace ProjectFinalLp2.Formularios.Aplication
 			}
 
 		}
+
+		private void VerificaLicencia()
+		{
+			try
+			{
+				RentcargokudemonContext context = new RentcargokudemonContext();
+
+				var idTipolicencia = context.Licencia.FirstOrDefault(x => x.Id == cliente.IdLicencia)!.IdTipoLicencia;
+
+				if (idTipolicencia < vehiculo.LicenciaRequerida)
+				{
+					btnRentar.Enabled = false;
+
+					lblAvisoDisponibilidad.Text = $"Necesitas una licencia CAT: {vehiculo.LicenciaRequerida}";
+					btnRentar.Text = "Necesitas otra licencia";
+					btnRentar.BackColor = Color.DarkRed;
+					btnRentar.ForeColor = Color.Black;
+
+				}
+
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Algo fallo al verificar tus datos de licencia.\n {e}");
+
+			}
+		}
+
+
 		#endregion
 
 
